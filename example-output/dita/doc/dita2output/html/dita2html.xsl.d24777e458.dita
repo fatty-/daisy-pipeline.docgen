@@ -1,0 +1,38 @@
+<reference id="d24777e458">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">&lt;refbody&gt; becomes &lt;section class="refbody"&gt;&lt;header
+            class="refbody-header"&gt;&lt;h1&gt;Parameters&lt;/h1&gt;&lt;/header&gt;...&lt;/section&gt;</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template match="refbody" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;xsl:variable name="nodetext"&gt;
+            &lt;xsl:value-of select="descendant-or-self::text()[not(ancestor::*[local-name()='apiname'])]"/&gt;
+        &lt;/xsl:variable&gt;
+        &lt;xsl:if test="string-length(normalize-space($nodetext))&gt;0"&gt;
+            &lt;!--section class="refbody {@outputclass}"&gt;
+                &lt;header class="refbody-header"&gt;
+                    &lt;h1&gt;Parameters&lt;/h1--&gt;
+                    &lt;!--h1&gt;Input / Output&lt;xsl:if test=".//apiname"&gt; for &lt;xsl:value-of select=".//apiname"/&gt;&lt;/xsl:if&gt;&lt;/h1--&gt;
+                &lt;!--/header--&gt;
+                &lt;xsl:apply-templates/&gt;
+            &lt;!--/section--&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

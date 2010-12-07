@@ -1,0 +1,34 @@
+<reference id="d24777e110">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Load DITA reference and apply-templates to it.</xd:short>
+      </shortdesc>
+      <xd:detail xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Wraps any child elements of the reference to the DITA reference document in their
+            own &lt;section class="child-topics"&gt; following the processed reference.</xd:detail>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template match="topicref[@format='dita']" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;xsl:apply-templates select="document(@href)"/&gt;
+        &lt;xsl:if test="count(./*) &gt; 0"&gt;
+            &lt;section class="child-topics"&gt;
+                &lt;xsl:apply-templates/&gt;
+            &lt;/section&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

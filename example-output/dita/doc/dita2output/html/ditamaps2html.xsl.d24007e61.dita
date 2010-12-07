@@ -1,0 +1,95 @@
+<reference id="d24007e61">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                   xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Create main HTML structure.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template match="/c:result" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;style type="text/css"&gt;
+                    body {
+                        font-family: futura, helvetica, arial, sans-serif;
+                    }
+                    section, article, header, footer, nav, aside, hgroup {
+                        display: block;
+                    }
+                    ul.toc li {
+                        background-position: 0% 50%;
+                        background-repeat: no-repeat;
+                        font-size: 85%;
+                        list-style-type: none;
+                        margin: 1px 0px 1px 1px;
+                        padding: 1px 0px 1px 11px;
+                    }
+                    ul.toc li a {
+                        text-decoration: none;
+                    }
+                    a, a:visited, a:hover {
+                        color: #009;
+                    }&lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;header class="filelist-header"&gt;
+                    &lt;h1&gt;
+                        &lt;xsl:value-of select="$title"/&gt;
+                    &lt;/h1&gt;
+                &lt;/header&gt;
+                &lt;ul class="toc"&gt;
+                    &lt;xsl:for-each select="c:result"&gt;
+                        &lt;!-- for each source file alphabetically --&gt;
+                        &lt;xsl:sort select="@rel"/&gt;
+                        &lt;!-- split into parent directories ($parts[1..last()-1]) and filename ($parts[last()]) --&gt;
+                        &lt;xsl:variable name="parts" select="tokenize(@rel,'/')"/&gt;
+                        &lt;xsl:variable name="element" select="."/&gt;
+                        &lt;xsl:for-each select="$parts"&gt;
+                            &lt;!-- path to current parent directory --&gt;
+                            &lt;xsl:variable name="dir" select="string-join(subsequence($parts,1,position()),'/')"/&gt;
+                            &lt;!-- check if this is the last file in the parent folder --&gt;
+                            &lt;!--xsl:variable name="isLastSubFile"
+                                select="if (position()=1) then false() else count($element/following-sibling::*[matches(@rel,concat('^',string-join(subsequence($parts,1,position()-1),'/')))])=0"/&gt;
+                            &lt;xsl:variable name="isLastSuperDir" select="false()"/--&gt;
+                            &lt;xsl:choose&gt;
+                                &lt;xsl:when test="position()=last()"&gt;
+                                    &lt;!-- $parts[last()] is the filename --&gt;
+                                    &lt;xsl:apply-templates select="$element"&gt;
+                                        &lt;xsl:with-param name="indent" select="position()"/&gt;
+                                        &lt;!--xsl:with-param name="isLastSubFile" select="$isLastSubFile"/&gt;
+                                        &lt;xsl:with-param name="isLastSuperDir"
+                                            select="$isLastSuperDir"/--&gt;
+                                    &lt;/xsl:apply-templates&gt;
+                                &lt;/xsl:when&gt;
+                                &lt;xsl:when test="count($element/preceding-sibling::*[matches(@rel,concat('^',$dir))])=0"&gt;
+                                    &lt;xsl:apply-templates select="$element"&gt;
+                                        &lt;xsl:with-param name="indent" select="position()"/&gt;
+                                        &lt;xsl:with-param name="directory" select="."/&gt;
+                                        &lt;!--xsl:with-param name="isLastSubFile" select="$isLastSubFile"/&gt;
+                                        &lt;xsl:with-param name="isLastSuperDir"
+                                            select="$isLastSuperDir"/--&gt;
+                                    &lt;/xsl:apply-templates&gt;
+                                &lt;/xsl:when&gt;
+                            &lt;/xsl:choose&gt;
+                        &lt;/xsl:for-each&gt;
+                    &lt;/xsl:for-each&gt;
+                &lt;/ul&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

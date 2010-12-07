@@ -1,0 +1,274 @@
+<html><head><style type="text/css">
+                    body {
+                        font-family: futura, helvetica, arial, sans-serif;
+                    }
+                    section, article, header, footer, nav, aside, hgroup {
+                        display: block;
+                    }
+                    section.reference {
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius:10px;
+                        -moz-border-radius:10px;
+                        margin: 5px;
+                        padding: 20px;
+                        border-color: #CCC;
+                        background-color: #F9F9F9;
+                    }
+                    .child-topics section.reference {
+                        border-style: solid;
+                        border-width: 2px;
+                        border-radius:10px;
+                        -moz-border-radius:10px;
+                        margin: 20px;
+                        padding: 20px;
+                        border-color: #CCC;
+                        background-color: #EEF;
+                    }
+                    section.child-topics {
+                        margin-left: 25px;
+                    }
+                    .main-header h1 {
+                        width: 100%;
+                        border-style: solid;
+                        border-width: 0px 0px 1px 0px;
+                        font-size: 26px;
+                    }
+                    table {
+                        margin: 10px;
+                    }
+                    table.parml {
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: white;
+                        background-color: #EEF;
+                    }
+                    tr.plentry {
+                        border-style: dotted;
+                        border-width: 1px;
+                    }
+                    td.pt td.pd {
+                        padding: 5px;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius:4px;
+                    }
+                    .reference h1 {
+                        font-size: 22px;
+                        color: #006;
+                    }
+                    section.abstract, section.prolog, section.parameters, section.linklist, section.sourcecode {
+                        border-style: dotted;
+                        border-width: 1px;
+                        border-radius: 0px;
+                        margin: 10px;
+                        padding: 10px 10px 50px 10px;
+                        background-color: #F5F5FF;
+                    }
+                    section.sourcecode {
+                        display: none;
+                    }
+                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                        position: relative;
+                        top: -30px;
+                        float: left;
+                    }
+                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                        position: absolute;
+                        color: #006;
+                        background-color: #EEF;
+                        font-size: 18px;
+                        white-space: nowrap;
+                    }
+                    header.subheader {
+                        position: static;
+                        top: 0px;
+                        float: none;
+                    }
+                    .subheader h1 {
+                        color: #006;
+                        background-color: transparent;
+                        font-size: 16px;
+                    }</style></head><header class="main-header"><h1>lib/recursive-directory-list.xpl</h1></header>
+   <section class="reference XProc "><header class="title "><h1>p:declare-step</h1></header><p class="shortdesc ">
+         Performs p:directory-list recursively.
+      </p><section class="abstract "><header class="abstract-header"><h1>Description</h1></header><p>
+      
+      <xd:detail xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">The cx:recursive-directory-list step lists the contents of the specified
+            directory on the filesystem. Unlike the standard p:directory-list step,
+            cx:recursive-directory-list expands all subdirectories recursively.</xd:detail>
+   </p></section><section class="prolog "><header class="prolog-header"><h1>About</h1></header>
+      <p class="">Author: 
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">Norman Walsh</xd:name>
+      </p>
+      <p class="">Contributor: 
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">Richard Hamilton</xd:name>
+      </p>
+      <p class="copyright "> © <span class="copyrholder ">
+            <xd:holder xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">Norman Walsh</xd:holder>
+         </span>, <span class="copyryear ">2010</span></p>
+      <table class="metadata ">
+         
+         <tr class="othermeta "><td>Programming language</td><td>XProc</td></tr>
+         <tr class="othermeta "><td>XProc version</td><td>1.0</td></tr>
+      </table>
+   </section>
+      <section class="section ">
+         
+      </section>
+      <section class="section parameters xproc-outputs">
+         <header class="title io-header"><h1>Outputs</h1></header>
+         <table class="parml xproc-outputs"><tr><th>name</th><th>primary</th><th>sequence</th><th>connection</th><th>description</th></tr>
+            <tr class="plentry ">
+               <td class="pt ">result</td>
+               <td class="pt ">true</td>
+               <td class="pt "/>
+               <td class="pt "/>
+               <td class="pd "/>
+            </tr>
+         </table>
+      </section>
+      <section class="section parameters xproc-options">
+         <header class="title io-header"><h1>Options</h1></header>
+         <table class="parml xproc-options"><tr><th>name</th><th>required</th><th>description</th></tr>
+            <tr class="plentry ">
+               <td class="pt ">path</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">include-filter</td>
+               <td class="pt "/>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">exclude-filter</td>
+               <td class="pt "/>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">depth</td>
+               <td class="pt "/>
+               <td class="pd "/>
+            </tr>
+         </table>
+      </section>
+   <span class="related-links ">
+      <section class="linklist "><header class="title "><h1>See also</h1></header><p class="linkinfo ">These are related readings suggested by the author of the XProc
+                script.</p><p class="link "><a href="http://xprocbook.com/book/refentry-61.html" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../external_link.png) no-repeat center left;">http://xprocbook.com/book/refentry-61.html</a></p></section>
+   </span><section class="section sourcecode">
+      <header class="title sourcecode-header"><h1>Source Code</h1></header>
+      <pre class="codeblock"><code class="">&lt;p:declare-step type="cx:recursive-directory-list" version="1.0" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;p:documentation xd:target="parent"&gt;
+        &lt;xd:short&gt;Performs p:directory-list recursively.&lt;/xd:short&gt;
+        &lt;xd:detail&gt;The cx:recursive-directory-list step lists the contents of the specified
+            directory on the filesystem. Unlike the standard p:directory-list step,
+            cx:recursive-directory-list expands all subdirectories recursively.&lt;/xd:detail&gt;
+        &lt;xd:option name="path"&gt;Same as for p:directory-list; the directory to list all files and
+            directories in.&lt;/xd:option&gt;
+        &lt;xd:option name="include-filter"&gt;Same as for p:directory-list; if the include-filter pattern
+            matches a directory entry's name, the entry is included in the output.&lt;/xd:option&gt;
+        &lt;xd:option name="exclude-filter"&gt;Same as for p:directory-list; if the exclude-filter pattern
+            matches a directory entry's name, the entry is excluded in the output.&lt;/xd:option&gt;
+        &lt;xd:option name="depth"&gt;The depth option limits the recursive depth of the process. A value
+            of “-1” specifies an unbounded depth.&lt;/xd:option&gt;
+        &lt;xd:output&gt;Pretty much the same as for p:directory-list, but with directories nested
+            recursively.&lt;/xd:output&gt;
+        &lt;xd:author&gt;
+            &lt;xd:name&gt;Norman Walsh&lt;/xd:name&gt;
+        &lt;/xd:author&gt;
+        &lt;xd:contributor&gt;
+            &lt;xd:name&gt;Richard Hamilton&lt;/xd:name&gt;
+        &lt;/xd:contributor&gt;
+        &lt;xd:copyright&gt;
+            &lt;xd:year&gt;2010&lt;/xd:year&gt;
+            &lt;xd:holder&gt;Norman Walsh&lt;/xd:holder&gt;
+        &lt;/xd:copyright&gt;
+        &lt;xd:see&gt;http://xprocbook.com/book/refentry-61.html&lt;/xd:see&gt;
+    &lt;/p:documentation&gt;
+
+    &lt;p:output port="result"/&gt;
+    &lt;p:option name="path" required="true"/&gt;
+    &lt;p:option name="include-filter"/&gt;
+    &lt;p:option name="exclude-filter"/&gt;
+    &lt;p:option name="depth" select="-1"/&gt;
+
+    &lt;p:choose&gt;
+        &lt;p:when test="p:value-available('include-filter')             and p:value-available('exclude-filter')"&gt;
+            &lt;p:directory-list&gt;
+                &lt;p:with-option name="path" select="$path"/&gt;
+                &lt;p:with-option name="include-filter" select="$include-filter"/&gt;
+                &lt;p:with-option name="exclude-filter" select="$exclude-filter"/&gt;
+            &lt;/p:directory-list&gt;
+        &lt;/p:when&gt;
+
+        &lt;p:when test="p:value-available('include-filter')"&gt;
+            &lt;p:directory-list&gt;
+                &lt;p:with-option name="path" select="$path"/&gt;
+                &lt;p:with-option name="include-filter" select="$include-filter"/&gt;
+            &lt;/p:directory-list&gt;
+        &lt;/p:when&gt;
+
+        &lt;p:when test="p:value-available('exclude-filter')"&gt;
+            &lt;p:directory-list&gt;
+                &lt;p:with-option name="path" select="$path"/&gt;
+                &lt;p:with-option name="exclude-filter" select="$exclude-filter"/&gt;
+            &lt;/p:directory-list&gt;
+        &lt;/p:when&gt;
+
+        &lt;p:otherwise&gt;
+            &lt;p:directory-list&gt;
+                &lt;p:with-option name="path" select="$path"/&gt;
+            &lt;/p:directory-list&gt;
+        &lt;/p:otherwise&gt;
+    &lt;/p:choose&gt;
+
+    &lt;p:viewport match="/c:directory/c:directory"&gt;
+        &lt;p:variable name="name" select="/*/@name"/&gt;
+
+        &lt;p:choose&gt;
+            &lt;p:when test="$depth != 0"&gt;
+                &lt;p:choose&gt;
+                    &lt;p:when test="p:value-available('include-filter')                                                  and p:value-available('exclude-filter')"&gt;
+                        &lt;cx:recursive-directory-list&gt;
+                            &lt;p:with-option name="path" select="concat($path,'/',$name)"/&gt;
+                            &lt;p:with-option name="include-filter" select="$include-filter"/&gt;
+                            &lt;p:with-option name="exclude-filter" select="$exclude-filter"/&gt;
+                            &lt;p:with-option name="depth" select="$depth - 1"/&gt;
+                        &lt;/cx:recursive-directory-list&gt;
+                    &lt;/p:when&gt;
+
+                    &lt;p:when test="p:value-available('include-filter')"&gt;
+                        &lt;cx:recursive-directory-list&gt;
+                            &lt;p:with-option name="path" select="concat($path,'/',$name)"/&gt;
+                            &lt;p:with-option name="include-filter" select="$include-filter"/&gt;
+                            &lt;p:with-option name="depth" select="$depth - 1"/&gt;
+                        &lt;/cx:recursive-directory-list&gt;
+                    &lt;/p:when&gt;
+
+                    &lt;p:when test="p:value-available('exclude-filter')"&gt;
+                        &lt;cx:recursive-directory-list&gt;
+                            &lt;p:with-option name="path" select="concat($path,'/',$name)"/&gt;
+                            &lt;p:with-option name="exclude-filter" select="$exclude-filter"/&gt;
+                            &lt;p:with-option name="depth" select="$depth - 1"/&gt;
+                        &lt;/cx:recursive-directory-list&gt;
+                    &lt;/p:when&gt;
+
+                    &lt;p:otherwise&gt;
+                        &lt;cx:recursive-directory-list&gt;
+                            &lt;p:with-option name="path" select="concat($path,'/',$name)"/&gt;
+                            &lt;p:with-option name="depth" select="$depth - 1"/&gt;
+                        &lt;/cx:recursive-directory-list&gt;
+                    &lt;/p:otherwise&gt;
+                &lt;/p:choose&gt;
+            &lt;/p:when&gt;
+            &lt;p:otherwise&gt;
+                &lt;p:identity/&gt;
+            &lt;/p:otherwise&gt;
+        &lt;/p:choose&gt;
+    &lt;/p:viewport&gt;
+
+&lt;/p:declare-step&gt;</code></pre>
+   </section></section>
+</html>
