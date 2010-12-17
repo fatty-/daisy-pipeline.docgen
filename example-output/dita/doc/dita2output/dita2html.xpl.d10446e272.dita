@@ -1,0 +1,68 @@
+<reference id="d10446e272">
+   <title>p:identity - main</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
+                   xmlns:d="http://www.example.org/documenter">Creates a basic main.html front page.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>main</apiname>
+      </section>
+      <section outputclass="parameters xproc-inputs">
+         <title outputclass="io-header">Inputs</title>
+         <parml outputclass="xproc-inputs">
+            <plentry>
+               <pt>source</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt>inline</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:identity name="main" xmlns:p="http://www.w3.org/ns/xproc"&gt;
+        &lt;p:input port="source"&gt;
+            &lt;p:inline&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;style type="text/css"&gt;
+                            
+                            #outer {height: 100%; overflow: hidden; position: relative; width: 100%;}
+                            #outer[id] {display: table; position: static;}
+                            
+                            #middle {position: absolute; top: 50%; width: 100%; text-align: center;} /* for explorer only*/
+                            #middle[id] {display: table-cell; vertical-align: middle; position: static;}
+                            
+                            #inner {position: relative; top: -50%; text-align: left;} /* for explorer only */
+                            #inner {width: 200px; margin-left: auto; margin-right: auto;} /* for all browsers*/
+                            
+                        &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id="outer"&gt;
+                            &lt;div id="middle"&gt;
+                                &lt;div id="inner"&gt;
+                                    &lt;img class="center" src="img/generated-using-pipeline2.png" alt="Generated using Pipeline 2"/&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            &lt;/p:inline&gt;
+        &lt;/p:input&gt;
+    &lt;/p:identity&gt;</codeblock>
+   </section>
+</reference>

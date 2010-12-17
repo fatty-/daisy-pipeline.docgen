@@ -1,0 +1,123 @@
+<reference id="d8209e201">
+   <title>p:group - make-sequence-map</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                   xmlns:d="http://www.example.org/documenter"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Makes a DITA-map which references all the other DITA-maps in a
+            sequence.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>make-sequence-map</apiname>
+      </section>
+      <section outputclass="parameters xproc-outputs">
+         <title outputclass="io-header">Outputs</title>
+         <parml outputclass="xproc-outputs">
+            <plentry>
+               <pt>result</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:group name="make-sequence-map" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+        &lt;p:output port="result" primary="true"/&gt;
+
+        &lt;p:identity&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="result-ditamap"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:identity&gt;
+
+        &lt;p:documentation&gt;
+            &lt;xd:short&gt;Resolves relative map paths.&lt;/xd:short&gt;
+            &lt;xd:input&gt;&lt;xd:code&gt;&amp;lt;c:result&gt;&amp;lt;c:result type name ...&gt;filename&amp;lt;/c:result&gt; ... &amp;lt;/c:result&gt;&lt;/xd:code&gt;&lt;/xd:input&gt;
+        &lt;/p:documentation&gt;
+        &lt;p:for-each name="resolve-relative-map-paths"&gt;
+            &lt;p:output port="result" primary="true" sequence="true"&gt;
+                &lt;p:pipe port="result" step="resolve-relative-map-paths-done"/&gt;
+            &lt;/p:output&gt;
+
+            &lt;p:iteration-source select="/c:result/c:result"/&gt;
+
+            &lt;p:add-attribute match="/c:result"&gt;
+                &lt;p:with-option name="attribute-name" select="'rel'"/&gt;
+                &lt;p:with-option name="attribute-value" select="substring-after(resolve-uri(.), concat($ditaPath,'/'))"/&gt;
+            &lt;/p:add-attribute&gt;
+
+            &lt;p:identity name="resolve-relative-map-paths-done"/&gt;
+        &lt;/p:for-each&gt;
+        &lt;p:wrap-sequence wrapper="c:result" name="relative-map-paths"/&gt;
+
+        &lt;p:group&gt;
+            &lt;p:variable name="title" select="replace($srcPath,'^.*/','')"/&gt;
+
+            &lt;p:xslt&gt;
+                &lt;p:with-param name="title" select="title"/&gt;
+                &lt;p:input port="source"&gt;
+                    &lt;p:pipe port="result" step="relative-map-paths"/&gt;
+                &lt;/p:input&gt;
+                &lt;p:input port="stylesheet"&gt;
+                    &lt;p:inline&gt;
+                        &lt;xsl:stylesheet version="2.0" exclude-result-prefixes="cx fn d xd" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+                            &lt;xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/&gt;
+
+                            &lt;xsl:param name="title" required="yes"/&gt;
+
+                            &lt;xsl:template match="/c:result"&gt;
+                                &lt;xsl:element name="map"&gt;
+                                    &lt;xsl:attribute name="title" select="title"/&gt;
+                                    &lt;xsl:for-each select="./c:result"&gt;
+                                        &lt;xsl:element name="topicref"&gt;
+                                            &lt;xsl:attribute name="href"&gt;
+                                                &lt;xsl:value-of select="@rel"/&gt;
+                                            &lt;/xsl:attribute&gt;
+                                            &lt;xsl:attribute name="format"&gt;
+                                                &lt;xsl:value-of select="'ditamap'"/&gt;
+                                            &lt;/xsl:attribute&gt;
+                                            &lt;!--xsl:apply-templates select="*|node()"/--&gt;
+                                        &lt;/xsl:element&gt;
+                                    &lt;/xsl:for-each&gt;
+                                &lt;/xsl:element&gt;
+                            &lt;/xsl:template&gt;
+
+                            &lt;xsl:template match="@*|text()|comment()|processing-instruction()"&gt;
+                                &lt;xsl:copy&gt;
+                                    &lt;xsl:apply-templates select="@*|node()"/&gt;
+                                &lt;/xsl:copy&gt;
+                            &lt;/xsl:template&gt;
+                        &lt;/xsl:stylesheet&gt;
+                    &lt;/p:inline&gt;
+                &lt;/p:input&gt;
+            &lt;/p:xslt&gt;
+        &lt;/p:group&gt;
+
+        &lt;p:store name="store-sequence-map"&gt;
+            &lt;p:with-option name="href" select="resolve-uri('sequence.ditamap',concat($ditaPath,'/'))"/&gt;
+            &lt;p:with-option name="indent" select="'true'"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:identity&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="store-sequence-map"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:identity&gt;
+    &lt;/p:group&gt;</codeblock>
+   </section>
+</reference>

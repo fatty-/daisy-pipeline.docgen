@@ -1,0 +1,28 @@
+<reference id="d24777e318">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">&lt;metadata/&gt; becomes &lt;table class="metadata"/&gt;</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template match="metadata" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;table class="metadata {@outputclass}"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/table&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

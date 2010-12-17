@@ -1,0 +1,805 @@
+<html><head><style type="text/css">
+                    body {
+                        font-family: futura, helvetica, arial, sans-serif;
+                    }
+                    section, article, header, footer, nav, aside, hgroup {
+                        display: block;
+                    }
+                    section.reference {
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius:10px;
+                        -moz-border-radius:10px;
+                        margin: 5px;
+                        padding: 20px;
+                        border-color: #CCC;
+                        background-color: #F9F9F9;
+                    }
+                    .child-topics section.reference {
+                        border-style: solid;
+                        border-width: 2px;
+                        border-radius:10px;
+                        -moz-border-radius:10px;
+                        margin: 20px;
+                        padding: 20px;
+                        border-color: #CCC;
+                        background-color: #EEF;
+                    }
+                    section.child-topics {
+                        margin-left: 25px;
+                    }
+                    .main-header h1 {
+                        width: 100%;
+                        border-style: solid;
+                        border-width: 0px 0px 1px 0px;
+                        font-size: 26px;
+                    }
+                    table {
+                        margin: 10px;
+                    }
+                    table.parml {
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: white;
+                        background-color: #EEF;
+                    }
+                    tr.plentry {
+                        border-style: dotted;
+                        border-width: 1px;
+                    }
+                    td.pt td.pd {
+                        padding: 5px;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius:4px;
+                    }
+                    .reference h1 {
+                        font-size: 22px;
+                        color: #006;
+                    }
+                    section.abstract, section.prolog, section.parameters, section.linklist, section.sourcecode {
+                        border-style: dotted;
+                        border-width: 1px;
+                        border-radius: 0px;
+                        margin: 10px;
+                        padding: 10px 10px 50px 10px;
+                        background-color: #F5F5FF;
+                    }
+                    section.sourcecode {
+                        display: none;
+                    }
+                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                        position: relative;
+                        top: -30px;
+                        float: left;
+                    }
+                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                        position: absolute;
+                        color: #006;
+                        background-color: #EEF;
+                        font-size: 18px;
+                        white-space: nowrap;
+                    }
+                    header.subheader {
+                        position: static;
+                        top: 0px;
+                        float: none;
+                    }
+                    .subheader h1 {
+                        color: #006;
+                        background-color: transparent;
+                        font-size: 16px;
+                    }</style></head><header class="main-header"><h1>source2dita/xslt/xslt.xpl</h1></header>
+   <section class="reference XProc "><header class="title "><h1>p:library</h1></header><p class="shortdesc ">
+         Steps for documenting XSLT documents in DITA.
+      </p><section class="prolog "><header class="prolog-header"><h1>About</h1></header>
+      <p class="">Author: 
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">Jostein Austvik Jacobsen</xd:name> (<xd:mailto xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">josteinaj@gmail.com</xd:mailto>), <xd:organization xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">NLB</xd:organization>
+      </p>
+      <p class="copyright "> © <span class="copyrholder ">
+            <xd:holder xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">DAISY Consortium</xd:holder>
+         </span>, <span class="copyryear ">2010</span></p>
+      <table class="metadata ">
+         
+         <tr class="othermeta "><td>Programming language</td><td>XProc</td></tr>
+         <tr class="othermeta "><td>Version</td><td>0.1</td></tr>
+         <tr class="othermeta "><td>XProc version</td><td>1.0</td></tr>
+      </table>
+   </section><span class="related-links ">
+      <section class="linklist "><header class="title "><h1>Dependencies (p:import)</h1></header><p class="linkinfo ">These dependencies are derived from the p:import statements from the XProc
+                script.</p><p class="link "><a href="http://xmlcalabash.com/extension/steps/library-1.0.xpl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../../external_link.png) no-repeat center left;">http://xmlcalabash.com/extension/steps/library-1.0.xpl</a></p></section>
+      <section class="linklist "><header class="title "><h1>Dependencies (p:document)</h1></header><p class="linkinfo ">These dependencies are derived from documents loaded with the p:document
+                step in the XProc script.</p><p class="link "><a href="xsDoc/xsdoc.xsl.html" style="padding-left: 20px; background: transparent url(../../img/xslt.png) no-repeat center left;">xsDoc/xsdoc.xsl</a></p></section>
+   </span><section class="section sourcecode">
+      <header class="title sourcecode-header"><h1>Source Code</h1></header>
+      <pre class="codeblock"><code class="">&lt;p:library version="1.0" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;p:documentation xd:target="parent"&gt;
+        &lt;xd:short&gt;Steps for documenting XSLT documents in DITA.&lt;/xd:short&gt;
+        &lt;xd:author&gt;
+            &lt;xd:name&gt;Jostein Austvik Jacobsen&lt;/xd:name&gt;
+            &lt;xd:mailto&gt;josteinaj@gmail.com&lt;/xd:mailto&gt;
+            &lt;xd:organization&gt;NLB&lt;/xd:organization&gt;
+        &lt;/xd:author&gt;
+        &lt;xd:copyright&gt;
+            &lt;xd:year&gt;2010&lt;/xd:year&gt;
+            &lt;xd:holder&gt;DAISY Consortium&lt;/xd:holder&gt;
+        &lt;/xd:copyright&gt;
+        &lt;xd:version&gt;0.1&lt;/xd:version&gt;
+    &lt;/p:documentation&gt;
+
+    &lt;p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Generates DITA-documentation from all XSLT files in $srcPath and saves it in
+            $ditaPath.&lt;/xd:short&gt;
+        &lt;xd:option name="srcPath"&gt;the path to the source code&lt;/xd:option&gt;
+        &lt;xd:option name="tempPath"&gt;path to temporary storage area&lt;/xd:option&gt;
+        &lt;xd:option name="ditaPath"&gt;path pointing to the DITA output directory&lt;/xd:option&gt;
+        &lt;xd:option name="selfPath"&gt;path to the documentation module&lt;/xd:option&gt;
+        &lt;xd:output port="result"&gt;Gives out a list of the resulting DITA-files on the form:&lt;xd:code&gt;
+        &amp;lt;c:result&gt;
+            &amp;lt;c:file ext="lower case file extension, typically xsl or xslt"
+                    rel="relative path to input file"
+                    name="filename of input file"
+                    abs="full path to input file"&gt;
+                &amp;lt;c:result rel="relative path to output file"
+                          name="filename of output file"
+                          abs="absolute path to output file"/&gt;
+                &amp;lt;c:result rel="relative path to output file"
+                          name="filename of output file"
+                          abs="absolute path to output file"/&gt;
+            &amp;lt;/c:file&gt;
+            &amp;lt;c:file ext="lower case file extension, typically xsl or xslt"
+                    rel="relative path to input file"
+                    name="filename of input file"
+                    abs="full path to input file"&gt;
+                &amp;lt;c:result rel="relative path to output file"
+                          name="filename of output file"
+                          abs="absolute path to output file"/&gt;
+                &amp;lt;c:result rel="relative path to output file"
+                          name="filename of output file"
+                          abs="absolute path to output file"/&gt;
+            &amp;lt;/c:file&gt;
+        &amp;lt;/c:result&gt;
+        &lt;/xd:code&gt;
+        &lt;/xd:output&gt;&lt;/p:documentation&gt;
+    &lt;p:declare-step type="d:document-xslt-dita"&gt;
+        &lt;p:option name="srcPath" required="true"/&gt;
+        &lt;p:option name="tempPath" required="true"/&gt;
+        &lt;p:option name="ditaPath" required="true"/&gt;
+        &lt;p:option name="selfPath" required="true"/&gt;
+
+        &lt;p:input port="source" primary="true"/&gt;
+        &lt;p:output port="result" primary="true"/&gt;
+
+        &lt;p:for-each&gt;
+            &lt;p:output port="result" primary="true" sequence="true"&gt;
+                &lt;p:pipe port="result" step="document-xslt-dita-done"/&gt;
+            &lt;/p:output&gt;
+
+            &lt;p:iteration-source select="/c:directory/c:file"/&gt;
+
+            &lt;p:variable name="fileName" select="/c:file/@name"/&gt;
+            &lt;p:variable name="fileRel" select="/c:file/@relative"/&gt;
+            &lt;p:variable name="fileAbs" select="resolve-uri($fileRel,$srcPath)"/&gt;
+            &lt;p:variable name="ext" select="fn:lower-case(fn:tokenize(/c:file/@name, '\.')[last()])"/&gt;
+
+            &lt;p:choose&gt;
+                &lt;p:when test="$ext = 'xsl' or $ext = 'xslt'"&gt;
+                    &lt;cx:message&gt;
+                        &lt;p:with-option name="message" select="concat('XSLT: ',$fileRel)"/&gt;
+                    &lt;/cx:message&gt;
+                    &lt;p:load&gt;
+                        &lt;p:with-option name="href" select="$fileAbs"/&gt;
+                    &lt;/p:load&gt;
+                    &lt;p:xslt&gt;
+                        &lt;p:input port="parameters"&gt;
+                            &lt;p:empty/&gt;
+                        &lt;/p:input&gt;
+                        &lt;p:input port="stylesheet"&gt;
+                            &lt;p:document href="xsDoc/xsdoc.xsl"/&gt;
+                        &lt;/p:input&gt;
+                    &lt;/p:xslt&gt;
+
+                    &lt;p:choose&gt;
+                        &lt;p:when test="count(/dita/reference) &gt; 0"&gt;
+                            &lt;p:for-each&gt;
+                                &lt;p:iteration-source select="/dita/reference"/&gt;
+
+                                &lt;p:variable name="newExt" select="concat('.',/reference/@id,'.dita')"/&gt;
+
+                                &lt;p:store name="apiFragmentStored"&gt;
+                                    &lt;p:with-option name="href" select="concat($ditaPath,'/doc/',$fileRel,$newExt)"/&gt;
+                                    &lt;p:with-option name="indent" select="'true'"/&gt;
+                                &lt;/p:store&gt;
+
+                                &lt;p:identity&gt;
+                                    &lt;p:input port="source"&gt;
+                                        &lt;p:pipe port="result" step="apiFragmentStored"/&gt;
+                                    &lt;/p:input&gt;
+                                &lt;/p:identity&gt;
+
+                                &lt;p:add-attribute attribute-name="name" match="/c:result"&gt;
+                                    &lt;p:with-option name="attribute-value" select="concat($fileName,$newExt)"/&gt;
+                                &lt;/p:add-attribute&gt;
+                                &lt;p:add-attribute attribute-name="rel" match="/c:result"&gt;
+                                    &lt;p:with-option name="attribute-value" select="concat($fileRel,$newExt)"/&gt;
+                                &lt;/p:add-attribute&gt;
+                                &lt;p:add-attribute attribute-name="abs" match="/c:result"&gt;
+                                    &lt;p:with-option name="attribute-value" select="concat($ditaPath,'/doc/',$fileRel,$newExt)"/&gt;
+                                &lt;/p:add-attribute&gt;
+
+                                &lt;cx:message&gt;
+                                    &lt;p:with-option name="message" select="concat('saved: ',node())"/&gt;
+                                &lt;/cx:message&gt;
+                            &lt;/p:for-each&gt;
+
+                            &lt;p:wrap-sequence wrapper="c:file"/&gt;
+                            &lt;p:add-attribute attribute-name="name" match="/c:file"&gt;
+                                &lt;p:with-option name="attribute-value" select="$fileName"/&gt;
+                            &lt;/p:add-attribute&gt;
+                            &lt;p:add-attribute attribute-name="rel" match="/c:file"&gt;
+                                &lt;p:with-option name="attribute-value" select="$fileRel"/&gt;
+                            &lt;/p:add-attribute&gt;
+                            &lt;p:add-attribute attribute-name="abs" match="/c:file"&gt;
+                                &lt;p:with-option name="attribute-value" select="$fileAbs"/&gt;
+                            &lt;/p:add-attribute&gt;
+                            &lt;p:add-attribute attribute-name="ext" match="/c:file"&gt;
+                                &lt;p:with-option name="attribute-value" select="$ext"/&gt;
+                            &lt;/p:add-attribute&gt;
+                        &lt;/p:when&gt;
+                        &lt;p:otherwise&gt;
+                            &lt;p:sink/&gt;
+                            &lt;p:identity&gt;
+                                &lt;p:input port="source"&gt;
+                                    &lt;p:empty/&gt;
+                                &lt;/p:input&gt;
+                            &lt;/p:identity&gt;
+                        &lt;/p:otherwise&gt;
+                    &lt;/p:choose&gt;
+
+                &lt;/p:when&gt;
+                &lt;p:otherwise&gt;
+                    &lt;p:sink/&gt;
+                    &lt;p:identity&gt;
+                        &lt;p:input port="source"&gt;
+                            &lt;p:empty/&gt;
+                        &lt;/p:input&gt;
+                    &lt;/p:identity&gt;
+                &lt;/p:otherwise&gt;
+            &lt;/p:choose&gt;
+
+            &lt;p:identity name="document-xslt-dita-done"/&gt;
+        &lt;/p:for-each&gt;
+
+        &lt;p:wrap-sequence wrapper="c:result"/&gt;
+    &lt;/p:declare-step&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Generates DITA-documentation and corresponding DITA-maps from all XSLT files in
+            $srcPath and saves it in $ditaPath.&lt;/xd:short&gt;
+        &lt;xd:option name="srcPath"&gt;the path to the source code&lt;/xd:option&gt;
+        &lt;xd:option name="tempPath"&gt;path to temporary storage area&lt;/xd:option&gt;
+        &lt;xd:option name="ditaPath"&gt;path pointing to the DITA output directory&lt;/xd:option&gt;
+        &lt;xd:option name="selfPath"&gt;path to the documentation module&lt;/xd:option&gt;
+        &lt;xd:output port="result"&gt;Gives out a list of the resulting DITA-maps on the form:&lt;xd:code&gt;
+            &amp;lt;c:result&gt;
+                &amp;lt;c:result type="xslt"&gt;relative path to output file&amp;lt;/c:result&gt;
+                &amp;lt;c:result type="xslt"&gt;relative path to output file&amp;lt;/c:result&gt;
+            &amp;lt;/c:result&gt;
+            &lt;/xd:code&gt;
+        &lt;/xd:output&gt;&lt;/p:documentation&gt;
+    &lt;p:declare-step type="d:document-xslt-ditamap"&gt;
+        &lt;p:option name="srcPath" required="true"/&gt;
+        &lt;p:option name="tempPath" required="true"/&gt;
+        &lt;p:option name="ditaPath" required="true"/&gt;
+        &lt;p:option name="selfPath" required="true"/&gt;
+
+        &lt;p:input port="source" primary="true"/&gt;
+        &lt;p:output port="result" primary="true"/&gt;
+
+        &lt;d:document-xslt-dita&gt;
+            &lt;p:with-option name="srcPath" select="$srcPath"/&gt;
+            &lt;p:with-option name="tempPath" select="$tempPath"/&gt;
+            &lt;p:with-option name="ditaPath" select="$ditaPath"/&gt;
+            &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
+        &lt;/d:document-xslt-dita&gt;
+
+        &lt;p:for-each&gt;
+            &lt;p:output port="result" primary="true"&gt;
+                &lt;p:pipe port="result" step="document-xslt-ditamap-done"/&gt;
+            &lt;/p:output&gt;
+
+            &lt;p:iteration-source select="/c:result/c:file"/&gt;
+
+            &lt;p:variable name="name" select="/c:file/@name"/&gt;
+            &lt;p:variable name="rel" select="/c:file/@rel"/&gt;
+            &lt;p:variable name="abs" select="/c:file/@abs"/&gt;
+            &lt;p:variable name="ext" select="/c:file/@ext"/&gt;
+
+            &lt;p:variable name="mapFile" select="resolve-uri(concat(/c:file/@name,'.ditamap'),/c:file/c:result[1]/@abs)"/&gt;
+            &lt;cx:message&gt;
+                &lt;p:with-option name="message" select="$mapFile"/&gt;
+            &lt;/cx:message&gt;
+
+            &lt;p:xslt&gt;
+                &lt;p:with-param name="rel" select="$rel"/&gt;
+                &lt;p:input port="stylesheet"&gt;
+                    &lt;p:inline&gt;
+                        &lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+                            &lt;xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/&gt;
+
+                            &lt;xsl:param name="rel" required="yes"/&gt;
+
+                            &lt;xsl:template match="/c:file"&gt;
+                                &lt;xsl:element name="map"&gt;
+                                    &lt;xsl:attribute name="title"&gt;
+                                        &lt;xsl:value-of select="$rel"/&gt;
+                                    &lt;/xsl:attribute&gt;
+                                    &lt;xsl:if test="count(./c:result)&gt;0"&gt;
+                                        &lt;xsl:element name="topicref"&gt;
+                                            &lt;xsl:attribute name="format"&gt;
+                                                &lt;xsl:value-of select="'dita'"/&gt;
+                                            &lt;/xsl:attribute&gt;
+                                            &lt;xsl:attribute name="href"&gt;
+                                                &lt;xsl:value-of select="./c:result[1]/@name"/&gt;
+                                            &lt;/xsl:attribute&gt;
+                                            &lt;xsl:for-each select="./c:result[position()&gt;1]"&gt;
+                                                &lt;xsl:element name="topicref"&gt;
+                                                  &lt;xsl:attribute name="href"&gt;
+                                                  &lt;xsl:value-of select="@name"/&gt;
+                                                  &lt;/xsl:attribute&gt;
+                                                  &lt;xsl:attribute name="format"&gt;
+                                                  &lt;xsl:value-of select="'dita'"/&gt;
+                                                  &lt;/xsl:attribute&gt;
+                                                &lt;/xsl:element&gt;
+                                            &lt;/xsl:for-each&gt;
+                                        &lt;/xsl:element&gt;
+                                    &lt;/xsl:if&gt;
+                                &lt;/xsl:element&gt;
+                            &lt;/xsl:template&gt;
+
+                            &lt;xsl:template match="@*|text()|comment()|processing-instruction()"&gt;
+                                &lt;xsl:copy&gt;
+                                    &lt;xsl:apply-templates select="@*|node()"/&gt;
+                                &lt;/xsl:copy&gt;
+                            &lt;/xsl:template&gt;
+
+                            &lt;!--xsl:template match="c:result"&gt;
+                                &lt;xsl:element name="topicref"&gt;
+                                    &lt;xsl:attribute name="href"&gt;
+                                        &lt;xsl:value-of select="@name"/&gt;
+                                    &lt;/xsl:attribute&gt;
+                                &lt;/xsl:element&gt;
+                            &lt;/xsl:template--&gt;
+                        &lt;/xsl:stylesheet&gt;
+                    &lt;/p:inline&gt;
+                &lt;/p:input&gt;
+            &lt;/p:xslt&gt;
+
+            &lt;p:store name="apiStored"&gt;
+                &lt;p:with-option name="href" select="$mapFile"/&gt;
+                &lt;p:with-option name="indent" select="'true'"/&gt;
+            &lt;/p:store&gt;
+
+            &lt;p:identity&gt;
+                &lt;p:input port="source"&gt;
+                    &lt;p:pipe port="result" step="apiStored"/&gt;
+                &lt;/p:input&gt;
+            &lt;/p:identity&gt;
+
+            &lt;p:add-attribute match="/c:result" attribute-name="type" attribute-value="xslt"/&gt;
+            &lt;p:add-attribute match="/c:result" attribute-name="name"&gt;
+                &lt;p:with-option name="attribute-value" select="$name"/&gt;
+            &lt;/p:add-attribute&gt;
+            &lt;p:add-attribute match="/c:result" attribute-name="rel"&gt;
+                &lt;p:with-option name="attribute-value" select="$rel"/&gt;
+            &lt;/p:add-attribute&gt;
+            &lt;p:add-attribute match="/c:result" attribute-name="abs"&gt;
+                &lt;p:with-option name="attribute-value" select="$abs"/&gt;
+            &lt;/p:add-attribute&gt;
+            &lt;p:add-attribute match="/c:result" attribute-name="ext"&gt;
+                &lt;p:with-option name="attribute-value" select="$ext"/&gt;
+            &lt;/p:add-attribute&gt;
+
+            &lt;p:identity name="document-xslt-ditamap-done"/&gt;
+        &lt;/p:for-each&gt;
+
+        &lt;p:wrap-sequence wrapper="c:result"/&gt;
+
+    &lt;/p:declare-step&gt;
+
+&lt;/p:library&gt;</code></pre>
+   </section></section><section class="child-topics">
+      <section class="reference XProc "><header class="title "><h1>p:declare-step</h1></header><p class="shortdesc ">
+         Generates DITA-documentation from all XSLT files in $srcPath and saves it in
+            $ditaPath.
+      </p>
+      <section class="section ">
+         
+      </section>
+      <section class="section parameters xproc-inputs">
+         <header class="title io-header"><h1>Inputs</h1></header>
+         <table class="parml xproc-inputs"><tr><th>name</th><th>primary</th><th>sequence</th><th>connection</th><th>description</th></tr>
+            <tr class="plentry ">
+               <td class="pt ">source</td>
+               <td class="pt ">true</td>
+               <td class="pt "/>
+               <td class="pt "/>
+               <td class="pd "/>
+            </tr>
+         </table>
+      </section>
+      <section class="section parameters xproc-outputs">
+         <header class="title io-header"><h1>Outputs</h1></header>
+         <table class="parml xproc-outputs"><tr><th>name</th><th>primary</th><th>sequence</th><th>connection</th><th>description</th></tr>
+            <tr class="plentry ">
+               <td class="pt ">result</td>
+               <td class="pt ">true</td>
+               <td class="pt "/>
+               <td class="pt "/>
+               <td class="pd ">
+                  <xd:output xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" port="result">Gives out a list of the resulting DITA-files on the form:<pre class="codeblock"><code class="language-xslt">
+        &lt;c:result&gt;
+            &lt;c:file ext="lower case file extension, typically xsl or xslt"
+                    rel="relative path to input file"
+                    name="filename of input file"
+                    abs="full path to input file"&gt;
+                &lt;c:result rel="relative path to output file"
+                          name="filename of output file"
+                          abs="absolute path to output file"/&gt;
+                &lt;c:result rel="relative path to output file"
+                          name="filename of output file"
+                          abs="absolute path to output file"/&gt;
+            &lt;/c:file&gt;
+            &lt;c:file ext="lower case file extension, typically xsl or xslt"
+                    rel="relative path to input file"
+                    name="filename of input file"
+                    abs="full path to input file"&gt;
+                &lt;c:result rel="relative path to output file"
+                          name="filename of output file"
+                          abs="absolute path to output file"/&gt;
+                &lt;c:result rel="relative path to output file"
+                          name="filename of output file"
+                          abs="absolute path to output file"/&gt;
+            &lt;/c:file&gt;
+        &lt;/c:result&gt;
+        </code></pre>
+                  </xd:output>
+               </td>
+            </tr>
+         </table>
+      </section>
+      <section class="section parameters xproc-options">
+         <header class="title io-header"><h1>Options</h1></header>
+         <table class="parml xproc-options"><tr><th>name</th><th>required</th><th>description</th></tr>
+            <tr class="plentry ">
+               <td class="pt ">srcPath</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">tempPath</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">ditaPath</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">selfPath</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+         </table>
+      </section>
+   <span class="related-links ">
+      <section class="linklist "><header class="title "><h1>Dependencies (p:document)</h1></header><p class="linkinfo ">These dependencies are derived from documents loaded with the p:document
+                step in the XProc script.</p><p class="link "><a href="xsDoc/xsdoc.xsl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../../external_link.png) no-repeat center left;">xsDoc/xsdoc.xsl</a></p></section>
+   </span><section class="section sourcecode">
+      <header class="title sourcecode-header"><h1>Source Code</h1></header>
+      <pre class="codeblock"><code class="">&lt;p:declare-step type="d:document-xslt-dita" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions"&gt;
+        &lt;p:option name="srcPath" required="true"/&gt;
+        &lt;p:option name="tempPath" required="true"/&gt;
+        &lt;p:option name="ditaPath" required="true"/&gt;
+        &lt;p:option name="selfPath" required="true"/&gt;
+
+        &lt;p:input port="source" primary="true"/&gt;
+        &lt;p:output port="result" primary="true"/&gt;
+
+        &lt;p:for-each&gt;
+            &lt;p:output port="result" primary="true" sequence="true"&gt;
+                &lt;p:pipe port="result" step="document-xslt-dita-done"/&gt;
+            &lt;/p:output&gt;
+
+            &lt;p:iteration-source select="/c:directory/c:file"/&gt;
+
+            &lt;p:variable name="fileName" select="/c:file/@name"/&gt;
+            &lt;p:variable name="fileRel" select="/c:file/@relative"/&gt;
+            &lt;p:variable name="fileAbs" select="resolve-uri($fileRel,$srcPath)"/&gt;
+            &lt;p:variable name="ext" select="fn:lower-case(fn:tokenize(/c:file/@name, '\.')[last()])"/&gt;
+
+            &lt;p:choose&gt;
+                &lt;p:when test="$ext = 'xsl' or $ext = 'xslt'"&gt;
+                    &lt;cx:message&gt;
+                        &lt;p:with-option name="message" select="concat('XSLT: ',$fileRel)"/&gt;
+                    &lt;/cx:message&gt;
+                    &lt;p:load&gt;
+                        &lt;p:with-option name="href" select="$fileAbs"/&gt;
+                    &lt;/p:load&gt;
+                    &lt;p:xslt&gt;
+                        &lt;p:input port="parameters"&gt;
+                            &lt;p:empty/&gt;
+                        &lt;/p:input&gt;
+                        &lt;p:input port="stylesheet"&gt;
+                            &lt;p:document href="xsDoc/xsdoc.xsl"/&gt;
+                        &lt;/p:input&gt;
+                    &lt;/p:xslt&gt;
+
+                    &lt;p:choose&gt;
+                        &lt;p:when test="count(/dita/reference) &gt; 0"&gt;
+                            &lt;p:for-each&gt;
+                                &lt;p:iteration-source select="/dita/reference"/&gt;
+
+                                &lt;p:variable name="newExt" select="concat('.',/reference/@id,'.dita')"/&gt;
+
+                                &lt;p:store name="apiFragmentStored"&gt;
+                                    &lt;p:with-option name="href" select="concat($ditaPath,'/doc/',$fileRel,$newExt)"/&gt;
+                                    &lt;p:with-option name="indent" select="'true'"/&gt;
+                                &lt;/p:store&gt;
+
+                                &lt;p:identity&gt;
+                                    &lt;p:input port="source"&gt;
+                                        &lt;p:pipe port="result" step="apiFragmentStored"/&gt;
+                                    &lt;/p:input&gt;
+                                &lt;/p:identity&gt;
+
+                                &lt;p:add-attribute attribute-name="name" match="/c:result"&gt;
+                                    &lt;p:with-option name="attribute-value" select="concat($fileName,$newExt)"/&gt;
+                                &lt;/p:add-attribute&gt;
+                                &lt;p:add-attribute attribute-name="rel" match="/c:result"&gt;
+                                    &lt;p:with-option name="attribute-value" select="concat($fileRel,$newExt)"/&gt;
+                                &lt;/p:add-attribute&gt;
+                                &lt;p:add-attribute attribute-name="abs" match="/c:result"&gt;
+                                    &lt;p:with-option name="attribute-value" select="concat($ditaPath,'/doc/',$fileRel,$newExt)"/&gt;
+                                &lt;/p:add-attribute&gt;
+
+                                &lt;cx:message&gt;
+                                    &lt;p:with-option name="message" select="concat('saved: ',node())"/&gt;
+                                &lt;/cx:message&gt;
+                            &lt;/p:for-each&gt;
+
+                            &lt;p:wrap-sequence wrapper="c:file"/&gt;
+                            &lt;p:add-attribute attribute-name="name" match="/c:file"&gt;
+                                &lt;p:with-option name="attribute-value" select="$fileName"/&gt;
+                            &lt;/p:add-attribute&gt;
+                            &lt;p:add-attribute attribute-name="rel" match="/c:file"&gt;
+                                &lt;p:with-option name="attribute-value" select="$fileRel"/&gt;
+                            &lt;/p:add-attribute&gt;
+                            &lt;p:add-attribute attribute-name="abs" match="/c:file"&gt;
+                                &lt;p:with-option name="attribute-value" select="$fileAbs"/&gt;
+                            &lt;/p:add-attribute&gt;
+                            &lt;p:add-attribute attribute-name="ext" match="/c:file"&gt;
+                                &lt;p:with-option name="attribute-value" select="$ext"/&gt;
+                            &lt;/p:add-attribute&gt;
+                        &lt;/p:when&gt;
+                        &lt;p:otherwise&gt;
+                            &lt;p:sink/&gt;
+                            &lt;p:identity&gt;
+                                &lt;p:input port="source"&gt;
+                                    &lt;p:empty/&gt;
+                                &lt;/p:input&gt;
+                            &lt;/p:identity&gt;
+                        &lt;/p:otherwise&gt;
+                    &lt;/p:choose&gt;
+
+                &lt;/p:when&gt;
+                &lt;p:otherwise&gt;
+                    &lt;p:sink/&gt;
+                    &lt;p:identity&gt;
+                        &lt;p:input port="source"&gt;
+                            &lt;p:empty/&gt;
+                        &lt;/p:input&gt;
+                    &lt;/p:identity&gt;
+                &lt;/p:otherwise&gt;
+            &lt;/p:choose&gt;
+
+            &lt;p:identity name="document-xslt-dita-done"/&gt;
+        &lt;/p:for-each&gt;
+
+        &lt;p:wrap-sequence wrapper="c:result"/&gt;
+    &lt;/p:declare-step&gt;</code></pre>
+   </section></section>
+      <section class="reference XProc "><header class="title "><h1>p:declare-step</h1></header><p class="shortdesc ">
+         Generates DITA-documentation and corresponding DITA-maps from all XSLT files in
+            $srcPath and saves it in $ditaPath.
+      </p>
+      <section class="section ">
+         
+      </section>
+      <section class="section parameters xproc-inputs">
+         <header class="title io-header"><h1>Inputs</h1></header>
+         <table class="parml xproc-inputs"><tr><th>name</th><th>primary</th><th>sequence</th><th>connection</th><th>description</th></tr>
+            <tr class="plentry ">
+               <td class="pt ">source</td>
+               <td class="pt ">true</td>
+               <td class="pt "/>
+               <td class="pt "/>
+               <td class="pd "/>
+            </tr>
+         </table>
+      </section>
+      <section class="section parameters xproc-outputs">
+         <header class="title io-header"><h1>Outputs</h1></header>
+         <table class="parml xproc-outputs"><tr><th>name</th><th>primary</th><th>sequence</th><th>connection</th><th>description</th></tr>
+            <tr class="plentry ">
+               <td class="pt ">result</td>
+               <td class="pt ">true</td>
+               <td class="pt "/>
+               <td class="pt "/>
+               <td class="pd ">
+                  <xd:output xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" port="result">Gives out a list of the resulting DITA-maps on the form:<pre class="codeblock"><code class="language-xslt">
+            &lt;c:result&gt;
+                &lt;c:result type="xslt"&gt;relative path to output file&lt;/c:result&gt;
+                &lt;c:result type="xslt"&gt;relative path to output file&lt;/c:result&gt;
+            &lt;/c:result&gt;
+            </code></pre>
+                  </xd:output>
+               </td>
+            </tr>
+         </table>
+      </section>
+      <section class="section parameters xproc-options">
+         <header class="title io-header"><h1>Options</h1></header>
+         <table class="parml xproc-options"><tr><th>name</th><th>required</th><th>description</th></tr>
+            <tr class="plentry ">
+               <td class="pt ">srcPath</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">tempPath</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">ditaPath</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+            <tr class="plentry ">
+               <td class="pt ">selfPath</td>
+               <td class="pt ">true</td>
+               <td class="pd "/>
+            </tr>
+         </table>
+      </section>
+   <section class="section sourcecode">
+      <header class="title sourcecode-header"><h1>Source Code</h1></header>
+      <pre class="codeblock"><code class="">&lt;p:declare-step type="d:document-xslt-ditamap" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter"&gt;
+        &lt;p:option name="srcPath" required="true"/&gt;
+        &lt;p:option name="tempPath" required="true"/&gt;
+        &lt;p:option name="ditaPath" required="true"/&gt;
+        &lt;p:option name="selfPath" required="true"/&gt;
+
+        &lt;p:input port="source" primary="true"/&gt;
+        &lt;p:output port="result" primary="true"/&gt;
+
+        &lt;d:document-xslt-dita&gt;
+            &lt;p:with-option name="srcPath" select="$srcPath"/&gt;
+            &lt;p:with-option name="tempPath" select="$tempPath"/&gt;
+            &lt;p:with-option name="ditaPath" select="$ditaPath"/&gt;
+            &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
+        &lt;/d:document-xslt-dita&gt;
+
+        &lt;p:for-each&gt;
+            &lt;p:output port="result" primary="true"&gt;
+                &lt;p:pipe port="result" step="document-xslt-ditamap-done"/&gt;
+            &lt;/p:output&gt;
+
+            &lt;p:iteration-source select="/c:result/c:file"/&gt;
+
+            &lt;p:variable name="name" select="/c:file/@name"/&gt;
+            &lt;p:variable name="rel" select="/c:file/@rel"/&gt;
+            &lt;p:variable name="abs" select="/c:file/@abs"/&gt;
+            &lt;p:variable name="ext" select="/c:file/@ext"/&gt;
+
+            &lt;p:variable name="mapFile" select="resolve-uri(concat(/c:file/@name,'.ditamap'),/c:file/c:result[1]/@abs)"/&gt;
+            &lt;cx:message&gt;
+                &lt;p:with-option name="message" select="$mapFile"/&gt;
+            &lt;/cx:message&gt;
+
+            &lt;p:xslt&gt;
+                &lt;p:with-param name="rel" select="$rel"/&gt;
+                &lt;p:input port="stylesheet"&gt;
+                    &lt;p:inline&gt;
+                        &lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+                            &lt;xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/&gt;
+
+                            &lt;xsl:param name="rel" required="yes"/&gt;
+
+                            &lt;xsl:template match="/c:file"&gt;
+                                &lt;xsl:element name="map"&gt;
+                                    &lt;xsl:attribute name="title"&gt;
+                                        &lt;xsl:value-of select="$rel"/&gt;
+                                    &lt;/xsl:attribute&gt;
+                                    &lt;xsl:if test="count(./c:result)&gt;0"&gt;
+                                        &lt;xsl:element name="topicref"&gt;
+                                            &lt;xsl:attribute name="format"&gt;
+                                                &lt;xsl:value-of select="'dita'"/&gt;
+                                            &lt;/xsl:attribute&gt;
+                                            &lt;xsl:attribute name="href"&gt;
+                                                &lt;xsl:value-of select="./c:result[1]/@name"/&gt;
+                                            &lt;/xsl:attribute&gt;
+                                            &lt;xsl:for-each select="./c:result[position()&gt;1]"&gt;
+                                                &lt;xsl:element name="topicref"&gt;
+                                                  &lt;xsl:attribute name="href"&gt;
+                                                  &lt;xsl:value-of select="@name"/&gt;
+                                                  &lt;/xsl:attribute&gt;
+                                                  &lt;xsl:attribute name="format"&gt;
+                                                  &lt;xsl:value-of select="'dita'"/&gt;
+                                                  &lt;/xsl:attribute&gt;
+                                                &lt;/xsl:element&gt;
+                                            &lt;/xsl:for-each&gt;
+                                        &lt;/xsl:element&gt;
+                                    &lt;/xsl:if&gt;
+                                &lt;/xsl:element&gt;
+                            &lt;/xsl:template&gt;
+
+                            &lt;xsl:template match="@*|text()|comment()|processing-instruction()"&gt;
+                                &lt;xsl:copy&gt;
+                                    &lt;xsl:apply-templates select="@*|node()"/&gt;
+                                &lt;/xsl:copy&gt;
+                            &lt;/xsl:template&gt;
+
+                            &lt;!--xsl:template match="c:result"&gt;
+                                &lt;xsl:element name="topicref"&gt;
+                                    &lt;xsl:attribute name="href"&gt;
+                                        &lt;xsl:value-of select="@name"/&gt;
+                                    &lt;/xsl:attribute&gt;
+                                &lt;/xsl:element&gt;
+                            &lt;/xsl:template--&gt;
+                        &lt;/xsl:stylesheet&gt;
+                    &lt;/p:inline&gt;
+                &lt;/p:input&gt;
+            &lt;/p:xslt&gt;
+
+            &lt;p:store name="apiStored"&gt;
+                &lt;p:with-option name="href" select="$mapFile"/&gt;
+                &lt;p:with-option name="indent" select="'true'"/&gt;
+            &lt;/p:store&gt;
+
+            &lt;p:identity&gt;
+                &lt;p:input port="source"&gt;
+                    &lt;p:pipe port="result" step="apiStored"/&gt;
+                &lt;/p:input&gt;
+            &lt;/p:identity&gt;
+
+            &lt;p:add-attribute match="/c:result" attribute-name="type" attribute-value="xslt"/&gt;
+            &lt;p:add-attribute match="/c:result" attribute-name="name"&gt;
+                &lt;p:with-option name="attribute-value" select="$name"/&gt;
+            &lt;/p:add-attribute&gt;
+            &lt;p:add-attribute match="/c:result" attribute-name="rel"&gt;
+                &lt;p:with-option name="attribute-value" select="$rel"/&gt;
+            &lt;/p:add-attribute&gt;
+            &lt;p:add-attribute match="/c:result" attribute-name="abs"&gt;
+                &lt;p:with-option name="attribute-value" select="$abs"/&gt;
+            &lt;/p:add-attribute&gt;
+            &lt;p:add-attribute match="/c:result" attribute-name="ext"&gt;
+                &lt;p:with-option name="attribute-value" select="$ext"/&gt;
+            &lt;/p:add-attribute&gt;
+
+            &lt;p:identity name="document-xslt-ditamap-done"/&gt;
+        &lt;/p:for-each&gt;
+
+        &lt;p:wrap-sequence wrapper="c:result"/&gt;
+
+    &lt;/p:declare-step&gt;</code></pre>
+   </section></section>
+   </section>
+</html>

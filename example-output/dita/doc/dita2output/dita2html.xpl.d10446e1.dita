@@ -1,0 +1,500 @@
+<reference id="d10446e1">
+   <title>p:declare-step</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter">Make XHTML-documentation from DITA files.</xd:short>
+      </shortdesc>
+      <xd:detail xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter">This step receives a list of DITA files, loads them, transforms them into XHTML
+            using an XSLT stylesheet (dita2html.xsl), and stores them to the output directory. The
+            list of DITA files is also used to produce a table of contents of all files so that the
+            documentation is easier to navigate.</xd:detail>
+   </abstract>
+   <prolog>
+      <author type="creator">
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter">Jostein Austvik Jacobsen</xd:name> (<xd:mailto xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter">josteinaj@gmail.com</xd:mailto>), <xd:organization xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter">NLB</xd:organization>
+      </author>
+      <copyright>
+         <copyryear year="2010"/>
+         <copyrholder>
+            <xd:holder xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter">DAISY Consortium</xd:holder>
+         </copyrholder>
+      </copyright>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+         <othermeta name="version" content="0.1"/>
+         <othermeta name="xproc-version" content="1.0"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:declare-step</apiname>
+      </section>
+      <section outputclass="parameters xproc-inputs">
+         <title outputclass="io-header">Inputs</title>
+         <parml outputclass="xproc-inputs">
+            <plentry>
+               <pt>source</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt/>
+               <pd>
+                  <xd:input xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter" port="source">A list of DITA files on the form:<codeblock outputclass="language-xslt">
+        &lt;c:result xmlns:c="http://www.w3.org/ns/xproc-step"&gt;
+            &lt;c:result
+                type="xproc|xslt|xquery|..."
+                rel="doc/(*.xpl|*.xsl|*.xq|*...).ditamap"
+                name="*.xpl|*.xsl|*.xq|*..."
+                ext="xpl|xproc|xsl|xslt|xq|xquery|..."
+                abs="/absolute/path/to/src/(*.xpl|*.xsl|*.xq|*...)"&gt;/absolute/path/to/dita/doc/*.ditamap&lt;/c:result&gt;
+            &lt;c:result .../&gt;
+            ...
+        &lt;/c:result&gt;
+        </codeblock>
+                  </xd:input>
+               </pd>
+            </plentry>
+         </parml>
+      </section>
+      <section outputclass="parameters xproc-outputs">
+         <title outputclass="io-header">Outputs</title>
+         <parml outputclass="xproc-outputs">
+            <plentry>
+               <pt>result</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+      <section outputclass="parameters xproc-options">
+         <title outputclass="io-header">Options</title>
+         <parml outputclass="xproc-options">
+            <plentry>
+               <pt>ditaPath</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>tempPath</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>htmlPath</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>selfPath</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>title</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <related-links>
+      <linklist>
+         <title>Dependencies (p:document)</title>
+         <link format="ditamap" href="html/dita2html.xsl.ditamap"/>
+         <link format="ditamap" href="html/ditamaps2html.xsl.ditamap"/>
+         <linkinfo>These dependencies are derived from documents loaded with the p:document
+                step in the XProc script.</linkinfo>
+      </linklist>
+      <linklist>
+         <title>See also</title>
+         <link href="http://code.google.com/p/daisy-pipeline/" format="ditamap"/>
+         <linkinfo>These are related readings suggested by the author of the XProc
+                script.</linkinfo>
+      </linklist>
+   </related-links>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:declare-step version="1.0" type="d:dita2html" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;p:documentation xd:target="parent"&gt;
+        &lt;xd:short&gt;Make XHTML-documentation from DITA files.&lt;/xd:short&gt;
+        &lt;xd:detail&gt;This step receives a list of DITA files, loads them, transforms them into XHTML
+            using an XSLT stylesheet (dita2html.xsl), and stores them to the output directory. The
+            list of DITA files is also used to produce a table of contents of all files so that the
+            documentation is easier to navigate.&lt;/xd:detail&gt;
+        &lt;xd:author&gt;
+            &lt;xd:name&gt;Jostein Austvik Jacobsen&lt;/xd:name&gt;
+            &lt;xd:mailto&gt;josteinaj@gmail.com&lt;/xd:mailto&gt;
+            &lt;xd:organization&gt;NLB&lt;/xd:organization&gt;
+        &lt;/xd:author&gt;
+        &lt;xd:copyright&gt;
+            &lt;xd:year&gt;2010&lt;/xd:year&gt;
+            &lt;xd:holder&gt;DAISY Consortium&lt;/xd:holder&gt;
+        &lt;/xd:copyright&gt;
+        &lt;xd:version&gt;0.1&lt;/xd:version&gt;
+        &lt;xd:see&gt;http://code.google.com/p/daisy-pipeline/&lt;/xd:see&gt;
+        &lt;xd:input port="source"&gt;A list of DITA files on the form:&lt;xd:code&gt;
+        &amp;lt;c:result xmlns:c="http://www.w3.org/ns/xproc-step"&gt;
+            &amp;lt;c:result
+                type="xproc|xslt|xquery|..."
+                rel="doc/(*.xpl|*.xsl|*.xq|*...).ditamap"
+                name="*.xpl|*.xsl|*.xq|*..."
+                ext="xpl|xproc|xsl|xslt|xq|xquery|..."
+                abs="/absolute/path/to/src/(*.xpl|*.xsl|*.xq|*...)"&gt;/absolute/path/to/dita/doc/*.ditamap&amp;lt;/c:result&gt;
+            &amp;lt;c:result .../&gt;
+            ...
+        &amp;lt;/c:result&gt;
+        &lt;/xd:code&gt;&lt;/xd:input&gt;
+        &lt;xd:option name="selfPath"&gt;Resolved full path to documentation module (the directory
+            containing this documentation generator).&lt;/xd:option&gt;
+        &lt;xd:option name="htmlPath"&gt;Where to store the XHTML-documentation.&lt;/xd:option&gt;
+        &lt;xd:option name="title"&gt;Name of the target module.&lt;/xd:option&gt;
+    &lt;/p:documentation&gt;
+
+    &lt;p:option name="ditaPath" required="true"/&gt;
+    &lt;p:option name="tempPath" required="true"/&gt;
+    &lt;p:option name="htmlPath" required="true"/&gt;
+    &lt;p:option name="selfPath" required="true"/&gt;
+    &lt;p:option name="title" required="true"/&gt;
+
+    &lt;p:input port="source" primary="true"/&gt;
+    &lt;p:output port="result" primary="true"/&gt;
+
+    &lt;p:identity name="ditamaps"/&gt;
+
+    &lt;p:for-each&gt;
+        &lt;p:iteration-source select="/c:result/c:result"/&gt;
+
+        &lt;p:variable name="type" select="/c:result/@type"/&gt;
+        &lt;p:variable name="ext" select="/c:result/@ext"/&gt;
+        &lt;p:variable name="rel" select="/c:result/@rel"/&gt;
+        &lt;p:variable name="name" select="/c:result/@name"/&gt;
+        &lt;p:variable name="abs" select="/c:result/@abs"/&gt;
+        &lt;p:variable name="mapabs" select="/c:result/text()"/&gt;
+
+        &lt;p:load&gt;
+            &lt;p:with-option name="href" select="$mapabs"/&gt;
+        &lt;/p:load&gt;
+
+        &lt;p:documentation xd:target="following"&gt;
+            &lt;xd:short&gt;Transform the loaded DITA document to XHTML.&lt;/xd:short&gt;
+        &lt;/p:documentation&gt;
+        &lt;p:xslt&gt;
+            &lt;p:with-param name="title" select="$title"/&gt;
+            &lt;p:with-param name="pathToRoot" select="replace(replace($rel,'/[^/]*$',''),'[^/]+','..')"/&gt;
+            &lt;p:input port="parameters"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:input port="stylesheet"&gt;
+                &lt;p:document href="html/dita2html.xsl"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:xslt&gt;
+
+        &lt;p:store name="store"&gt;
+            &lt;p:documentation xd:target="parent"&gt;
+                &lt;xd:short&gt;Stores the documentation for a file in the output directory.&lt;/xd:short&gt;
+            &lt;/p:documentation&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/doc/',$rel,'.html')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:identity&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="store"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:identity&gt;
+    &lt;/p:for-each&gt;
+    &lt;p:wrap-sequence wrapper="c:result"/&gt;
+    &lt;p:sink/&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Transforms the input list of DITA files to a table of contents listing all
+            files.&lt;/xd:short&gt;
+        &lt;xd:input port="source"&gt;The list of DITA files.&lt;/xd:input&gt;
+        &lt;xd:output port="result"&gt;The XHTML code.&lt;/xd:output&gt;
+    &lt;/p:documentation&gt;
+    &lt;p:group&gt;
+        &lt;p:xslt&gt;
+            &lt;p:input port="parameters"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="ditamaps"/&gt;
+            &lt;/p:input&gt;
+            &lt;p:input port="stylesheet"&gt;
+                &lt;p:inline&gt;
+                    &lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+                        &lt;xsl:template match="@*|node()"&gt;
+                            &lt;xsl:copy&gt;
+                                &lt;xsl:apply-templates select="@*|node()"/&gt;
+                            &lt;/xsl:copy&gt;
+                        &lt;/xsl:template&gt;
+                        &lt;xsl:template match="/c:result"&gt;
+                            &lt;xsl:copy&gt;
+                                &lt;xsl:apply-templates select="@*"/&gt;
+                                &lt;xsl:for-each select="c:result"&gt;
+                                    &lt;xsl:sort select="@rel"/&gt;
+                                    &lt;xsl:apply-templates select="."/&gt;
+                                &lt;/xsl:for-each&gt;
+                            &lt;/xsl:copy&gt;
+                        &lt;/xsl:template&gt;
+                    &lt;/xsl:stylesheet&gt;
+                &lt;/p:inline&gt;
+            &lt;/p:input&gt;
+        &lt;/p:xslt&gt;
+        &lt;p:xslt name="filelist"&gt;
+            &lt;p:with-param name="title" select="$title"/&gt;
+            &lt;p:input port="stylesheet"&gt;
+                &lt;p:document href="html/ditamaps2html.xsl"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:xslt&gt;
+    &lt;/p:group&gt;
+    &lt;p:store&gt;
+        &lt;p:documentation xd:target="parent"&gt;
+            &lt;xd:short&gt;Stores the table of contents as filelist.html to the output
+                directory.&lt;/xd:short&gt;
+        &lt;/p:documentation&gt;
+        &lt;p:with-option name="href" select="concat($htmlPath,'/filelist.html')"/&gt;
+    &lt;/p:store&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Creates a basic index.html frameset.&lt;/xd:short&gt;
+        &lt;xd:output name="result"&gt;The XHTML code.&lt;/xd:output&gt;
+    &lt;/p:documentation&gt;
+    &lt;p:identity name="index"&gt;
+        &lt;p:input port="source"&gt;
+            &lt;p:inline&gt;
+                &lt;html&gt;
+                    &lt;frameset cols="25%,75%"&gt;
+                        &lt;frame src="filelist.html" name="files"/&gt;
+                        &lt;frame src="main.html" name="content"/&gt;
+                    &lt;/frameset&gt;
+                &lt;/html&gt;
+            &lt;/p:inline&gt;
+        &lt;/p:input&gt;
+    &lt;/p:identity&gt;
+    &lt;p:store&gt;
+        &lt;p:documentation xd:target="parent"&gt;
+            &lt;xd:short&gt;Stores the index.html in the output directory.&lt;/xd:short&gt;
+        &lt;/p:documentation&gt;
+        &lt;p:with-option name="href" select="concat($htmlPath,'/index.html')"/&gt;
+    &lt;/p:store&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Creates a basic main.html front page.&lt;/xd:short&gt;
+        &lt;xd:output name="result"&gt;The XHTML code.&lt;/xd:output&gt;
+    &lt;/p:documentation&gt;
+    &lt;p:identity name="main"&gt;
+        &lt;p:input port="source"&gt;
+            &lt;p:inline&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;style type="text/css"&gt;
+                            
+                            #outer {height: 100%; overflow: hidden; position: relative; width: 100%;}
+                            #outer[id] {display: table; position: static;}
+                            
+                            #middle {position: absolute; top: 50%; width: 100%; text-align: center;} /* for explorer only*/
+                            #middle[id] {display: table-cell; vertical-align: middle; position: static;}
+                            
+                            #inner {position: relative; top: -50%; text-align: left;} /* for explorer only */
+                            #inner {width: 200px; margin-left: auto; margin-right: auto;} /* for all browsers*/
+                            
+                        &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id="outer"&gt;
+                            &lt;div id="middle"&gt;
+                                &lt;div id="inner"&gt;
+                                    &lt;img class="center" src="img/generated-using-pipeline2.png" alt="Generated using Pipeline 2"/&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            &lt;/p:inline&gt;
+        &lt;/p:input&gt;
+    &lt;/p:identity&gt;
+    &lt;p:store&gt;
+        &lt;p:documentation xd:target="parent"&gt;
+            &lt;xd:short&gt;Stores a main.html to the output directory.&lt;/xd:short&gt;
+        &lt;/p:documentation&gt;
+        &lt;p:with-option name="href" select="concat($htmlPath,'/main.html')"/&gt;
+    &lt;/p:store&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Copy images to output.&lt;/xd:short&gt;
+        &lt;xd:detail&gt;TODO: Change these p:exec's into p:data+p:store&lt;/xd:detail&gt;
+    &lt;/p:documentation&gt;
+    &lt;p:group&gt;
+        &lt;p:identity&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="index"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:identity&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="mkdir"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($htmlPath,'/img')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/directory.png ',$htmlPath,'/img/directory.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/subfile.png ',$htmlPath,'/img/subfile.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/superdir.png ',$htmlPath,'/img/superdir.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/lastsubfile.png ',$htmlPath,'/img/lastsubfile.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/lastsuperdirs.png ',$htmlPath,'/img/lastsuperdirs.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xproc.png ',$htmlPath,'/img/xproc.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xslt.png ',$htmlPath,'/img/xslt.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xquery.png ',$htmlPath,'/img/xquery.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/external_link.png ',$htmlPath,'/img/external_link.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+        &lt;p:exec command="cp"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/generated-using-pipeline2.png ',$htmlPath,'/img/generated-using-pipeline2.png')"/&gt;
+            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
+        &lt;/p:exec&gt;
+        &lt;p:sink/&gt;
+    &lt;/p:group&gt;
+
+    &lt;p:identity&gt;
+        &lt;p:input port="source"&gt;
+            &lt;p:pipe port="result" step="ditamaps"/&gt;
+        &lt;/p:input&gt;
+    &lt;/p:identity&gt;
+
+
+    &lt;!--p:variable name="relativeout" select="replace(resolve-uri(resolve-uri('.',concat($path,'/'))),'^file:','')"--&gt;
+    &lt;!--rel getRelativePath(fra,til)--&gt;
+    &lt;!--p:variable name="relativeout" select="//@result[1]"&gt;
+        &lt;p:pipe port="result" step="resolveout"/&gt;
+    &lt;/p:variable&gt;
+    &lt;p:group name="resolveout"&gt;
+        &lt;p:output port="result" primary="true"/&gt;
+        &lt;p:identity&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:inline&gt;
+                    &lt;c:result/&gt;
+                &lt;/p:inline&gt;
+            &lt;/p:input&gt;
+        &lt;/p:identity&gt;
+        &lt;p:add-attribute match="/c:result" attribute-name="fn" attribute-value="getRelativePath"/&gt;
+        &lt;p:add-attribute match="/c:result" attribute-name="source"&gt;
+            &lt;p:with-option name="attribute-value" select="$map"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:add-attribute match="/c:result" attribute-name="target"&gt;
+            &lt;p:with-option name="attribute-value" select="$supermap"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:xslt&gt;
+            &lt;p:input port="parameters"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:input port="stylesheet"&gt;
+                &lt;p:document href="relpath_util.xsl"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:xslt&gt;
+    &lt;/p:group&gt;
+    &lt;p:group&gt;
+        &lt;p:variable name="relativeout" select="//@result[1]"&gt;
+            &lt;p:pipe port="result" step="resolveout"/&gt;
+        &lt;/p:variable&gt;
+        
+        &lt;p:load name="map"&gt;
+            &lt;p:with-option name="href" select="$map"/&gt;
+        &lt;/p:load&gt;
+
+        &lt;p:xslt&gt;
+            &lt;p:input port="parameters"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:input port="stylesheet"&gt;
+                &lt;p:document href="ditamap2html.xsl"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:xslt&gt;
+
+        &lt;p:store&gt;
+            &lt;p:with-option name="href" select="concat($outdir,"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:viewport match="//topicref[@format='ditamap']"&gt;
+            &lt;p:viewport-source&gt;
+                &lt;p:pipe port="result" step="map"/&gt;
+            &lt;/p:viewport-source&gt;
+            &lt;d:dita2html&gt;
+                &lt;p:with-option name="map" select="resolve-uri(/topicref/@href,$map)"/&gt;
+                &lt;p:with-option name="outdir" select="$outdir"/&gt;
+                &lt;p:with-option name="supermap" select="$supermap"/&gt;
+            &lt;/d:dita2html&gt;
+        &lt;/p:viewport&gt;
+    &lt;/p:group--&gt;
+
+&lt;/p:declare-step&gt;</codeblock>
+   </section>
+</reference>

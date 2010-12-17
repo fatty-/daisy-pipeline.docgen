@@ -1,0 +1,76 @@
+<reference id="d8209e114">
+   <title>d:document-xproc-ditamap - xproc-ditamap</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                   xmlns:d="http://www.example.org/documenter"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Documents all XProc scripts.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xproc-ditamap</apiname>
+      </section>
+      <section outputclass="parameters xproc-inputs">
+         <title outputclass="io-header">Inputs</title>
+         <parml outputclass="xproc-inputs">
+            <plentry>
+               <pt>source</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt>result@file-list</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+      <section outputclass="parameters xproc-options">
+         <title outputclass="io-header">Options</title>
+         <parml outputclass="xproc-options xproc-with-options">
+            <plentry>
+               <pt>srcPath</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>tempPath</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>ditaPath</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>selfPath</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;d:document-xproc-ditamap name="xproc-ditamap" xmlns:p="http://www.w3.org/ns/xproc" xmlns:d="http://www.example.org/documenter"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="file-list"/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="srcPath" select="$srcPath"/&gt;
+            &lt;p:with-option name="tempPath" select="$tempPath"/&gt;
+            &lt;p:with-option name="ditaPath" select="$ditaPath"/&gt;
+            &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
+        &lt;/d:document-xproc-ditamap&gt;</codeblock>
+   </section>
+</reference>

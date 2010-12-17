@@ -1,0 +1,70 @@
+<reference id="d10446e154">
+   <title>p:group</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
+                   xmlns:d="http://www.example.org/documenter">Transforms the input list of DITA files to a table of contents listing all
+            files.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:group</apiname>
+      </section>
+   </refbody>
+   <related-links>
+      <linklist>
+         <title>Dependencies (p:document)</title>
+         <link href="html/ditamaps2html.xsl" format="ditamap"/>
+         <linkinfo>These dependencies are derived from documents loaded with the p:document
+                step in the XProc script.</linkinfo>
+      </linklist>
+   </related-links>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:group xmlns:p="http://www.w3.org/ns/xproc"&gt;
+        &lt;p:xslt&gt;
+            &lt;p:input port="parameters"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="ditamaps"/&gt;
+            &lt;/p:input&gt;
+            &lt;p:input port="stylesheet"&gt;
+                &lt;p:inline&gt;
+                    &lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+                        &lt;xsl:template match="@*|node()"&gt;
+                            &lt;xsl:copy&gt;
+                                &lt;xsl:apply-templates select="@*|node()"/&gt;
+                            &lt;/xsl:copy&gt;
+                        &lt;/xsl:template&gt;
+                        &lt;xsl:template match="/c:result"&gt;
+                            &lt;xsl:copy&gt;
+                                &lt;xsl:apply-templates select="@*"/&gt;
+                                &lt;xsl:for-each select="c:result"&gt;
+                                    &lt;xsl:sort select="@rel"/&gt;
+                                    &lt;xsl:apply-templates select="."/&gt;
+                                &lt;/xsl:for-each&gt;
+                            &lt;/xsl:copy&gt;
+                        &lt;/xsl:template&gt;
+                    &lt;/xsl:stylesheet&gt;
+                &lt;/p:inline&gt;
+            &lt;/p:input&gt;
+        &lt;/p:xslt&gt;
+        &lt;p:xslt name="filelist"&gt;
+            &lt;p:with-param name="title" select="$title"/&gt;
+            &lt;p:input port="stylesheet"&gt;
+                &lt;p:document href="html/ditamaps2html.xsl"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:xslt&gt;
+    &lt;/p:group&gt;</codeblock>
+   </section>
+</reference>

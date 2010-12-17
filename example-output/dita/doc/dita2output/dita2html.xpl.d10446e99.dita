@@ -1,0 +1,77 @@
+<reference id="d10446e99">
+   <title>p:xslt</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
+                   xmlns:d="http://www.example.org/documenter">Transform the loaded DITA document to XHTML.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:xslt</apiname>
+      </section>
+      <section outputclass="parameters xproc-inputs">
+         <title outputclass="io-header">Inputs</title>
+         <parml outputclass="xproc-inputs">
+            <plentry>
+               <pt>parameters</pt>
+               <pt>false</pt>
+               <pt/>
+               <pt>empty</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>stylesheet</pt>
+               <pt>false</pt>
+               <pt/>
+               <pt>html/dita2html.xsl</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+      <section outputclass="parameters xproc-with-params">
+         <title outputclass="io-header">Parameters</title>
+         <parml outputclass="xproc-with-params">
+            <plentry>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <related-links>
+      <linklist>
+         <title>Dependencies (p:document)</title>
+         <link href="html/dita2html.xsl" format="ditamap"/>
+         <linkinfo>These dependencies are derived from documents loaded with the p:document
+                step in the XProc script.</linkinfo>
+      </linklist>
+   </related-links>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:xslt xmlns:p="http://www.w3.org/ns/xproc"&gt;
+            &lt;p:with-param name="title" select="$title"/&gt;
+            &lt;p:with-param name="pathToRoot" select="replace(replace($rel,'/[^/]*$',''),'[^/]+','..')"/&gt;
+            &lt;p:input port="parameters"&gt;
+                &lt;p:empty/&gt;
+            &lt;/p:input&gt;
+            &lt;p:input port="stylesheet"&gt;
+                &lt;p:document href="html/dita2html.xsl"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:xslt&gt;</codeblock>
+   </section>
+</reference>
