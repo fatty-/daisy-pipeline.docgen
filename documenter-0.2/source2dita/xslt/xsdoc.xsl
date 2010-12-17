@@ -3,7 +3,7 @@
   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
   xmlns:xsltdoc="http://www.pnp-software.com/XSLTdoc" exclude-result-prefixes="#all" version="2.0">
 
-  <xsl:import href="../../../lib/xml-to-string.xsl"/>
+  <xsl:import href="../../lib/xml-to-string.xsl"/>
 
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
