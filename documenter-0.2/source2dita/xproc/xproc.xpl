@@ -78,7 +78,7 @@
                             <p:empty/>
                         </p:input>
                         <p:input port="stylesheet">
-                            <p:document href="xpDoc/xpdoc.xsl"/>
+                            <p:document href="xpdoc.xsl"/>
                         </p:input>
                     </p:xslt>
                     <p:choose>

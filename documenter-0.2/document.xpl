@@ -29,11 +29,6 @@
     <p:option name="src" required="true"/>
     <p:option name="doc" required="true"/>
 
-    <p:input port="source" primary="true">
-        <p:empty/>
-    </p:input>
-    <p:output port="result" primary="true"/>
-
     <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
     <p:import href="source2dita/makedita.xpl"/>
     <p:import href="dita2output/dita2html.xpl"/>
@@ -85,4 +80,6 @@
         <p:with-option name="htmlPath" select="concat($docPath,'html')"/>
         <p:with-option name="selfPath" select="$selfPath"/>
     </d:dita2html>
+    <p:sink/>
+    
 </p:declare-step>

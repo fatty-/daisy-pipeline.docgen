@@ -88,7 +88,7 @@
                             <p:empty/>
                         </p:input>
                         <p:input port="stylesheet">
-                            <p:document href="xsDoc/xsdoc.xsl"/>
+                            <p:document href="xsdoc.xsl"/>
                         </p:input>
                     </p:xslt>
 

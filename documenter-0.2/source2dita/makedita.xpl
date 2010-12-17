@@ -31,15 +31,11 @@
     <p:option name="ditaPath" required="true"/>
     <p:option name="selfPath" required="true"/>
 
-    <p:input port="source" primary="true">
-        <p:empty/>
-    </p:input>
     <p:output port="result" primary="true"/>
 
     <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
     <p:import href="xproc/xproc.xpl"/>
     <p:import href="xslt/xslt.xpl"/>
-    <p:import href="xquery/xquery.xpl"/>
     <p:import href="fix-cross-references.xpl"/>
     <p:import href="../lib/filelist.xpl"/>
     <p:import href="../lib/recursive-directory-list.xpl"/>
@@ -88,20 +84,6 @@
             <p:with-option name="selfPath" select="$selfPath"/>
         </d:document-xslt-ditamap>
 
-        <!--p:documentation xd:target="following">
-            <xd:short>Documents all XQuery documents.</xd:short>
-            <xd:output><xd:code><![CDATA[<c:result><c:file .../><c:file .../>...</c:result>]]></xd:code></xd:output>
-        </p:documentation>
-        <d:document-xquery-ditamap name="xquery-ditamap">
-            <p:input port="source">
-                <p:pipe port="result" step="file-list"/>
-            </p:input>
-            <p:with-option name="srcPath" select="$srcPath"/>
-            <p:with-option name="tempPath" select="$tempPath"/>
-            <p:with-option name="ditaPath" select="$ditaPath"/>
-            <p:with-option name="selfPath" select="$selfPath"/>
-        </d:document-xquery-ditamap-->
-
         <p:identity>
             <p:input port="source">
                 <p:inline>
@@ -121,12 +103,6 @@
             </p:input>
             <p:with-option name="position" select="'last-child'"/>
         </p:insert>
-        <!--p:insert>
-            <p:input port="insertion" select="/c:result/c:result">
-                <p:pipe port="result" step="xquery-ditamap"/>
-            </p:input>
-            <p:with-option name="position" select="'last-child'"/>
-        </p:insert-->
 
         <p:identity name="result-map-done"/>
     </p:group>
