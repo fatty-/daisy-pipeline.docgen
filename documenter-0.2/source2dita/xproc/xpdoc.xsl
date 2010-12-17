@@ -3,7 +3,7 @@
   xmlns:p="http://www.w3.org/ns/xproc" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
   exclude-result-prefixes="#all" version="2.0">
   
-  <xsl:import href="../../../lib/xml-to-string.xsl"/>
+  <xsl:import href="../../lib/xml-to-string.xsl"/>
   
   <xd:doc target="parent">
     <xd:short>Transforms the input XProc document to a DITA Reference Topic.</xd:short>
