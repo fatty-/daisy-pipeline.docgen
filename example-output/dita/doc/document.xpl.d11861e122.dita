@@ -1,0 +1,90 @@
+<reference id="d11861e122">
+   <title>d:dita2html</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                   xmlns:d="http://www.example.org/documenter"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Make XHTML5-documentation.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>d:dita2html</apiname>
+      </section>
+      <section outputclass="parameters xproc-inputs">
+         <title outputclass="io-header">Inputs</title>
+         <parml outputclass="xproc-inputs">
+            <plentry>
+               <pt>source</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt>result@dita</pt>
+               <pd>
+                  <xd:input xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                            xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                            xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                            xmlns:d="http://www.example.org/documenter"
+                            xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
+                            port="source">List of files.</xd:input>
+               </pd>
+            </plentry>
+         </parml>
+      </section>
+      <section outputclass="parameters xproc-options">
+         <title outputclass="io-header">Options</title>
+         <parml outputclass="xproc-options xproc-with-options">
+            <plentry>
+               <pt>title</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>ditaPath</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>tempPath</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>htmlPath</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>selfPath</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;d:dita2html xmlns:p="http://www.w3.org/ns/xproc" xmlns:d="http://www.example.org/documenter"&gt;
+        &lt;p:input port="source"&gt;
+            &lt;p:pipe port="result" step="dita"/&gt;
+        &lt;/p:input&gt;
+        &lt;p:with-option name="title" select="replace($srcPath,'^.*/','')"/&gt;
+        &lt;p:with-option name="ditaPath" select="concat($docPath,'dita')"/&gt;
+        &lt;p:with-option name="tempPath" select="concat($docPath,'temp')"/&gt;
+        &lt;p:with-option name="htmlPath" select="concat($docPath,'html')"/&gt;
+        &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
+    &lt;/d:dita2html&gt;</codeblock>
+   </section>
+</reference>

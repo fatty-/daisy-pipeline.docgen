@@ -1,0 +1,29 @@
+<reference id="d25099e46">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                   xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Identity template</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template match="@*|node()" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;xsl:copy&gt;
+            &lt;xsl:apply-templates select="@*|node()"/&gt;
+        &lt;/xsl:copy&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

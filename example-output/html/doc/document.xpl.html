@@ -68,12 +68,12 @@
                     section.sourcecode {
                         display: none;
                     }
-                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
                         position: relative;
                         top: -30px;
                         float: left;
                     }
-                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
                         position: absolute;
                         color: #006;
                         background-color: #EEF;
@@ -116,30 +116,6 @@
       <section class="section ">
          
       </section>
-      <section class="section parameters xproc-inputs">
-         <header class="title io-header"><h1>Inputs</h1></header>
-         <table class="parml xproc-inputs"><tr><th>name</th><th>primary</th><th>sequence</th><th>connection</th><th>description</th></tr>
-            <tr class="plentry ">
-               <td class="pt ">source</td>
-               <td class="pt ">true</td>
-               <td class="pt "/>
-               <td class="pt ">empty</td>
-               <td class="pd "/>
-            </tr>
-         </table>
-      </section>
-      <section class="section parameters xproc-outputs">
-         <header class="title io-header"><h1>Outputs</h1></header>
-         <table class="parml xproc-outputs"><tr><th>name</th><th>primary</th><th>sequence</th><th>connection</th><th>description</th></tr>
-            <tr class="plentry ">
-               <td class="pt ">result</td>
-               <td class="pt ">true</td>
-               <td class="pt "/>
-               <td class="pt "/>
-               <td class="pd "/>
-            </tr>
-         </table>
-      </section>
       <section class="section parameters xproc-options">
          <header class="title io-header"><h1>Options</h1></header>
          <table class="parml xproc-options"><tr><th>name</th><th>required</th><th>description</th></tr>
@@ -157,11 +133,11 @@
       </section>
    <span class="related-links ">
       <section class="linklist "><header class="title "><h1>Dependencies (p:import)</h1></header><p class="linkinfo ">These dependencies are derived from the p:import statements from the XProc
-                script.</p><p class="link "><a href="http://xmlcalabash.com/extension/steps/library-1.0.xpl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../external_link.png) no-repeat center left;">http://xmlcalabash.com/extension/steps/library-1.0.xpl</a></p><p class="link "><a href="source2dita/makedita.xpl.html" style="padding-left: 20px; background: transparent url(../img/xproc.png) no-repeat center left;">source2dita/makedita.xpl</a></p><p class="link "><a href="dita2output/dita2html.xpl.html" style="padding-left: 20px; background: transparent url(../img/xproc.png) no-repeat center left;">dita2output/dita2html.xpl</a></p></section>
+                script.</p><p class="link "><a href="http://xmlcalabash.com/extension/steps/library-1.0.xpl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../img/external_link.png) no-repeat center left;">http://xmlcalabash.com/extension/steps/library-1.0.xpl</a></p><p class="link "><a href="source2dita/makedita.xpl.html" style="padding-left: 20px; background: transparent url(../img/xproc.png) no-repeat center left;">source2dita/makedita.xpl</a></p><p class="link "><a href="dita2output/dita2html.xpl.html" style="padding-left: 20px; background: transparent url(../img/xproc.png) no-repeat center left;">dita2output/dita2html.xpl</a></p></section>
       <section class="linklist "><header class="title "><h1>Dependencies (p:document)</h1></header><p class="linkinfo ">These dependencies are derived from documents loaded with the p:document
                 step in the XProc script.</p><p class="link "><a href="document.xpl.html" style="padding-left: 20px; background: transparent url(../img/xproc.png) no-repeat center left;">document.xpl</a></p></section>
       <section class="linklist "><header class="title "><h1>See also</h1></header><p class="linkinfo ">These are related readings suggested by the author of the XProc
-                script.</p><p class="link "><a href="http://code.google.com/p/daisy-pipeline/" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../external_link.png) no-repeat center left;">http://code.google.com/p/daisy-pipeline/</a></p></section>
+                script.</p><p class="link "><a href="http://code.google.com/p/daisy-pipeline/" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../img/external_link.png) no-repeat center left;">http://code.google.com/p/daisy-pipeline/</a></p></section>
    </span><section class="section sourcecode">
       <header class="title sourcecode-header"><h1>Source Code</h1></header>
       <pre class="codeblock"><code class="">&lt;p:declare-step version="1.0" xmlns:p="http://www.w3.org/ns/xproc" xmlns:d="http://www.example.org/documenter" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
@@ -190,11 +166,6 @@
 
     &lt;p:option name="src" required="true"/&gt;
     &lt;p:option name="doc" required="true"/&gt;
-
-    &lt;p:input port="source" primary="true"&gt;
-        &lt;p:empty/&gt;
-    &lt;/p:input&gt;
-    &lt;p:output port="result" primary="true"/&gt;
 
     &lt;p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/&gt;
     &lt;p:import href="source2dita/makedita.xpl"/&gt;
@@ -244,6 +215,8 @@
         &lt;p:with-option name="htmlPath" select="concat($docPath,'html')"/&gt;
         &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
     &lt;/d:dita2html&gt;
+    &lt;p:sink/&gt;
+    
 &lt;/p:declare-step&gt;</code></pre>
    </section></section><section class="child-topics">
       <section class="reference XProc "><header class="title "><h1>d:makeDita - dita</h1></header><p class="shortdesc ">

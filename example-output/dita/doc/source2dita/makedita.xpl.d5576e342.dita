@@ -1,0 +1,46 @@
+<reference id="d5576e342">
+   <title>p:group</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                   xmlns:d="http://www.example.org/documenter"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Prepares the primary output (the list of files), suitable for further
+            processing.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:group</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:group xmlns:p="http://www.w3.org/ns/xproc"&gt;
+        &lt;p:variable name="title" select="replace($srcPath,'^.*/','')"&gt;
+            &lt;!-- Should introduce a dependency on the fix-cross-references step: --&gt;
+            &lt;p:pipe port="result" step="fix-cross-references"/&gt;
+        &lt;/p:variable&gt;
+        &lt;p:identity&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="result-ditamap"/&gt;
+            &lt;/p:input&gt;
+        &lt;/p:identity&gt;
+        &lt;p:add-attribute match="/c:result" attribute-name="sequencemap"&gt;
+            &lt;p:with-option name="attribute-value" select="/c:result/text()"&gt;
+                &lt;p:pipe port="result" step="make-sequence-map"/&gt;
+            &lt;/p:with-option&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:add-attribute match="/c:result" attribute-name="title"&gt;
+            &lt;p:with-option name="attribute-value" select="$title"/&gt;
+        &lt;/p:add-attribute&gt;
+    &lt;/p:group&gt;</codeblock>
+   </section>
+</reference>

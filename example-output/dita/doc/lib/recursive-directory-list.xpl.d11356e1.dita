@@ -1,0 +1,195 @@
+<reference id="d11356e1">
+   <title>p:declare-step</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">Performs p:directory-list recursively.</xd:short>
+      </shortdesc>
+      <xd:detail xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">The cx:recursive-directory-list step lists the contents of the specified
+            directory on the filesystem. Unlike the standard p:directory-list step,
+            cx:recursive-directory-list expands all subdirectories recursively.</xd:detail>
+   </abstract>
+   <prolog>
+      <author type="creator">
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">Norman Walsh</xd:name>
+      </author>
+      <author type="contributor">
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">Richard Hamilton</xd:name>
+      </author>
+      <copyright>
+         <copyryear year="2010"/>
+         <copyrholder>
+            <xd:holder xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions">Norman Walsh</xd:holder>
+         </copyrholder>
+      </copyright>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+         <othermeta name="xproc-version" content="1.0"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:declare-step</apiname>
+      </section>
+      <section outputclass="parameters xproc-outputs">
+         <title outputclass="io-header">Outputs</title>
+         <parml outputclass="xproc-outputs">
+            <plentry>
+               <pt>result</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+      <section outputclass="parameters xproc-options">
+         <title outputclass="io-header">Options</title>
+         <parml outputclass="xproc-options">
+            <plentry>
+               <pt>path</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>include-filter</pt>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>exclude-filter</pt>
+               <pt/>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>depth</pt>
+               <pt/>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <related-links>
+      <linklist>
+         <title>See also</title>
+         <link href="http://xprocbook.com/book/refentry-61.html" format="ditamap"/>
+         <linkinfo>These are related readings suggested by the author of the XProc
+                script.</linkinfo>
+      </linklist>
+   </related-links>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:declare-step type="cx:recursive-directory-list" version="1.0" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;p:documentation xd:target="parent"&gt;
+        &lt;xd:short&gt;Performs p:directory-list recursively.&lt;/xd:short&gt;
+        &lt;xd:detail&gt;The cx:recursive-directory-list step lists the contents of the specified
+            directory on the filesystem. Unlike the standard p:directory-list step,
+            cx:recursive-directory-list expands all subdirectories recursively.&lt;/xd:detail&gt;
+        &lt;xd:option name="path"&gt;Same as for p:directory-list; the directory to list all files and
+            directories in.&lt;/xd:option&gt;
+        &lt;xd:option name="include-filter"&gt;Same as for p:directory-list; if the include-filter pattern
+            matches a directory entry's name, the entry is included in the output.&lt;/xd:option&gt;
+        &lt;xd:option name="exclude-filter"&gt;Same as for p:directory-list; if the exclude-filter pattern
+            matches a directory entry's name, the entry is excluded in the output.&lt;/xd:option&gt;
+        &lt;xd:option name="depth"&gt;The depth option limits the recursive depth of the process. A value
+            of “-1” specifies an unbounded depth.&lt;/xd:option&gt;
+        &lt;xd:output&gt;Pretty much the same as for p:directory-list, but with directories nested
+            recursively.&lt;/xd:output&gt;
+        &lt;xd:author&gt;
+            &lt;xd:name&gt;Norman Walsh&lt;/xd:name&gt;
+        &lt;/xd:author&gt;
+        &lt;xd:contributor&gt;
+            &lt;xd:name&gt;Richard Hamilton&lt;/xd:name&gt;
+        &lt;/xd:contributor&gt;
+        &lt;xd:copyright&gt;
+            &lt;xd:year&gt;2010&lt;/xd:year&gt;
+            &lt;xd:holder&gt;Norman Walsh&lt;/xd:holder&gt;
+        &lt;/xd:copyright&gt;
+        &lt;xd:see&gt;http://xprocbook.com/book/refentry-61.html&lt;/xd:see&gt;
+    &lt;/p:documentation&gt;
+
+    &lt;p:output port="result"/&gt;
+    &lt;p:option name="path" required="true"/&gt;
+    &lt;p:option name="include-filter"/&gt;
+    &lt;p:option name="exclude-filter"/&gt;
+    &lt;p:option name="depth" select="-1"/&gt;
+
+    &lt;p:choose&gt;
+        &lt;p:when test="p:value-available('include-filter')             and p:value-available('exclude-filter')"&gt;
+            &lt;p:directory-list&gt;
+                &lt;p:with-option name="path" select="$path"/&gt;
+                &lt;p:with-option name="include-filter" select="$include-filter"/&gt;
+                &lt;p:with-option name="exclude-filter" select="$exclude-filter"/&gt;
+            &lt;/p:directory-list&gt;
+        &lt;/p:when&gt;
+
+        &lt;p:when test="p:value-available('include-filter')"&gt;
+            &lt;p:directory-list&gt;
+                &lt;p:with-option name="path" select="$path"/&gt;
+                &lt;p:with-option name="include-filter" select="$include-filter"/&gt;
+            &lt;/p:directory-list&gt;
+        &lt;/p:when&gt;
+
+        &lt;p:when test="p:value-available('exclude-filter')"&gt;
+            &lt;p:directory-list&gt;
+                &lt;p:with-option name="path" select="$path"/&gt;
+                &lt;p:with-option name="exclude-filter" select="$exclude-filter"/&gt;
+            &lt;/p:directory-list&gt;
+        &lt;/p:when&gt;
+
+        &lt;p:otherwise&gt;
+            &lt;p:directory-list&gt;
+                &lt;p:with-option name="path" select="$path"/&gt;
+            &lt;/p:directory-list&gt;
+        &lt;/p:otherwise&gt;
+    &lt;/p:choose&gt;
+
+    &lt;p:viewport match="/c:directory/c:directory"&gt;
+        &lt;p:variable name="name" select="/*/@name"/&gt;
+
+        &lt;p:choose&gt;
+            &lt;p:when test="$depth != 0"&gt;
+                &lt;p:choose&gt;
+                    &lt;p:when test="p:value-available('include-filter')                                                  and p:value-available('exclude-filter')"&gt;
+                        &lt;cx:recursive-directory-list&gt;
+                            &lt;p:with-option name="path" select="concat($path,'/',$name)"/&gt;
+                            &lt;p:with-option name="include-filter" select="$include-filter"/&gt;
+                            &lt;p:with-option name="exclude-filter" select="$exclude-filter"/&gt;
+                            &lt;p:with-option name="depth" select="$depth - 1"/&gt;
+                        &lt;/cx:recursive-directory-list&gt;
+                    &lt;/p:when&gt;
+
+                    &lt;p:when test="p:value-available('include-filter')"&gt;
+                        &lt;cx:recursive-directory-list&gt;
+                            &lt;p:with-option name="path" select="concat($path,'/',$name)"/&gt;
+                            &lt;p:with-option name="include-filter" select="$include-filter"/&gt;
+                            &lt;p:with-option name="depth" select="$depth - 1"/&gt;
+                        &lt;/cx:recursive-directory-list&gt;
+                    &lt;/p:when&gt;
+
+                    &lt;p:when test="p:value-available('exclude-filter')"&gt;
+                        &lt;cx:recursive-directory-list&gt;
+                            &lt;p:with-option name="path" select="concat($path,'/',$name)"/&gt;
+                            &lt;p:with-option name="exclude-filter" select="$exclude-filter"/&gt;
+                            &lt;p:with-option name="depth" select="$depth - 1"/&gt;
+                        &lt;/cx:recursive-directory-list&gt;
+                    &lt;/p:when&gt;
+
+                    &lt;p:otherwise&gt;
+                        &lt;cx:recursive-directory-list&gt;
+                            &lt;p:with-option name="path" select="concat($path,'/',$name)"/&gt;
+                            &lt;p:with-option name="depth" select="$depth - 1"/&gt;
+                        &lt;/cx:recursive-directory-list&gt;
+                    &lt;/p:otherwise&gt;
+                &lt;/p:choose&gt;
+            &lt;/p:when&gt;
+            &lt;p:otherwise&gt;
+                &lt;p:identity/&gt;
+            &lt;/p:otherwise&gt;
+        &lt;/p:choose&gt;
+    &lt;/p:viewport&gt;
+
+&lt;/p:declare-step&gt;</codeblock>
+   </section>
+</reference>

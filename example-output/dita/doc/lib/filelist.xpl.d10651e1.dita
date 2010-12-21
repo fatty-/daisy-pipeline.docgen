@@ -1,0 +1,178 @@
+<reference id="d10651e1">
+   <title>p:declare-step</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">Lists all files in the module.</xd:short>
+      </shortdesc>
+      <xd:detail xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">Uses recursive-directory-list.xpl to get a structure containing all files in the
+            module, then flattens it and returns it.</xd:detail>
+   </abstract>
+   <prolog>
+      <author type="creator">
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">Jostein Austvik Jacobsen</xd:name> (<xd:mailto xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">josteinaj@gmail.com</xd:mailto>), <xd:organization xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">NLB</xd:organization>
+      </author>
+      <copyright>
+         <copyryear year="2010"/>
+         <copyrholder>
+            <xd:holder xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">DAISY Consortium</xd:holder>
+         </copyrholder>
+      </copyright>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+         <othermeta name="xproc-version" content="1.0"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:declare-step</apiname>
+      </section>
+      <section outputclass="parameters xproc-outputs">
+         <title outputclass="io-header">Outputs</title>
+         <parml outputclass="xproc-outputs">
+            <plentry>
+               <pt>result</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt/>
+               <pd>
+                  <xd:output xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter" port="result">Gives out a flat list of files on the form: &lt;c:directory&gt;
+            &lt;c:file relative="relative from $path" name="filename"/&gt; &lt;c:file
+            relative="relative from $path" name="filename"/&gt; &lt;c:file relative="relative from
+            $path" name="filename"/&gt; &lt;/c:directory&gt;</xd:output>
+               </pd>
+            </plentry>
+         </parml>
+      </section>
+      <section outputclass="parameters xproc-options">
+         <title outputclass="io-header">Options</title>
+         <parml outputclass="xproc-options">
+            <plentry>
+               <pt>path</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>depth</pt>
+               <pt>false</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <related-links>
+      <linklist>
+         <title>Dependencies (p:import)</title>
+         <link href="http://xmlcalabash.com/extension/steps/library-1.0.xpl" format="ditamap"/>
+         <link format="ditamap" href="recursive-directory-list.xpl.ditamap"/>
+         <linkinfo>These dependencies are derived from the p:import statements from the XProc
+                script.</linkinfo>
+      </linklist>
+   </related-links>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:declare-step type="d:listFiles" version="1.0" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;p:documentation xd:target="parent"&gt;
+        &lt;xd:short&gt;Lists all files in the module.&lt;/xd:short&gt;
+        &lt;xd:detail&gt;Uses recursive-directory-list.xpl to get a structure containing all files in the
+            module, then flattens it and returns it.&lt;/xd:detail&gt;
+        &lt;xd:author&gt;
+            &lt;xd:name&gt;Jostein Austvik Jacobsen&lt;/xd:name&gt;
+            &lt;xd:mailto&gt;josteinaj@gmail.com&lt;/xd:mailto&gt;
+            &lt;xd:organization&gt;NLB&lt;/xd:organization&gt;
+        &lt;/xd:author&gt;
+        &lt;xd:copyright&gt;
+            &lt;xd:year&gt;2010&lt;/xd:year&gt;
+            &lt;xd:holder&gt;DAISY Consortium&lt;/xd:holder&gt;
+        &lt;/xd:copyright&gt;
+        &lt;xd:option name="path"&gt;full path to the target folder&lt;/xd:option&gt;
+        &lt;xd:option name="depth"&gt;Depth to search for files. Are simply passed on to the underlying
+            cx:recursive-directory-list step.&lt;/xd:option&gt;
+        &lt;xd:output port="result"&gt;Gives out a flat list of files on the form: &amp;lt;c:directory&gt;
+            &amp;lt;c:file relative="relative from $path" name="filename"/&gt; &amp;lt;c:file
+            relative="relative from $path" name="filename"/&gt; &amp;lt;c:file relative="relative from
+            $path" name="filename"/&gt; &amp;lt;/c:directory&gt;&lt;/xd:output&gt;
+    &lt;/p:documentation&gt;
+
+    &lt;p:option name="path" required="true"/&gt;
+    &lt;p:option name="depth" required="false" select="-1"/&gt;
+
+    &lt;p:output port="result" primary="true"/&gt;
+
+    &lt;p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/&gt;
+    &lt;p:import href="recursive-directory-list.xpl"/&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Get list of all files&lt;/xd:short&gt;
+        &lt;xd:detail&gt;Uses recursive-directory-list to retrieve a structure of all files in the
+            module.&lt;/xd:detail&gt;
+        &lt;xd:option name="path"&gt;Path to the directory in the module containing the source
+            files.&lt;/xd:option&gt;
+        &lt;xd:option name="depth"&gt;How deep to recurse. -1 is default, and means that there's no
+            limit.&lt;/xd:option&gt;
+    &lt;/p:documentation&gt;
+    &lt;cx:recursive-directory-list&gt;
+        &lt;p:with-option name="path" select="$path"/&gt;
+        &lt;p:with-option name="depth" select="$depth"/&gt;
+    &lt;/cx:recursive-directory-list&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Flatten list of files&lt;/xd:short&gt;
+    &lt;/p:documentation&gt;
+    &lt;p:xslt&gt;
+        &lt;p:input port="parameters"&gt;
+            &lt;p:empty/&gt;
+        &lt;/p:input&gt;
+        &lt;p:input port="stylesheet"&gt;
+            &lt;p:inline&gt;
+                &lt;xsl:stylesheet version="1.0" exclude-result-prefixes="cx fn d xd" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+                    &lt;xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/&gt;
+
+                    &lt;xsl:template match="/c:directory"&gt;
+                        &lt;xsl:copy&gt;
+                            &lt;xsl:apply-templates&gt;
+                                &lt;!--xsl:with-param name="path" select="@name"/--&gt;
+                                &lt;xsl:with-param name="path" select="'.'"/&gt;
+                            &lt;/xsl:apply-templates&gt;
+                        &lt;/xsl:copy&gt;
+                    &lt;/xsl:template&gt;
+
+                    &lt;xsl:template match="c:directory"&gt;
+                        &lt;xsl:param name="path" select="''"/&gt;
+                        &lt;xsl:variable name="newPath" select="''"/&gt;
+                        &lt;xsl:apply-templates&gt;
+                            &lt;xsl:with-param name="path" select="concat($path,'/',@name)"/&gt;
+                        &lt;/xsl:apply-templates&gt;
+                    &lt;/xsl:template&gt;
+
+                    &lt;xsl:template match="c:file"&gt;
+                        &lt;xsl:param name="path"/&gt;
+                        &lt;xsl:variable name="newPath" select="concat($path,'/',@name)"/&gt;
+                        &lt;xsl:copy&gt;
+                            &lt;xsl:attribute name="relative"&gt;
+                                &lt;xsl:value-of select="replace($newPath,'^\./','')"/&gt;
+                            &lt;/xsl:attribute&gt;
+                            &lt;xsl:attribute name="name"&gt;
+                                &lt;xsl:value-of select="@name"/&gt;
+                            &lt;/xsl:attribute&gt;
+                            &lt;xsl:apply-templates&gt;
+                                &lt;xsl:with-param name="path" select="$newPath"/&gt;
+                            &lt;/xsl:apply-templates&gt;
+
+                        &lt;/xsl:copy&gt;
+                    &lt;/xsl:template&gt;
+
+                    &lt;xsl:template match="@*|node()"&gt;
+                        &lt;xsl:copy&gt;
+                            &lt;xsl:apply-templates select="@*|node()"/&gt;
+                        &lt;/xsl:copy&gt;
+                    &lt;/xsl:template&gt;
+                &lt;/xsl:stylesheet&gt;
+            &lt;/p:inline&gt;
+        &lt;/p:input&gt;
+    &lt;/p:xslt&gt;
+&lt;/p:declare-step&gt;</codeblock>
+   </section>
+</reference>

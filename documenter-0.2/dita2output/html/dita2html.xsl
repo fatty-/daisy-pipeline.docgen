@@ -107,12 +107,12 @@
                     section.sourcecode {
                         display: none;
                     }
-                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
                         position: relative;
                         top: -30px;
                         float: left;
                     }
-                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
                         position: absolute;
                         color: #006;
                         background-color: #EEF;
@@ -205,7 +205,8 @@
     </xd:doc>
     <xsl:template match="abstract">
         <xsl:variable name="nodetext">
-            <xsl:value-of select="descendant-or-self::text()[not(ancestor::*[local-name()='shortdesc'])]"/>
+            <xsl:value-of
+                select="descendant-or-self::text()[not(ancestor::*[local-name()='shortdesc'])]"/>
         </xsl:variable>
         <xsl:if test="string-length(normalize-space($nodetext))>0">
             <section class="abstract {@outputclass}">
@@ -374,15 +375,16 @@
     </xd:doc>
     <xsl:template match="refbody">
         <xsl:variable name="nodetext">
-            <xsl:value-of select="descendant-or-self::text()[not(ancestor::*[local-name()='apiname'])]"/>
+            <xsl:value-of
+                select="descendant-or-self::text()[not(ancestor::*[local-name()='apiname'])]"/>
         </xsl:variable>
         <xsl:if test="string-length(normalize-space($nodetext))>0">
             <!--section class="refbody {@outputclass}">
                 <header class="refbody-header">
                     <h1>Parameters</h1-->
-                    <!--h1>Input / Output<xsl:if test=".//apiname"> for <xsl:value-of select=".//apiname"/></xsl:if></h1-->
-                <!--/header-->
-                <xsl:apply-templates/>
+            <!--h1>Input / Output<xsl:if test=".//apiname"> for <xsl:value-of select=".//apiname"/></xsl:if></h1-->
+            <!--/header-->
+            <xsl:apply-templates/>
             <!--/section-->
         </xsl:if>
     </xsl:template>
@@ -551,14 +553,12 @@
                                 <xsl:attribute name="style" select="'padding-left: 20px;'"/>
                             </xsl:otherwise>
                         </xsl:choose>
-                        <xsl:value-of
-                            select="substring-before($href,'.ditamap')"
-                        />
+                        <xsl:value-of select="substring-before($href,'.ditamap')"/>
                     </a>
                 </xsl:when>
                 <xsl:otherwise>
                     <a href="{$href}" target="_blank" class="external-link"
-                        style="padding-left: 20px; background: transparent url({$pathToRoot}/external_link.png) no-repeat center left;">
+                        style="padding-left: 20px; background: transparent url({$pathToRoot}/img/external_link.png) no-repeat center left;">
                         <xsl:value-of select="$href"/>
                     </a>
                 </xsl:otherwise>

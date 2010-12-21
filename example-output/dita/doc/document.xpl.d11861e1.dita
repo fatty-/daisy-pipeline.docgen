@@ -1,0 +1,153 @@
+<reference id="d11861e1">
+   <title>p:declare-step</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">Main entry point for the documentation module.</xd:short>
+      </shortdesc>
+      <xd:detail xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">Use this script to document a module. The script will first instruct makedita.xpl
+            to generate documentation for the module, which will be in the DITA format. Then the
+            script instructs dita2html.xpl to use the resulting DITA files to generate documentation
+            in HTML. The documentation will be generated in the 'doc'-directory in the
+            module.</xd:detail>
+   </abstract>
+   <prolog>
+      <author type="creator">
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">Jostein Austvik Jacobsen</xd:name> (<xd:mailto xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">josteinaj@gmail.com</xd:mailto>), <xd:organization xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">NLB</xd:organization>
+      </author>
+      <copyright>
+         <copyryear year="2010"/>
+         <copyrholder>
+            <xd:holder xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:d="http://www.example.org/documenter">DAISY Consortium</xd:holder>
+         </copyrholder>
+      </copyright>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+         <othermeta name="version" content="0.1"/>
+         <othermeta name="xproc-version" content="1.0"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:declare-step</apiname>
+      </section>
+      <section outputclass="parameters xproc-options">
+         <title outputclass="io-header">Options</title>
+         <parml outputclass="xproc-options">
+            <plentry>
+               <pt>src</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>doc</pt>
+               <pt>true</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <related-links>
+      <linklist>
+         <title>Dependencies (p:import)</title>
+         <link href="http://xmlcalabash.com/extension/steps/library-1.0.xpl" format="ditamap"/>
+         <link format="ditamap" href="source2dita/makedita.xpl.ditamap"/>
+         <link format="ditamap" href="dita2output/dita2html.xpl.ditamap"/>
+         <linkinfo>These dependencies are derived from the p:import statements from the XProc
+                script.</linkinfo>
+      </linklist>
+      <linklist>
+         <title>Dependencies (p:document)</title>
+         <link format="ditamap" href="document.xpl.ditamap"/>
+         <linkinfo>These dependencies are derived from documents loaded with the p:document
+                step in the XProc script.</linkinfo>
+      </linklist>
+      <linklist>
+         <title>See also</title>
+         <link href="http://code.google.com/p/daisy-pipeline/" format="ditamap"/>
+         <linkinfo>These are related readings suggested by the author of the XProc
+                script.</linkinfo>
+      </linklist>
+   </related-links>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:declare-step version="1.0" xmlns:p="http://www.w3.org/ns/xproc" xmlns:d="http://www.example.org/documenter" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;p:documentation xd:target="parent"&gt;
+        &lt;xd:short&gt;Main entry point for the documentation module.&lt;/xd:short&gt;
+        &lt;xd:detail&gt;Use this script to document a module. The script will first instruct makedita.xpl
+            to generate documentation for the module, which will be in the DITA format. Then the
+            script instructs dita2html.xpl to use the resulting DITA files to generate documentation
+            in HTML. The documentation will be generated in the 'doc'-directory in the
+            module.&lt;/xd:detail&gt;
+        &lt;xd:author&gt;
+            &lt;xd:name&gt;Jostein Austvik Jacobsen&lt;/xd:name&gt;
+            &lt;xd:mailto&gt;josteinaj@gmail.com&lt;/xd:mailto&gt;
+            &lt;xd:organization&gt;NLB&lt;/xd:organization&gt;
+        &lt;/xd:author&gt;
+        &lt;xd:copyright&gt;
+            &lt;xd:year&gt;2010&lt;/xd:year&gt;
+            &lt;xd:holder&gt;DAISY Consortium&lt;/xd:holder&gt;
+        &lt;/xd:copyright&gt;
+        &lt;xd:version&gt;0.1&lt;/xd:version&gt;
+        &lt;xd:see&gt;http://code.google.com/p/daisy-pipeline/&lt;/xd:see&gt;
+        &lt;xd:option name="src"&gt;Path to the module you want to document.&lt;/xd:option&gt;
+        &lt;xd:option name="doc"&gt;Path to where you want to store the documentation.&lt;/xd:option&gt;
+    &lt;/p:documentation&gt;
+
+    &lt;p:option name="src" required="true"/&gt;
+    &lt;p:option name="doc" required="true"/&gt;
+
+    &lt;p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/&gt;
+    &lt;p:import href="source2dita/makedita.xpl"/&gt;
+    &lt;p:import href="dita2output/dita2html.xpl"/&gt;
+
+    &lt;p:variable name="srcPath" select="replace(replace(resolve-uri(resolve-uri('.',concat($src,'/'))),'^file:',''),'[^/]+$','')"/&gt;
+    &lt;p:variable name="docPath" select="replace(replace(resolve-uri(resolve-uri('.',concat($doc,'/'))),'^file:',''),'[^/]+$','')"/&gt;
+    &lt;p:variable name="selfPath" select="replace(replace(resolve-uri(resolve-uri('.',base-uri())),'^file:',''),'[^/]+$','')"&gt;
+        &lt;p:document href="document.xpl"/&gt;
+    &lt;/p:variable&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Make DITA files.&lt;/xd:short&gt;
+        &lt;xd:detail&gt;Iterates through all files in the module and makes DITA documents of
+            them.&lt;/xd:detail&gt;
+        &lt;xd:option name="inPath"&gt;Path to the module to be documented.&lt;/xd:option&gt;
+        &lt;xd:option name="tempPath"&gt;Resolved full path to a directory that can be used to store
+            temporary files.&lt;/xd:option&gt;
+        &lt;xd:option name="ditaPath"&gt;Resolved full path to the output directory where the DITA files
+            should be stored.&lt;/xd:option&gt;
+        &lt;xd:option name="selfPath"&gt;Path to the documentation module itself.&lt;/xd:option&gt;
+    &lt;/p:documentation&gt;
+    &lt;d:makeDita name="dita"&gt;
+        &lt;p:with-option name="srcPath" select="$srcPath"/&gt;
+        &lt;p:with-option name="tempPath" select="concat($docPath,'temp')"/&gt;
+        &lt;p:with-option name="ditaPath" select="concat($docPath,'dita')"/&gt;
+        &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
+    &lt;/d:makeDita&gt;
+
+    &lt;p:documentation xd:target="following"&gt;
+        &lt;xd:short&gt;Make XHTML5-documentation.&lt;/xd:short&gt;
+        &lt;xd:input port="source"&gt;List of files.&lt;/xd:input&gt;
+        &lt;xd:option name="ditaPath"&gt;Resolved full path to the directory where the DITA files are
+            stored.&lt;/xd:option&gt;
+        &lt;xd:option name="tempPath"&gt;Resolved full path to a directory that can be used to store
+            temporary files.&lt;/xd:option&gt;
+        &lt;xd:option name="htmlPath"&gt;Where to store the XHTML-documentation.&lt;/xd:option&gt;
+        &lt;xd:option name="selfPath"&gt;Path to the documentation module itself.&lt;/xd:option&gt;
+    &lt;/p:documentation&gt;
+    &lt;d:dita2html&gt;
+        &lt;p:input port="source"&gt;
+            &lt;p:pipe port="result" step="dita"/&gt;
+        &lt;/p:input&gt;
+        &lt;p:with-option name="title" select="replace($srcPath,'^.*/','')"/&gt;
+        &lt;p:with-option name="ditaPath" select="concat($docPath,'dita')"/&gt;
+        &lt;p:with-option name="tempPath" select="concat($docPath,'temp')"/&gt;
+        &lt;p:with-option name="htmlPath" select="concat($docPath,'html')"/&gt;
+        &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
+    &lt;/d:dita2html&gt;
+    &lt;p:sink/&gt;
+    
+&lt;/p:declare-step&gt;</codeblock>
+   </section>
+</reference>

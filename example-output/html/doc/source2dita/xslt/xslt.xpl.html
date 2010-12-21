@@ -68,12 +68,12 @@
                     section.sourcecode {
                         display: none;
                     }
-                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
                         position: relative;
                         top: -30px;
                         float: left;
                     }
-                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
                         position: absolute;
                         color: #006;
                         background-color: #EEF;
@@ -107,9 +107,9 @@
       </table>
    </section><span class="related-links ">
       <section class="linklist "><header class="title "><h1>Dependencies (p:import)</h1></header><p class="linkinfo ">These dependencies are derived from the p:import statements from the XProc
-                script.</p><p class="link "><a href="http://xmlcalabash.com/extension/steps/library-1.0.xpl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../../external_link.png) no-repeat center left;">http://xmlcalabash.com/extension/steps/library-1.0.xpl</a></p></section>
+                script.</p><p class="link "><a href="http://xmlcalabash.com/extension/steps/library-1.0.xpl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../../img/external_link.png) no-repeat center left;">http://xmlcalabash.com/extension/steps/library-1.0.xpl</a></p></section>
       <section class="linklist "><header class="title "><h1>Dependencies (p:document)</h1></header><p class="linkinfo ">These dependencies are derived from documents loaded with the p:document
-                step in the XProc script.</p><p class="link "><a href="xsDoc/xsdoc.xsl.html" style="padding-left: 20px; background: transparent url(../../img/xslt.png) no-repeat center left;">xsDoc/xsdoc.xsl</a></p></section>
+                step in the XProc script.</p><p class="link "><a href="xsdoc.xsl.html" style="padding-left: 20px; background: transparent url(../../img/xslt.png) no-repeat center left;">xsdoc.xsl</a></p></section>
    </span><section class="section sourcecode">
       <header class="title sourcecode-header"><h1>Source Code</h1></header>
       <pre class="codeblock"><code class="">&lt;p:library version="1.0" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:d="http://www.example.org/documenter" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
@@ -198,7 +198,7 @@
                             &lt;p:empty/&gt;
                         &lt;/p:input&gt;
                         &lt;p:input port="stylesheet"&gt;
-                            &lt;p:document href="xsDoc/xsdoc.xsl"/&gt;
+                            &lt;p:document href="xsdoc.xsl"/&gt;
                         &lt;/p:input&gt;
                     &lt;/p:xslt&gt;
 
@@ -499,7 +499,7 @@
       </section>
    <span class="related-links ">
       <section class="linklist "><header class="title "><h1>Dependencies (p:document)</h1></header><p class="linkinfo ">These dependencies are derived from documents loaded with the p:document
-                step in the XProc script.</p><p class="link "><a href="xsDoc/xsdoc.xsl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../../external_link.png) no-repeat center left;">xsDoc/xsdoc.xsl</a></p></section>
+                step in the XProc script.</p><p class="link "><a href="xsdoc.xsl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../../img/external_link.png) no-repeat center left;">xsdoc.xsl</a></p></section>
    </span><section class="section sourcecode">
       <header class="title sourcecode-header"><h1>Source Code</h1></header>
       <pre class="codeblock"><code class="">&lt;p:declare-step type="d:document-xslt-dita" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions"&gt;
@@ -536,7 +536,7 @@
                             &lt;p:empty/&gt;
                         &lt;/p:input&gt;
                         &lt;p:input port="stylesheet"&gt;
-                            &lt;p:document href="xsDoc/xsdoc.xsl"/&gt;
+                            &lt;p:document href="xsdoc.xsl"/&gt;
                         &lt;/p:input&gt;
                     &lt;/p:xslt&gt;
 

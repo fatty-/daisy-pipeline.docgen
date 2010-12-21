@@ -221,7 +221,7 @@
             </p:input>
         </p:identity>
         <p:sink/>
-        
+
         <p:identity name="requestTemplate">
             <p:input port="source">
                 <p:inline>
@@ -229,125 +229,136 @@
                 </p:inline>
             </p:input>
         </p:identity>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/directory.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/directory.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/directory.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/subfile.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/subfile.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/subfile.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/superdir.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/superdir.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/superdir.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/lastsubfile.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/lastsubfile.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/lastsubfile.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/lastsuperdirs.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/lastsuperdirs.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/lastsuperdirs.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xproc.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/xproc.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/xproc.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xslt.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/xslt.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/xslt.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xquery.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/xquery.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/xquery.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/external_link.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/external_link.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
             <p:with-option name="href" select="concat($htmlPath,'/img/external_link.png')"/>
         </p:store>
-        
+
         <p:add-attribute match="c:request" attribute-name="href">
             <p:input port="source">
                 <p:pipe port="result" step="requestTemplate"/>
             </p:input>
-            <p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/generated-using-pipeline2.png')"/>
+            <p:with-option name="attribute-value"
+                select="concat($selfPath,'/resources/images/generated-using-pipeline2.png')"/>
         </p:add-attribute>
         <p:http-request/>
         <p:store cx:decode="true">
             <p:input port="source" select="/c:body"/>
-            <p:with-option name="href" select="concat($htmlPath,'/img/generated-using-pipeline2.png')"/>
+            <p:with-option name="href"
+                select="concat($htmlPath,'/img/generated-using-pipeline2.png')"/>
         </p:store>
     </p:group>
 

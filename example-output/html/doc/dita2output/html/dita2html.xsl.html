@@ -68,12 +68,12 @@
                     section.sourcecode {
                         display: none;
                     }
-                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
                         position: relative;
                         top: -30px;
                         float: left;
                     }
-                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
                         position: absolute;
                         color: #006;
                         background-color: #EEF;
@@ -149,7 +149,7 @@
       </section>
    <span class="related-links ">
       <section class="linklist "><header class="title "><h1>See also</h1></header><p class="linkinfo ">These are related readings suggested by the author of the XSLT
-                stylesheet.</p><p class="link "><a href="http://code.google.com/p/daisy-pipeline/" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../../external_link.png) no-repeat center left;">http://code.google.com/p/daisy-pipeline/</a></p></section>
+                stylesheet.</p><p class="link "><a href="http://code.google.com/p/daisy-pipeline/" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../../img/external_link.png) no-repeat center left;">http://code.google.com/p/daisy-pipeline/</a></p></section>
    </span><section class="section sourcecode">
       <header class="title sourcecode-header"><h1>Source Code</h1></header>
       <pre class="codeblock"><code class="">&lt;xsl:stylesheet exclude-result-prefixes="xd" version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
@@ -259,12 +259,12 @@
                     section.sourcecode {
                         display: none;
                     }
-                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
                         position: relative;
                         top: -30px;
                         float: left;
                     }
-                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
                         position: absolute;
                         color: #006;
                         background-color: #EEF;
@@ -528,9 +528,9 @@
             &lt;!--section class="refbody {@outputclass}"&gt;
                 &lt;header class="refbody-header"&gt;
                     &lt;h1&gt;Parameters&lt;/h1--&gt;
-                    &lt;!--h1&gt;Input / Output&lt;xsl:if test=".//apiname"&gt; for &lt;xsl:value-of select=".//apiname"/&gt;&lt;/xsl:if&gt;&lt;/h1--&gt;
-                &lt;!--/header--&gt;
-                &lt;xsl:apply-templates/&gt;
+            &lt;!--h1&gt;Input / Output&lt;xsl:if test=".//apiname"&gt; for &lt;xsl:value-of select=".//apiname"/&gt;&lt;/xsl:if&gt;&lt;/h1--&gt;
+            &lt;!--/header--&gt;
+            &lt;xsl:apply-templates/&gt;
             &lt;!--/section--&gt;
         &lt;/xsl:if&gt;
     &lt;/xsl:template&gt;
@@ -693,7 +693,7 @@
                     &lt;/a&gt;
                 &lt;/xsl:when&gt;
                 &lt;xsl:otherwise&gt;
-                    &lt;a href="{$href}" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url({$pathToRoot}/external_link.png) no-repeat center left;"&gt;
+                    &lt;a href="{$href}" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url({$pathToRoot}/img/external_link.png) no-repeat center left;"&gt;
                         &lt;xsl:value-of select="$href"/&gt;
                     &lt;/a&gt;
                 &lt;/xsl:otherwise&gt;
@@ -807,12 +807,12 @@
                     section.sourcecode {
                         display: none;
                     }
-                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
                         position: relative;
                         top: -30px;
                         float: left;
                     }
-                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
                         position: absolute;
                         color: #006;
                         background-color: #EEF;
@@ -1085,9 +1085,9 @@
             &lt;!--section class="refbody {@outputclass}"&gt;
                 &lt;header class="refbody-header"&gt;
                     &lt;h1&gt;Parameters&lt;/h1--&gt;
-                    &lt;!--h1&gt;Input / Output&lt;xsl:if test=".//apiname"&gt; for &lt;xsl:value-of select=".//apiname"/&gt;&lt;/xsl:if&gt;&lt;/h1--&gt;
-                &lt;!--/header--&gt;
-                &lt;xsl:apply-templates/&gt;
+            &lt;!--h1&gt;Input / Output&lt;xsl:if test=".//apiname"&gt; for &lt;xsl:value-of select=".//apiname"/&gt;&lt;/xsl:if&gt;&lt;/h1--&gt;
+            &lt;!--/header--&gt;
+            &lt;xsl:apply-templates/&gt;
             &lt;!--/section--&gt;
         &lt;/xsl:if&gt;
     &lt;/xsl:template&gt;</code></pre>
@@ -1259,7 +1259,7 @@
                     &lt;/a&gt;
                 &lt;/xsl:when&gt;
                 &lt;xsl:otherwise&gt;
-                    &lt;a href="{$href}" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url({$pathToRoot}/external_link.png) no-repeat center left;"&gt;
+                    &lt;a href="{$href}" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url({$pathToRoot}/img/external_link.png) no-repeat center left;"&gt;
                         &lt;xsl:value-of select="$href"/&gt;
                     &lt;/a&gt;
                 &lt;/xsl:otherwise&gt;
