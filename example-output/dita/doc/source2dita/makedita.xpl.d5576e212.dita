@@ -1,0 +1,52 @@
+<reference id="d5576e212">
+   <title>p:for-each - resolve-relative-map-paths</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                   xmlns:d="http://www.example.org/documenter"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Resolves relative map paths.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>resolve-relative-map-paths</apiname>
+      </section>
+      <section outputclass="parameters xproc-outputs">
+         <title outputclass="io-header">Outputs</title>
+         <parml outputclass="xproc-outputs">
+            <plentry>
+               <pt>result</pt>
+               <pt>true</pt>
+               <pt>true</pt>
+               <pt>result@resolve-relative-map-paths-done</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:for-each name="resolve-relative-map-paths" xmlns:p="http://www.w3.org/ns/xproc"&gt;
+            &lt;p:output port="result" primary="true" sequence="true"&gt;
+                &lt;p:pipe port="result" step="resolve-relative-map-paths-done"/&gt;
+            &lt;/p:output&gt;
+
+            &lt;p:iteration-source select="/c:result/c:result"/&gt;
+
+            &lt;p:add-attribute match="/c:result"&gt;
+                &lt;p:with-option name="attribute-name" select="'rel'"/&gt;
+                &lt;p:with-option name="attribute-value" select="substring-after(resolve-uri(.), concat($ditaPath,'/'))"/&gt;
+            &lt;/p:add-attribute&gt;
+
+            &lt;p:identity name="resolve-relative-map-paths-done"/&gt;
+        &lt;/p:for-each&gt;</codeblock>
+   </section>
+</reference>

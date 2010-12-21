@@ -1,7 +1,7 @@
 <map title="source2dita/xproc/xproc.xpl">
-   <topicref format="dita" href="xproc.xpl.d92e1.dita">
-      <topicref href="xproc.xpl.d92e81.dita" format="dita"/>
-      <topicref href="xproc.xpl.d92e276.dita" format="dita"/>
-      <topicref href="xproc.xpl.d92e420.dita" format="dita"/>
+   <topicref format="dita" href="xproc.xpl.d80e1.dita">
+      <topicref href="xproc.xpl.d80e81.dita" format="dita"/>
+      <topicref href="xproc.xpl.d80e276.dita" format="dita"/>
+      <topicref href="xproc.xpl.d80e420.dita" format="dita"/>
    </topicref>
 </map>

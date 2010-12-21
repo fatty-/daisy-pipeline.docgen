@@ -1,0 +1,133 @@
+<reference id="d21853e63">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Matches the top element and creates the main HTML structure.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template match="/map" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;style type="text/css"&gt;
+                    body {
+                        font-family: futura, helvetica, arial, sans-serif;
+                    }
+                    section, article, header, footer, nav, aside, hgroup {
+                        display: block;
+                    }
+                    section.reference {
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius:10px;
+                        -moz-border-radius:10px;
+                        margin: 5px;
+                        padding: 20px;
+                        border-color: #CCC;
+                        background-color: #F9F9F9;
+                    }
+                    .child-topics section.reference {
+                        border-style: solid;
+                        border-width: 2px;
+                        border-radius:10px;
+                        -moz-border-radius:10px;
+                        margin: 20px;
+                        padding: 20px;
+                        border-color: #CCC;
+                        background-color: #EEF;
+                    }
+                    section.child-topics {
+                        margin-left: 25px;
+                    }
+                    .main-header h1 {
+                        width: 100%;
+                        border-style: solid;
+                        border-width: 0px 0px 1px 0px;
+                        font-size: 26px;
+                    }
+                    table {
+                        margin: 10px;
+                    }
+                    table.parml {
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: white;
+                        background-color: #EEF;
+                    }
+                    tr.plentry {
+                        border-style: dotted;
+                        border-width: 1px;
+                    }
+                    td.pt td.pd {
+                        padding: 5px;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius:4px;
+                    }
+                    .reference h1 {
+                        font-size: 22px;
+                        color: #006;
+                    }
+                    section.abstract, section.prolog, section.parameters, section.linklist, section.sourcecode {
+                        border-style: dotted;
+                        border-width: 1px;
+                        border-radius: 0px;
+                        margin: 10px;
+                        padding: 10px 10px 50px 10px;
+                        background-color: #F5F5FF;
+                    }
+                    section.sourcecode {
+                        display: none;
+                    }
+                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
+                        position: relative;
+                        top: -30px;
+                        float: left;
+                    }
+                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
+                        position: absolute;
+                        color: #006;
+                        background-color: #EEF;
+                        font-size: 18px;
+                        white-space: nowrap;
+                    }
+                    header.subheader {
+                        position: static;
+                        top: 0px;
+                        float: none;
+                    }
+                    .subheader h1 {
+                        color: #006;
+                        background-color: transparent;
+                        font-size: 16px;
+                    }&lt;/style&gt;
+            &lt;/head&gt;
+            &lt;header class="main-header"&gt;
+                &lt;xsl:if test="count(//*[@name='programming-language'])&gt;0"&gt;
+                    &lt;xsl:attribute name="class"&gt;
+                        &lt;xsl:value-of select="concat('main-header ',//*[@name='programming-language'][1]/@content)"/&gt;
+                    &lt;/xsl:attribute&gt;
+                &lt;/xsl:if&gt;
+                &lt;h1&gt;
+                    &lt;xsl:value-of select="@title"/&gt;
+                &lt;/h1&gt;
+            &lt;/header&gt;
+
+            &lt;xsl:apply-templates/&gt;
+        &lt;/html&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

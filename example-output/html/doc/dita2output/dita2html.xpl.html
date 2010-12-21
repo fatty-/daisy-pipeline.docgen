@@ -68,12 +68,12 @@
                     section.sourcecode {
                         display: none;
                     }
-                    header.abstract-header, header.prolog-header, header.io-header, .linklist header, header.sourcecode-header {
+                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
                         position: relative;
                         top: -30px;
                         float: left;
                     }
-                    .abstract-header h1, .prolog-header h1, .io-header h1, .linklist h1, .sourcecode-header h1 {
+                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
                         position: absolute;
                         color: #006;
                         background-color: #EEF;
@@ -185,12 +185,12 @@
       </section>
    <span class="related-links ">
       <section class="linklist "><header class="title "><h1>Dependencies (p:document)</h1></header><p class="linkinfo ">These dependencies are derived from documents loaded with the p:document
-                step in the XProc script.</p><p class="link "><a href="html/dita2html.xsl.html" style="padding-left: 20px; background: transparent url(../img/xslt.png) no-repeat center left;">html/dita2html.xsl</a></p><p class="link "><a href="html/ditamaps2html.xsl.html" style="padding-left: 20px; background: transparent url(../img/xslt.png) no-repeat center left;">html/ditamaps2html.xsl</a></p></section>
+                step in the XProc script.</p><p class="link "><a href="html/dita2html.xsl.html" style="padding-left: 20px; background: transparent url(../img/xslt.png) no-repeat center left;">html/dita2html.xsl</a></p><p class="link "><a href="html/dita2htmltoc.xsl.html" style="padding-left: 20px; background: transparent url(../img/xslt.png) no-repeat center left;">html/dita2htmltoc.xsl</a></p></section>
       <section class="linklist "><header class="title "><h1>See also</h1></header><p class="linkinfo ">These are related readings suggested by the author of the XProc
-                script.</p><p class="link "><a href="http://code.google.com/p/daisy-pipeline/" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../external_link.png) no-repeat center left;">http://code.google.com/p/daisy-pipeline/</a></p></section>
+                script.</p><p class="link "><a href="http://code.google.com/p/daisy-pipeline/" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../img/external_link.png) no-repeat center left;">http://code.google.com/p/daisy-pipeline/</a></p></section>
    </span><section class="section sourcecode">
       <header class="title sourcecode-header"><h1>Source Code</h1></header>
-      <pre class="codeblock"><code class="">&lt;p:declare-step version="1.0" type="d:dita2html" xmlns:p="http://www.w3.org/ns/xproc" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+      <pre class="codeblock"><code class="">&lt;p:declare-step version="1.0" type="d:dita2html" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
 
     &lt;p:documentation xd:target="parent"&gt;
         &lt;xd:short&gt;Make XHTML-documentation from DITA files.&lt;/xd:short&gt;
@@ -320,7 +320,7 @@
         &lt;p:xslt name="filelist"&gt;
             &lt;p:with-param name="title" select="$title"/&gt;
             &lt;p:input port="stylesheet"&gt;
-                &lt;p:document href="html/ditamaps2html.xsl"/&gt;
+                &lt;p:document href="html/dita2htmltoc.xsl"/&gt;
             &lt;/p:input&gt;
         &lt;/p:xslt&gt;
     &lt;/p:group&gt;
@@ -399,7 +399,6 @@
 
     &lt;p:documentation xd:target="following"&gt;
         &lt;xd:short&gt;Copy images to output.&lt;/xd:short&gt;
-        &lt;xd:detail&gt;TODO: Change these p:exec's into p:data+p:store&lt;/xd:detail&gt;
     &lt;/p:documentation&gt;
     &lt;p:group&gt;
         &lt;p:identity&gt;
@@ -408,94 +407,134 @@
             &lt;/p:input&gt;
         &lt;/p:identity&gt;
         &lt;p:sink/&gt;
-        &lt;p:exec command="mkdir"&gt;
+
+        &lt;p:identity name="requestTemplate"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:inline&gt;
+                    &lt;c:request method="GET" detailed="true"/&gt;
+                &lt;/p:inline&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($htmlPath,'/img')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+        &lt;/p:identity&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/directory.png ',$htmlPath,'/img/directory.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/directory.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/directory.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/subfile.png ',$htmlPath,'/img/subfile.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/subfile.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/subfile.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/superdir.png ',$htmlPath,'/img/superdir.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/superdir.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/superdir.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/lastsubfile.png ',$htmlPath,'/img/lastsubfile.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/lastsubfile.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/lastsubfile.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/lastsuperdirs.png ',$htmlPath,'/img/lastsuperdirs.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/lastsuperdirs.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/lastsuperdirs.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xproc.png ',$htmlPath,'/img/xproc.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xproc.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/xproc.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xslt.png ',$htmlPath,'/img/xslt.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xslt.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/xslt.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xquery.png ',$htmlPath,'/img/xquery.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xquery.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/xquery.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/external_link.png ',$htmlPath,'/img/external_link.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/external_link.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/external_link.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/generated-using-pipeline2.png ',$htmlPath,'/img/generated-using-pipeline2.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/generated-using-pipeline2.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/generated-using-pipeline2.png')"/&gt;
+        &lt;/p:store&gt;
     &lt;/p:group&gt;
 
     &lt;p:identity&gt;
@@ -613,7 +652,7 @@
       </section>
    <span class="related-links ">
       <section class="linklist "><header class="title "><h1>Dependencies (p:document)</h1></header><p class="linkinfo ">These dependencies are derived from documents loaded with the p:document
-                step in the XProc script.</p><p class="link "><a href="html/dita2html.xsl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../external_link.png) no-repeat center left;">html/dita2html.xsl</a></p></section>
+                step in the XProc script.</p><p class="link "><a href="html/dita2html.xsl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../img/external_link.png) no-repeat center left;">html/dita2html.xsl</a></p></section>
    </span><section class="section sourcecode">
       <header class="title sourcecode-header"><h1>Source Code</h1></header>
       <pre class="codeblock"><code class="">&lt;p:xslt xmlns:p="http://www.w3.org/ns/xproc"&gt;
@@ -658,7 +697,7 @@
             files.
       </p><span class="related-links ">
       <section class="linklist "><header class="title "><h1>Dependencies (p:document)</h1></header><p class="linkinfo ">These dependencies are derived from documents loaded with the p:document
-                step in the XProc script.</p><p class="link "><a href="html/ditamaps2html.xsl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../external_link.png) no-repeat center left;">html/ditamaps2html.xsl</a></p></section>
+                step in the XProc script.</p><p class="link "><a href="html/dita2htmltoc.xsl" target="_blank" class="external-link" style="padding-left: 20px; background: transparent url(../img/external_link.png) no-repeat center left;">html/dita2htmltoc.xsl</a></p></section>
    </span><section class="section sourcecode">
       <header class="title sourcecode-header"><h1>Source Code</h1></header>
       <pre class="codeblock"><code class="">&lt;p:group xmlns:p="http://www.w3.org/ns/xproc"&gt;
@@ -693,7 +732,7 @@
         &lt;p:xslt name="filelist"&gt;
             &lt;p:with-param name="title" select="$title"/&gt;
             &lt;p:input port="stylesheet"&gt;
-                &lt;p:document href="html/ditamaps2html.xsl"/&gt;
+                &lt;p:document href="html/dita2htmltoc.xsl"/&gt;
             &lt;/p:input&gt;
         &lt;/p:xslt&gt;
     &lt;/p:group&gt;</code></pre>
@@ -865,106 +904,143 @@
    </section></section>
       <section class="reference XProc "><header class="title "><h1>p:group</h1></header><p class="shortdesc ">
          Copy images to output.
-      </p><section class="abstract "><header class="abstract-header"><h1>Description</h1></header><p>
-      
-      <xd:detail xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:d="http://www.example.org/documenter">TODO: Change these p:exec's into p:data+p:store</xd:detail>
-   </p></section><section class="section sourcecode">
+      </p><section class="section sourcecode">
       <header class="title sourcecode-header"><h1>Source Code</h1></header>
-      <pre class="codeblock"><code class="">&lt;p:group xmlns:p="http://www.w3.org/ns/xproc"&gt;
+      <pre class="codeblock"><code class="">&lt;p:group xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:c="http://www.w3.org/ns/xproc-step"&gt;
         &lt;p:identity&gt;
             &lt;p:input port="source"&gt;
                 &lt;p:pipe port="result" step="index"/&gt;
             &lt;/p:input&gt;
         &lt;/p:identity&gt;
         &lt;p:sink/&gt;
-        &lt;p:exec command="mkdir"&gt;
+
+        &lt;p:identity name="requestTemplate"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:inline&gt;
+                    &lt;c:request method="GET" detailed="true"/&gt;
+                &lt;/p:inline&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($htmlPath,'/img')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+        &lt;/p:identity&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/directory.png ',$htmlPath,'/img/directory.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/directory.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/directory.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/subfile.png ',$htmlPath,'/img/subfile.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/subfile.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/subfile.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/superdir.png ',$htmlPath,'/img/superdir.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/superdir.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/superdir.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/lastsubfile.png ',$htmlPath,'/img/lastsubfile.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/lastsubfile.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/lastsubfile.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/lastsuperdirs.png ',$htmlPath,'/img/lastsuperdirs.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/lastsuperdirs.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/lastsuperdirs.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xproc.png ',$htmlPath,'/img/xproc.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xproc.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/xproc.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xslt.png ',$htmlPath,'/img/xslt.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xslt.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/xslt.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/xquery.png ',$htmlPath,'/img/xquery.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/xquery.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/xquery.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/external_link.png ',$htmlPath,'/img/external_link.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
-        &lt;p:exec command="cp"&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/external_link.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/external_link.png')"/&gt;
+        &lt;/p:store&gt;
+
+        &lt;p:add-attribute match="c:request" attribute-name="href"&gt;
             &lt;p:input port="source"&gt;
-                &lt;p:empty/&gt;
+                &lt;p:pipe port="result" step="requestTemplate"/&gt;
             &lt;/p:input&gt;
-            &lt;p:with-option name="args" select="concat($selfPath,'/resources/images/generated-using-pipeline2.png ',$htmlPath,'/img/generated-using-pipeline2.png')"/&gt;
-            &lt;p:with-option name="result-is-xml" select="false()"/&gt;
-        &lt;/p:exec&gt;
-        &lt;p:sink/&gt;
+            &lt;p:with-option name="attribute-value" select="concat($selfPath,'/resources/images/generated-using-pipeline2.png')"/&gt;
+        &lt;/p:add-attribute&gt;
+        &lt;p:http-request/&gt;
+        &lt;p:store cx:decode="true"&gt;
+            &lt;p:input port="source" select="/c:body"/&gt;
+            &lt;p:with-option name="href" select="concat($htmlPath,'/img/generated-using-pipeline2.png')"/&gt;
+        &lt;/p:store&gt;
     &lt;/p:group&gt;</code></pre>
    </section></section>
    </section>

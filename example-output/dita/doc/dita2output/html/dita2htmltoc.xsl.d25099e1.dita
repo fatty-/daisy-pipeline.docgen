@@ -1,0 +1,242 @@
+<reference id="d25099e1">
+   <title>xsl:stylesheet</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:c="http://www.w3.org/ns/xproc-step">Transforms the input list of DITA files to a table of contents listing all
+            files.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <author type="creator">
+         <xd:name xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:c="http://www.w3.org/ns/xproc-step">Jostein Austvik Jacobsen</xd:name> (<xd:mailto xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:c="http://www.w3.org/ns/xproc-step">josteinaj@gmail.com</xd:mailto>), <xd:organization xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:c="http://www.w3.org/ns/xproc-step">NLB</xd:organization>
+      </author>
+      <copyright>
+         <copyryear year="2010"/>
+         <copyrholder>
+            <xd:holder xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:c="http://www.w3.org/ns/xproc-step">DAISY Consortium</xd:holder>
+         </copyrholder>
+      </copyright>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+         <othermeta name="version" content="0.1"/>
+         <othermeta name="xslt-version" content="2.0"/>
+         <othermeta name="xpath-version" content="2.0"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:stylesheet</apiname>
+      </section>
+      <section outputclass="parameters xslt-params">
+         <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+         <parml outputclass="xslt-params">
+            <plentry>
+               <pt>title</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>no</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+      <section outputclass="parameters xslt-outputs">
+         <title outputclass="io-header">Outputs (xsl:output)</title>
+         <parml outputclass="xslt-outputs">
+            <pt/>
+            <pt>html</pt>
+            <pt>yes</pt>
+            <pt/>
+            <pt/>
+            <pt>yes</pt>
+            <pt>UTF-8</pt>
+            <pt>text/html</pt>
+            <pt>yes</pt>
+            <pt>omit</pt>
+            <pt/>
+            <pd/>
+         </parml>
+      </section>
+   </refbody>
+   <related-links>
+      <linklist>
+         <title>See also</title>
+         <link href="http://code.google.com/p/daisy-pipeline/" format="ditamap"/>
+         <linkinfo>These are related readings suggested by the author of the XSLT
+                stylesheet.</linkinfo>
+      </linklist>
+   </related-links>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:stylesheet exclude-result-prefixes="xd" version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+    &lt;xd:doc target="parent"&gt;
+        &lt;xd:short&gt;Transforms the input list of DITA files to a table of contents listing all
+            files.&lt;/xd:short&gt;
+        &lt;xd:author&gt;
+            &lt;xd:name&gt;Jostein Austvik Jacobsen&lt;/xd:name&gt;
+            &lt;xd:mailto&gt;josteinaj@gmail.com&lt;/xd:mailto&gt;
+            &lt;xd:organization&gt;NLB&lt;/xd:organization&gt;
+        &lt;/xd:author&gt;
+        &lt;xd:copyright&gt;
+            &lt;xd:year&gt;2010&lt;/xd:year&gt;
+            &lt;xd:holder&gt;DAISY Consortium&lt;/xd:holder&gt;
+        &lt;/xd:copyright&gt;
+        &lt;xd:version&gt;0.1&lt;/xd:version&gt;
+        &lt;xd:see&gt;http://code.google.com/p/daisy-pipeline/&lt;/xd:see&gt;
+    &lt;/xd:doc&gt;
+
+    &lt;xsl:output encoding="UTF-8" method="html" omit-xml-declaration="yes" indent="yes"/&gt;
+
+    &lt;xsl:param name="title" required="yes"/&gt;
+
+    &lt;xd:doc target="following"&gt;
+        &lt;xd:short&gt;Identity template&lt;/xd:short&gt;
+    &lt;/xd:doc&gt;
+    &lt;xsl:template match="@*|node()"&gt;
+        &lt;xsl:copy&gt;
+            &lt;xsl:apply-templates select="@*|node()"/&gt;
+        &lt;/xsl:copy&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xd:doc target="following"&gt;
+        &lt;xd:short&gt;Create main HTML structure.&lt;/xd:short&gt;
+    &lt;/xd:doc&gt;
+    &lt;xsl:template match="/c:result"&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;style type="text/css"&gt;
+                    body {
+                        font-family: futura, helvetica, arial, sans-serif;
+                    }
+                    section, article, header, footer, nav, aside, hgroup {
+                        display: block;
+                    }
+                    ul.toc li {
+                        background-position: 0% 50%;
+                        background-repeat: no-repeat;
+                        font-size: 85%;
+                        list-style-type: none;
+                        margin: 1px 0px 1px 1px;
+                        padding: 1px 0px 1px 11px;
+                    }
+                    ul.toc li a {
+                        text-decoration: none;
+                    }
+                    a, a:visited, a:hover {
+                        color: #009;
+                    }&lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;header class="filelist-header"&gt;
+                    &lt;h1&gt;
+                        &lt;xsl:value-of select="$title"/&gt;
+                    &lt;/h1&gt;
+                &lt;/header&gt;
+                &lt;ul class="toc"&gt;
+                    &lt;xsl:for-each select="c:result"&gt;
+                        &lt;!-- for each source file alphabetically --&gt;
+                        &lt;xsl:sort select="@rel"/&gt;
+                        &lt;!-- split into parent directories ($parts[1..last()-1]) and filename ($parts[last()]) --&gt;
+                        &lt;xsl:variable name="parts" select="tokenize(@rel,'/')"/&gt;
+                        &lt;xsl:variable name="element" select="."/&gt;
+                        &lt;xsl:for-each select="$parts"&gt;
+                            &lt;!-- path to current parent directory --&gt;
+                            &lt;xsl:variable name="dir" select="string-join(subsequence($parts,1,position()),'/')"/&gt;
+                            &lt;!-- check if this is the last file in the parent folder --&gt;
+                            &lt;!--xsl:variable name="isLastSubFile"
+                                select="if (position()=1) then false() else count($element/following-sibling::*[matches(@rel,concat('^',string-join(subsequence($parts,1,position()-1),'/')))])=0"/&gt;
+                            &lt;xsl:variable name="isLastSuperDir" select="false()"/--&gt;
+                            &lt;xsl:choose&gt;
+                                &lt;xsl:when test="position()=last()"&gt;
+                                    &lt;!-- $parts[last()] is the filename --&gt;
+                                    &lt;xsl:apply-templates select="$element"&gt;
+                                        &lt;xsl:with-param name="indent" select="position()"/&gt;
+                                        &lt;!--xsl:with-param name="isLastSubFile" select="$isLastSubFile"/&gt;
+                                        &lt;xsl:with-param name="isLastSuperDir"
+                                            select="$isLastSuperDir"/--&gt;
+                                    &lt;/xsl:apply-templates&gt;
+                                &lt;/xsl:when&gt;
+                                &lt;xsl:when test="count($element/preceding-sibling::*[matches(@rel,concat('^',$dir))])=0"&gt;
+                                    &lt;xsl:apply-templates select="$element"&gt;
+                                        &lt;xsl:with-param name="indent" select="position()"/&gt;
+                                        &lt;xsl:with-param name="directory" select="."/&gt;
+                                        &lt;!--xsl:with-param name="isLastSubFile" select="$isLastSubFile"/&gt;
+                                        &lt;xsl:with-param name="isLastSuperDir"
+                                            select="$isLastSuperDir"/--&gt;
+                                    &lt;/xsl:apply-templates&gt;
+                                &lt;/xsl:when&gt;
+                            &lt;/xsl:choose&gt;
+                        &lt;/xsl:for-each&gt;
+                    &lt;/xsl:for-each&gt;
+                &lt;/ul&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xd:doc target="following"&gt;
+        &lt;xd:short&gt;Makes link to the documentaion for each file.&lt;/xd:short&gt;
+    &lt;/xd:doc&gt;
+    &lt;xsl:template match="c:result"&gt;
+        &lt;xsl:param name="indent" select="1"/&gt;
+        &lt;xsl:param name="directory" select="''"/&gt;
+        &lt;li&gt;
+            &lt;xsl:choose&gt;
+                &lt;xsl:when test="$directory"&gt;
+                    &lt;xsl:attribute name="style" select="concat('background-image: url(img/directory.png); text-indent: ',(20*$indent),'px;')"/&gt;
+                    &lt;!--xsl:variable name="parts" select="tokenize(@rel,'/')"/&gt;
+                    &lt;xsl:variable name="element" select="."/&gt;
+                    &lt;xsl:for-each select="$parts"&gt;
+                        &lt;xsl:choose&gt;
+                            &lt;xsl:when test="$indent = 1 or position() = 1"/&gt;
+                            &lt;xsl:when test="position() = 1"/&gt;
+                            &lt;xsl:when test="position() &amp;lt; $indent"&gt;
+                                &lt;xsl:variable name="superPart"
+                                    select="string-join(subsequence($parts,1,position()-1),'/')"/&gt;
+                                &lt;xsl:variable name="subPart"
+                                    select="string-join(subsequence($parts,1,position()),'/')"/&gt;
+                                &lt;xsl:variable name="isLastPart"
+                                    select="count($element/following-sibling::*[starts-with(@rel,$superPart) and not(starts-with(@rel,$subPart))])=0"/&gt;
+                                &lt;xsl:choose&gt;
+                                    &lt;xsl:when test="$isLastPart"&gt;
+                                        &lt;img src="img/lastsuperdirs.png"/&gt;
+                                    &lt;/xsl:when&gt;
+                                    &lt;xsl:otherwise&gt;
+                                        &lt;img src="img/superdir.png"/&gt;
+                                    &lt;/xsl:otherwise&gt;
+                                &lt;/xsl:choose&gt;
+                            &lt;/xsl:when&gt;
+                        &lt;/xsl:choose&gt;
+                    &lt;/xsl:for-each--&gt;
+                    &lt;!--xsl:if test="$indent&gt;1"&gt;
+                        &lt;xsl:choose&gt;
+                            &lt;xsl:when
+                                test="count($element/following-sibling::*[starts-with(@rel,string-join(subsequence($parts,1,$indent -1),'/')) and not(starts-with(@rel,string-join(subsequence($parts,1,$indent),'/')))])=0"&gt;
+                                &lt;img src="img/lastsubfile.png"/&gt;
+                            &lt;/xsl:when&gt;
+                            &lt;xsl:otherwise&gt;
+                                &lt;img src="img/subfile.png"/&gt;
+                            &lt;/xsl:otherwise&gt;
+                        &lt;/xsl:choose&gt;
+                        &lt;/xsl:if--&gt;
+                    &lt;xsl:value-of select="$directory"/&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:otherwise&gt;
+                    &lt;xsl:attribute name="style" select="concat('background-image: url(img/',@type,'.png); text-indent: ',(20*$indent),'px;')"/&gt;
+                    &lt;!--xsl:for-each select="1 to $indent"&gt;
+                        &lt;img src="img/superdir.png"/&gt;
+                    &lt;/xsl:for-each&gt;
+                    &lt;xsl:if test="$indent&gt;0"&gt;
+                        &lt;img&gt;
+                            rel="&lt;xsl:value-of select="@rel"/&gt;"
+                        &lt;/img&gt;
+                    &lt;/xsl:if--&gt;
+                    &lt;a href="doc/{@rel}.html" target="content"&gt;
+                        &lt;xsl:value-of select="@name"/&gt;
+                    &lt;/a&gt;
+                &lt;/xsl:otherwise&gt;
+            &lt;/xsl:choose&gt;
+        &lt;/li&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</codeblock>
+   </section>
+</reference>

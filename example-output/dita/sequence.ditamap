@@ -1,6 +1,5 @@
 <map title="">
    <topicref href="doc/source2dita/xproc/xproc.xpl.ditamap" format="ditamap"/>
-   <topicref href="doc/source2dita/xquery/xquery.xpl.ditamap" format="ditamap"/>
    <topicref href="doc/source2dita/fix-cross-references.xpl.ditamap" format="ditamap"/>
    <topicref href="doc/source2dita/xslt/xslt.xpl.ditamap" format="ditamap"/>
    <topicref href="doc/source2dita/makedita.xpl.ditamap" format="ditamap"/>
@@ -8,9 +7,9 @@
    <topicref href="doc/lib/filelist.xpl.ditamap" format="ditamap"/>
    <topicref href="doc/lib/recursive-directory-list.xpl.ditamap" format="ditamap"/>
    <topicref href="doc/document.xpl.ditamap" format="ditamap"/>
-   <topicref href="doc/source2dita/xproc/xpDoc/xpdoc.xsl.ditamap" format="ditamap"/>
-   <topicref href="doc/source2dita/xslt/xsDoc/xsdoc.xsl.ditamap" format="ditamap"/>
-   <topicref href="doc/dita2output/html/ditamaps2html.xsl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/xproc/xpdoc.xsl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/xslt/xsdoc.xsl.ditamap" format="ditamap"/>
    <topicref href="doc/dita2output/html/dita2html.xsl.ditamap" format="ditamap"/>
+   <topicref href="doc/dita2output/html/dita2htmltoc.xsl.ditamap" format="ditamap"/>
    <topicref href="doc/lib/xml-to-string.xsl.ditamap" format="ditamap"/>
 </map>
