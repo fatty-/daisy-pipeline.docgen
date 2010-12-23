@@ -1,9 +1,41 @@
-= Documentation Module v0.2 =
+###############################################################################
+###             DAISY Pipeline 2 - Documentation Generator                  ###
+###############################################################################
 
-To run this module, execute the XProc script at documenter-0.2/document.xpl.
-It takes two options; src and doc, both of which are required.
-src is the path to the module (folder) to be documented.
-doc is the path to the folder to store the output documentation in.
 
-Run with calabash like this:
-calabash documenter-0.2/document.xpl src=documenter-0.2 doc=output
+
+About the DocGen tool
+-------------------------------------------------------------------------------
+
+DocGen is a tool used to generate developer-friendly documentation out of
+inline documentation markup in the Pipeline 2 source files.
+
+DocGen uses DITA as an intermediary format for the documentation. The generated
+DITA content can then be converted to HTML, and other output formats (e.g. PDF,
+Micsoft CHM, Eclipse Help, etc) can be added in the future.
+
+For more information on the ongoing development, see the framework
+documentation wiki page:
+   http://code.google.com/p/daisy-pipeline/wiki/Framework_Documentation
+
+
+
+Demo
+-------------------------------------------------------------------------------
+
+Generate the documentation of the docgen module itself:
+
+On Linux/Mac:
+
+$ docgen.sh -o docgen-doc documenter-0.2
+
+On Windows:
+
+> docgen.bat -o docgen-doc documenter-0.2
+
+
+
+Known limitations
+-------------------------------------------------------------------------------
+
+Only supports documenting XSLT and XProc at the moment.
