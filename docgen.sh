@@ -7,7 +7,7 @@ CONF_DIR=$COMMON_DIR/conf
 
 usageExit ()
 {
-	if [[ $2 ]]; then echo $2; fi
+	if [ "$2" ]; then echo $2; fi
 	echo "Usage: `basename $0` [options] DIR"
 	echo "    Generates the documentation of the DIR module."
 	echo ""
@@ -29,7 +29,7 @@ calabash()
 	for lib in `ls -1 $LIB_DIR`; do
 		CP=$CP:$LIB_DIR/$lib
 	done
-	if [[ $VERBOSE ]]; then
+	if [ $VERBOSE ]; then
 		LOGGING=-Djava.util.logging.config.file=$CONF_DIR/logging-info.properties
 	else
 		LOGGING=-Djava.util.logging.config.file=$CONF_DIR/conf/logging-severe.properties
@@ -51,12 +51,12 @@ shift $(($OPTIND - 1))
 
 #Check the input file has been set
 SRC_DIR=$1
-if [[ -z $SRC_DIR ]]
+if [ -z $SRC_DIR ]
 then	
 	usageExit 1 "The input directory must be set\n"
 fi
 
-if [[ -z $OUT_DIR ]]
+if [ -z $OUT_DIR ]
 then
 	OUT_DIR="output"
 fi
