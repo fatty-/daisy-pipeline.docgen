@@ -1,0 +1,74 @@
+<dita>
+   <reference id="d2e1">
+      <title>xsl:stylesheet</title>
+      <abstract>
+         <shortdesc>xsl:decimal-format</shortdesc>
+      </abstract>
+      <prolog>
+         <metadata>
+            <audience type="programmer" job="programming" experiencelevel="expert"/>
+            <othermeta name="programming-language" content="XSLT"/>
+            <othermeta name="xslt-version" content="2.0"/>
+            <othermeta name="xpath-version" content="2.0"/>
+         </metadata>
+      </prolog>
+      <refbody>
+         <section>
+            <apiname>xsl:stylesheet</apiname>
+         </section>
+         <section outputclass="parameters xslt-outputs">
+            <title outputclass="io-header">Outputs (xsl:output)</title>
+            <parml outputclass="xslt-outputs">
+               <pt/>
+               <pt/>
+               <pt/>
+               <pt/>
+               <pt/>
+               <pt>yes</pt>
+               <pt/>
+               <pt/>
+               <pt>no</pt>
+               <pt>omit</pt>
+               <pt/>
+               <pd/>
+            </parml>
+         </section>
+      </refbody>
+      <section outputclass="sourcecode">
+         <title outputclass="sourcecode-header">Source Code</title>
+         <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;xd:doc&gt;
+        &lt;xd:short&gt;xsl:decimal-format&lt;/xd:short&gt;
+    &lt;/xd:doc&gt;
+
+    &lt;xd:doc xd:target="following"&gt;
+        &lt;xd:short&gt;Decimal format for the "Euro"-currency (€).&lt;/xd:short&gt;
+    &lt;/xd:doc&gt;
+    &lt;xsl:decimal-format name="euro" decimal-separator="," grouping-separator="."/&gt;
+
+&lt;/xsl:stylesheet&gt;</codeblock>
+      </section>
+   </reference>
+   <reference id="d2e15">
+      <title>xsl:decimal-format - euro</title>
+      <abstract>
+         <shortdesc>Decimal format for the "Euro"-currency (€).</shortdesc>
+      </abstract>
+      <prolog>
+         <metadata>
+            <audience type="programmer" job="programming" experiencelevel="expert"/>
+            <othermeta name="programming-language" content="XSLT"/>
+         </metadata>
+      </prolog>
+      <refbody>
+         <section>
+            <apiname>xsl:decimal-format - euro</apiname>
+         </section>
+      </refbody>
+      <section outputclass="sourcecode">
+         <title outputclass="sourcecode-header">Source Code</title>
+         <codeblock>&lt;xsl:decimal-format name="euro" decimal-separator="," grouping-separator="." xmlns:xsl="http://www.w3.org/1999/XSL/Transform"/&gt;</codeblock>
+      </section>
+   </reference>
+</dita>

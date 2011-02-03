@@ -1,0 +1,105 @@
+<dita>
+   <reference id="d2e1">
+      <title>xsl:stylesheet</title>
+      <abstract>
+         <shortdesc>xd:function</shortdesc>
+      </abstract>
+      <prolog>
+         <metadata>
+            <audience type="programmer" job="programming" experiencelevel="expert"/>
+            <othermeta name="programming-language" content="XSLT"/>
+            <othermeta name="xslt-version" content="2.0"/>
+            <othermeta name="xpath-version" content="2.0"/>
+         </metadata>
+      </prolog>
+      <refbody>
+         <section>
+            <apiname>xsl:stylesheet</apiname>
+         </section>
+         <section outputclass="parameters xslt-outputs">
+            <title outputclass="io-header">Outputs (xsl:output)</title>
+            <parml outputclass="xslt-outputs">
+               <pt/>
+               <pt/>
+               <pt/>
+               <pt/>
+               <pt/>
+               <pt>yes</pt>
+               <pt/>
+               <pt/>
+               <pt>no</pt>
+               <pt>omit</pt>
+               <pt/>
+               <pd/>
+            </parml>
+         </section>
+      </refbody>
+      <section outputclass="sourcecode">
+         <title outputclass="sourcecode-header">Source Code</title>
+         <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;xd:doc&gt;
+        &lt;xd:short&gt;xd:function&lt;/xd:short&gt;
+    &lt;/xd:doc&gt;
+
+    &lt;xd:doc target="following"&gt;
+        &lt;xd:short&gt;Test function&lt;/xd:short&gt;
+        &lt;xd:detail&gt;Contains one undocumented and one documented parameter, as well as a documented
+            return value.&lt;/xd:detail&gt;
+        &lt;xd:param name="myParam"&gt;This is a parameter.&lt;/xd:param&gt;
+        &lt;xd:return&gt;This function returns something.&lt;/xd:return&gt;
+    &lt;/xd:doc&gt;
+    &lt;xsl:function name="mynamespace:myFunction"&gt;
+        &lt;xsl:param name="myParam" tunnel="no" as="xs:string"/&gt;
+        &lt;xsl:param name="myOtherParam"/&gt;
+        &lt;xsl:value-of select="'myValue'"/&gt;
+    &lt;/xsl:function&gt;
+
+&lt;/xsl:stylesheet&gt;</codeblock>
+      </section>
+   </reference>
+   <reference id="d2e24">
+      <title>xsl:function - mynamespace:myFunction</title>
+      <abstract>
+         <shortdesc>Test function</shortdesc>Contains one undocumented and one documented parameter, as well as a documented
+            return value.</abstract>
+      <prolog>
+         <metadata>
+            <audience type="programmer" job="programming" experiencelevel="expert"/>
+            <othermeta name="programming-language" content="XSLT"/>
+         </metadata>
+      </prolog>
+      <refbody>
+         <section>
+            <apiname>xsl:function - mynamespace:myFunction</apiname>
+         </section>
+         <section outputclass="parameters xslt-params">
+            <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+            <parml outputclass="xslt-params">
+               <plentry>
+                  <pt>myParam</pt>
+                  <pt>xs:string</pt>
+                  <pt>true</pt>
+                  <pt>no</pt>
+                  <pd>This is a parameter.</pd>
+               </plentry>
+               <plentry>
+                  <pt>myOtherParam</pt>
+                  <pt>undefined</pt>
+                  <pt>true</pt>
+                  <pt>no</pt>
+                  <pd/>
+               </plentry>
+            </parml>
+         </section>
+      </refbody>
+      <section outputclass="sourcecode">
+         <title outputclass="sourcecode-header">Source Code</title>
+         <codeblock>&lt;xsl:function name="mynamespace:myFunction" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;xsl:param name="myParam" tunnel="no" as="xs:string"/&gt;
+        &lt;xsl:param name="myOtherParam"/&gt;
+        &lt;xsl:value-of select="'myValue'"/&gt;
+    &lt;/xsl:function&gt;</codeblock>
+      </section>
+   </reference>
+</dita>
