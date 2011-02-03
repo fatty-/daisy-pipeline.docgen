@@ -1,0 +1,50 @@
+<dita>
+   <reference id="d2e1">
+      <title>xsl:stylesheet</title>
+      <abstract>
+         <shortdesc>xsl:output</shortdesc>
+      </abstract>
+      <prolog>
+         <metadata>
+            <audience type="programmer" job="programming" experiencelevel="expert"/>
+            <othermeta name="programming-language" content="XSLT"/>
+            <othermeta name="xslt-version" content="1.0"/>
+            <othermeta name="xpath-version" content="1.0"/>
+         </metadata>
+      </prolog>
+      <refbody>
+         <section>
+            <apiname>xsl:stylesheet</apiname>
+         </section>
+         <section outputclass="parameters xslt-outputs">
+            <title outputclass="io-header">Outputs (xsl:output)</title>
+            <parml outputclass="xslt-outputs">
+               <pt/>
+               <pt>xml</pt>
+               <pt>yes</pt>
+               <pt>reference.dtd</pt>
+               <pt>-//OASIS//DTD DITA Reference//EN</pt>
+               <pt>yes</pt>
+               <pt>UTF-8</pt>
+               <pt>application/xml</pt>
+               <pt>no</pt>
+               <pt>true</pt>
+               <pt/>
+               <pd/>
+            </parml>
+         </section>
+      </refbody>
+      <section outputclass="sourcecode">
+         <title outputclass="sourcecode-header">Source Code</title>
+         <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+
+    &lt;xd:doc xd:target="parent"&gt;
+        &lt;xd:short&gt;xsl:output&lt;/xd:short&gt;
+    &lt;/xd:doc&gt;
+
+    &lt;xsl:output method="xml" doctype-public="-//OASIS//DTD DITA Reference//EN" doctype-system="reference.dtd" encoding="UTF-8" indent="yes" media-type="application/xml" omit-xml-declaration="no" standalone="no"/&gt;
+
+&lt;/xsl:stylesheet&gt;</codeblock>
+      </section>
+   </reference>
+</dita>

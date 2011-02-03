@@ -114,7 +114,9 @@
   </xd:doc>
   <xsl:template name="subdoc">
     <xsl:param name="code" required="yes"/>
-    <xsl:param name="parentdoc"/>
+    <xsl:param name="parentdoc">
+      <xsl:element name="xd:doc"/>
+    </xsl:param>
 
     <xsl:if test="not(name($code) = 'xd:doc' or name($code) = 'xsltdoc:doc')">
       <xsl:for-each select="$code/*">
@@ -122,7 +124,7 @@
           <!-- Don't document the documentation ;) -->
           <xsl:when test="name(.) = 'xd:doc' or name(.) = 'xsltdoc:doc'"/>
 
-          <!-- When the current element contains a p:documentation child targeting it, use it -->
+          <!-- When the current element contains a xd:doc child targeting it, use it -->
           <xsl:when
             test="./xd:doc[@target='parent'][1] and not(generate-id(./xd:doc[@target='parent'][1]) = generate-id($parentdoc))">
             <xsl:variable name="doc" select="./xd:doc[@target='parent'][1]"/>
@@ -136,7 +138,7 @@
             </xsl:call-template>
           </xsl:when>
 
-          <!-- When the current element contains a p:documentation child targeting it, use it -->
+          <!-- When the current element contains a xs:doc child targeting it, use it -->
           <xsl:when
             test="(./xsltdoc:doc[@target='parent'][1]) and not(generate-id(./xsltdoc:doc[@target='parent'][1]) = generate-id($parentdoc))">
             <xsl:variable name="doc" select="./xsltdoc:doc[@target='parent'][1]"/>
@@ -164,7 +166,7 @@
             </xsl:call-template>
           </xsl:when>
 
-          <!-- When the first preceding sibling is a p:documentation and is not targeting another element, use it -->
+          <!-- When the first preceding sibling is a xs:doc and is not targeting another element, use it -->
           <xsl:when
             test="(name(preceding-sibling::*[1]) = 'xd:doc' or name(preceding-sibling::*[1]) = 'xsltdoc:doc') and not(preceding-sibling::*[1]/@target = 'parent') and not(generate-id(preceding-sibling::*[1]) = generate-id($parentdoc))">
             <xsl:variable name="doc" select="preceding-sibling::*[1]"/>
@@ -211,9 +213,9 @@
 
       <abstract>
         <shortdesc>
-          <xsl:apply-templates select="$doc/*[local-name()='short']"/>
+          <xsl:apply-templates select="$doc/*[local-name()='short']/node()"/>
         </shortdesc>
-        <xsl:apply-templates select="$doc/*[local-name()='detail']"/>
+        <xsl:apply-templates select="$doc/*[local-name()='detail']/node()"/>
       </abstract>
 
       <prolog>
@@ -231,14 +233,14 @@
                 <xsl:attribute name="type">maintainer</xsl:attribute>
               </xsl:when>
             </xsl:choose>
-            <xsl:apply-templates select="./*[local-name()='name']"/>
-            <xsl:if test="./*[local-name()='name'] and ./*[local-name()='mailto']"> (</xsl:if>
-            <xsl:apply-templates select="./*[local-name()='mailto']"/>
-            <xsl:if test="./*[local-name()='name'] and ./*[local-name()='mailto']">)</xsl:if>
+            <xsl:apply-templates select="./*[local-name()='name']/node()"/>
             <xsl:if
-              test="(./*[local-name()='name'] or ./*[local-name()='mailto']) and ./*[local-name()='organization']"
-              >, </xsl:if>
-            <xsl:apply-templates select="./*[local-name()='organization']"/>
+              test="./*[local-name()='name'] and (./*[local-name()='organization'] or ./*[local-name()='mailto'])"
+              ><![CDATA[, ]]></xsl:if>
+            <xsl:apply-templates select="./*[local-name()='organization']/node()"/>
+            <xsl:if test="./*[local-name()='organization'] and ./*[local-name()='mailto']"
+              ><![CDATA[, ]]></xsl:if>
+            <xsl:apply-templates select="./*[local-name()='mailto']/node()"/>
           </author>
         </xsl:for-each>
         <xsl:for-each select="$doc/*[local-name()='copyright']">
@@ -248,18 +250,41 @@
               <copyright>
                 <copyryear>
                   <xsl:attribute name="year">
-                    <xsl:apply-templates select="$doc/xd:copyright/*[local-name()='year']"/>
+                    <xsl:apply-templates select="$doc/xd:copyright/*[local-name()='year']/node()"/>
                   </xsl:attribute>
                 </copyryear>
                 <copyrholder>
-                  <xsl:apply-templates select="$doc/xd:copyright/*[local-name()='holder']"/>
+                  <xsl:choose>
+                    <xsl:when test="$doc/xd:copyright/*[local-name()='holder']">
+                      <xsl:apply-templates
+                        select="$doc/xd:copyright/*[local-name()='holder']/node()"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:if test="$doc/xd:copyright/*[local-name()='name']">
+                        <xsl:apply-templates
+                          select="$doc/xd:copyright/*[local-name()='name']/node()"/>
+                        <xsl:if
+                          test="$doc/xd:copyright/*[local-name()='organization' or local-name()='mailto']"
+                          ><![CDATA[, ]]></xsl:if>
+                      </xsl:if><![CDATA[]]><xsl:if
+                        test="$doc/xd:copyright/*[local-name()='organization']">
+                        <xsl:apply-templates
+                          select="$doc/xd:copyright/*[local-name()='organization']/node()"/>
+                        <xsl:if test="$doc/xd:copyright/*[local-name()='mailto']"
+                          ><![CDATA[, ]]></xsl:if>
+                      </xsl:if><![CDATA[]]><xsl:if test="$doc/xd:copyright/*[local-name()='mailto']">
+                        <xsl:apply-templates
+                          select="$doc/xd:copyright/*[local-name()='mailto']/node()"/>
+                      </xsl:if>
+                    </xsl:otherwise>
+                  </xsl:choose>
                 </copyrholder>
               </copyright>
             </xsl:when>
             <xsl:when test="count($doc/xsltdoc:copyright)>0">
               <copyright>
                 <copyrholder>
-                  <xsl:apply-templates select="$doc/xsltdoc:copyright"/>
+                  <xsl:apply-templates select="$doc/xsltdoc:copyright/node()"/>
                 </copyrholder>
               </copyright>
             </xsl:when>
@@ -298,7 +323,7 @@
           </xsl:for-each>
 
           <!-- XSLT and XPath version -->
-          <xsl:if test="name($code)='xsl:stylesheet'">
+          <xsl:if test="name($code)='xsl:stylesheet' or name($code)='xsl:transform'">
             <xsl:variable name="xslt-version" select="$code/@version | $code/@xsl:version"/>
             <othermeta name="xslt-version">
               <xsl:attribute name="content">
@@ -380,14 +405,15 @@
                     <xsl:when test="name(.)='xsl:param'">
                       <pd>
                         <xsl:variable name="name" select="@name"/>
-                        <xsl:apply-templates select="$doc/*[local-name()='param'][@name=$name]"/>
+                        <xsl:apply-templates
+                          select="$doc/*[local-name()='param'][@name=$name]/node()"/>
                       </pd>
                     </xsl:when>
                     <xsl:when test="name(.)='xsl:with-param'">
                       <pd>
                         <xsl:variable name="name" select="@name"/>
-                        <xsl:apply-templates select="$doc/*[local-name()='with-param'][@name=$name]"
-                        />
+                        <xsl:apply-templates
+                          select="$doc/*[local-name()='with-param'][@name=$name]/node()"/>
                       </pd>
                     </xsl:when>
                   </xsl:choose>
@@ -397,7 +423,7 @@
           </section>
         </xsl:if>
 
-        <xsl:if test="name($code) = 'xsl:stylesheet'">
+        <xsl:if test="name($code) = 'xsl:stylesheet' or name($code) = 'xsl:transform'">
           <section outputclass="parameters xslt-outputs">
             <title outputclass="io-header">Outputs (xsl:output)</title>
             <parml outputclass="xslt-outputs">
@@ -518,7 +544,7 @@
                 </xsl:choose>
               </pt>
               <pd>
-                <xsl:apply-templates select="$doc/*[local-name()='output' and not(@name)]"/>
+                <xsl:apply-templates select="$doc/*[local-name()='output' and not(@name)]/node()"/>
               </pd>
               <xsl:for-each select="$code/xsl:output[@name]">
                 <xsl:if test="not(@name=preceding::xsl:output/@name)">
@@ -627,7 +653,8 @@
                     </xsl:choose>
                   </pt>
                   <pd>
-                    <xsl:apply-templates select="$doc/*[local-name()='output' and @name=$name]"/>
+                    <xsl:apply-templates
+                      select="$doc/*[local-name()='output' and @name=$name]/node()"/>
                   </pd>
                 </xsl:if>
               </xsl:for-each>
@@ -638,7 +665,7 @@
       </refbody>
 
       <xsl:if
-        test="name($code) = 'xsl:stylesheet' and (count($code//xsl:include) > 0 or count($code//xsl:import) > 0 or count($doc/*[local-name()='see']) > 0)">
+        test="(name($code) = 'xsl:stylesheet' or name($code) = 'xsl:transform') and (count($code//xsl:include) > 0 or count($code//xsl:import) > 0 or count($doc/*[local-name()='see']) > 0)">
         <related-links>
           <xsl:if test="count($code//xsl:include) > 0">
             <linklist>
@@ -675,7 +702,9 @@
         <title outputclass="sourcecode-header">Source Code</title>
         <codeblock>
           <xsl:for-each select="$code">
-            <xsl:call-template name="xml-to-string"/>
+            <xsl:if test="not(self::xd:doc) and not(self::xsltdoc:doc)">
+              <xsl:call-template name="xml-to-string"/>
+            </xsl:if>
           </xsl:for-each>
         </codeblock>
       </section>
