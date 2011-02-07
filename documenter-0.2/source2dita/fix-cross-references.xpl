@@ -44,7 +44,10 @@
 
         <p:for-each>
             <p:iteration-source select="/map/topicref"/>
-            <p:variable name="href" select="resolve-uri(/topicref/@href,$mapAbs)"/>
+            <p:variable name="href" select="p:resolve-uri(/topicref/@href,p:resolve-uri($mapAbs))"/>
+            <!--cx:message><p:with-option name="message" select="concat('p:resolve-uri(',/topicref/@href,',p:resolve-uri(',$mapAbs,'))')"></p:with-option></cx:message>
+            <cx:message><p:with-option name="message" select="concat('p:resolve-uri(',/topicref/@href,',',p:resolve-uri($mapAbs),')')"></p:with-option></cx:message>
+            <cx:message><p:with-option name="message" select="p:resolve-uri(/topicref/@href,p:resolve-uri($mapAbs))"></p:with-option></cx:message-->
 
             <p:load>
                 <p:with-option name="href" select="$href"/>
@@ -53,9 +56,9 @@
             <p:viewport match="//related-links/linklist/link">
                 <p:variable name="linkHref" select="/link/@href"/>
                 <p:variable name="isWebLink"
-                    select="not(matches(resolve-uri(resolve-uri($linkHref)),'^file:'))"/>
+                    select="matches($linkHref,'^https?:')"/>
                 <p:variable name="isFileAbsolute"
-                    select="not($isWebLink='false') and resolve-uri(resolve-uri($linkHref,concat($srcPath,'/',$rel)))=resolve-uri(resolve-uri($linkHref))"/>
+                    select="not($isWebLink='false') and p:resolve-uri(p:resolve-uri($linkHref,concat($srcPath,'/',$rel)))=p:resolve-uri(p:resolve-uri($linkHref))"/>
                 <p:choose>
                     <p:when test="$isWebLink='true'">
                         <!-- TODO when packaging system is up and running; look through all package descriptors

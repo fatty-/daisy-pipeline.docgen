@@ -368,8 +368,7 @@
         </p:input>
     </p:identity>
 
-
-    <!--p:variable name="relativeout" select="replace(resolve-uri(resolve-uri('.',concat($path,'/'))),'^file:','')"-->
+    <!--p:variable name="relativeout" select="replace(p:resolve-uri(p:resolve-uri('.',concat($path,'/'))),'^file:','')"-->
     <!--rel getRelativePath(fra,til)-->
     <!--p:variable name="relativeout" select="//@result[1]">
         <p:pipe port="result" step="resolveout"/>
@@ -426,7 +425,7 @@
                 <p:pipe port="result" step="map"/>
             </p:viewport-source>
             <d:dita2html>
-                <p:with-option name="map" select="resolve-uri(/topicref/@href,$map)"/>
+                <p:with-option name="map" select="p:resolve-uri(/topicref/@href,$map)"/>
                 <p:with-option name="outdir" select="$outdir"/>
                 <p:with-option name="supermap" select="$supermap"/>
             </d:dita2html>

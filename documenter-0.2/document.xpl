@@ -32,13 +32,20 @@
     <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
     <p:import href="source2dita/makedita.xpl"/>
     <p:import href="dita2output/dita2html.xpl"/>
-
-    <p:variable name="srcPath"
-        select="replace(replace(resolve-uri(resolve-uri('.',concat($src,'/'))),'^file:',''),'[^/]+$','')"/>
-    <p:variable name="docPath"
-        select="replace(replace(resolve-uri(resolve-uri('.',concat($doc,'/'))),'^file:',''),'[^/]+$','')"/>
+    
+    <p:variable name="cwd" select="p:resolve-uri('.')">
+        <p:empty/>
+    </p:variable>
     <p:variable name="selfPath"
-        select="replace(replace(resolve-uri(resolve-uri('.',base-uri())),'^file:',''),'[^/]+$','')">
+        select="replace(replace(p:resolve-uri(p:resolve-uri(base-uri())),'^file:',''),'[^/]+$','')">
+        <p:document href="document.xpl"/>
+    </p:variable>
+    <p:variable name="srcPath"
+        select="replace(replace(p:resolve-uri(p:resolve-uri(concat($src,'/'),$cwd),$cwd),'^file:',''),'[^/]+$','')">
+        <p:document href="document.xpl"/>
+    </p:variable>
+    <p:variable name="docPath"
+        select="replace(replace(p:resolve-uri(p:resolve-uri(concat($doc,'/'),$cwd),$cwd),'^file:',''),'[^/]+$','')">
         <p:document href="document.xpl"/>
     </p:variable>
 
@@ -81,5 +88,5 @@
         <p:with-option name="selfPath" select="$selfPath"/>
     </d:dita2html>
     <p:sink/>
-    
+
 </p:declare-step>

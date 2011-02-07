@@ -1,0 +1,44 @@
+<reference id="d41e24">
+   <title>xsl:function - mynamespace:myFunction</title>
+   <abstract>
+      <shortdesc>Test function</shortdesc>Contains one undocumented and one documented parameter, as well as a documented
+            return value.</abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:function - mynamespace:myFunction</apiname>
+      </section>
+      <section outputclass="parameters xslt-params">
+         <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+         <parml outputclass="xslt-params">
+            <plentry>
+               <pt>myParam</pt>
+               <pt>xs:string</pt>
+               <pt>true</pt>
+               <pt>no</pt>
+               <pd>This is a parameter.</pd>
+            </plentry>
+            <plentry>
+               <pt>myOtherParam</pt>
+               <pt>undefined</pt>
+               <pt>true</pt>
+               <pt>no</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:function name="mynamespace:myFunction" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;xsl:param name="myParam" tunnel="no" as="xs:string"/&gt;
+        &lt;xsl:param name="myOtherParam"/&gt;
+        &lt;xsl:value-of select="'myValue'"/&gt;
+    &lt;/xsl:function&gt;</codeblock>
+   </section>
+</reference>
