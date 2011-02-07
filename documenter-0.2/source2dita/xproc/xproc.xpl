@@ -62,7 +62,8 @@
 
             <p:variable name="fileName" select="/c:file/@name"/>
             <p:variable name="fileRel" select="/c:file/@relative"/>
-            <p:variable name="fileAbs" select="resolve-uri($fileRel,$srcPath)"/>
+            <!--p:variable name="fileAbs" select="resolve-uri($fileRel,$srcPath)"/-->
+            <p:variable name="fileAbs" select="concat($srcPath,$fileRel)"/>
             <p:variable name="ext" select="fn:lower-case(fn:tokenize(/c:file/@name, '\.')[last()])"/>
 
             <p:choose>
@@ -224,8 +225,10 @@
             <p:variable name="abs" select="/c:file/@abs"/>
             <p:variable name="ext" select="/c:file/@ext"/>
 
+            <!--p:variable name="mapFile"
+            select="resolve-uri(concat(/c:file/@name,'.ditamap'),/c:file/c:result[1]/@abs)"/-->
             <p:variable name="mapFile"
-                select="resolve-uri(concat(/c:file/@name,'.ditamap'),/c:file/c:result[1]/@abs)"/>
+                select="concat(replace(/c:file/c:result[1]/@abs,'([/\\])[^/\\]*$','$1'),/c:file/@name,'.ditamap')"/>
             <cx:message>
                 <p:with-option name="message" select="$mapFile"/>
             </cx:message>

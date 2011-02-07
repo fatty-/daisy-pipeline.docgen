@@ -1,0 +1,21 @@
+<reference id="d41e15">
+   <title>xsl:variable - myVariable</title>
+   <abstract>
+      <shortdesc>This is a variable.</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:variable - myVariable</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:variable name="myVariable" select="'myValue'" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"/&gt;</codeblock>
+   </section>
+</reference>

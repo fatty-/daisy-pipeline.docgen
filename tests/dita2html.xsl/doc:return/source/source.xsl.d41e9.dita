@@ -1,0 +1,23 @@
+<reference id="d41e9">
+   <title>xsl:function - mynamespace:myFunction</title>
+   <abstract>
+      <shortdesc/>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:function - mynamespace:myFunction</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:function name="mynamespace:myFunction" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+        &lt;xsl:value-of select="'myValue'"/&gt;
+    &lt;/xsl:function&gt;</codeblock>
+   </section>
+</reference>

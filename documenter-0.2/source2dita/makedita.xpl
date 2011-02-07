@@ -103,7 +103,7 @@
             </p:input>
             <p:with-option name="position" select="'last-child'"/>
         </p:insert>
-
+        
         <p:identity name="result-map-done"/>
     </p:group>
 
@@ -113,34 +113,44 @@
     </p:documentation>
     <p:group name="make-sequence-map">
         <p:output port="result" primary="true"/>
-
-        <p:identity>
-            <p:input port="source">
-                <p:pipe port="result" step="result-ditamap"/>
-            </p:input>
-        </p:identity>
-
+        
+        
         <p:documentation>
             <xd:short>Resolves relative map paths.</xd:short>
             <xd:input><xd:code><![CDATA[<c:result><c:result type name ...>filename</c:result> ... </c:result>]]></xd:code></xd:input>
         </p:documentation>
-        <p:for-each name="resolve-relative-map-paths">
-            <p:output port="result" primary="true" sequence="true">
-                <p:pipe port="result" step="resolve-relative-map-paths-done"/>
+        <p:group name="relative-map-paths">
+            <p:output port="result">
+                <p:pipe port="result" step="resolve-relative-map-paths"/>
             </p:output>
-
-            <p:iteration-source select="/c:result/c:result"/>
-
-            <p:add-attribute match="/c:result">
-                <p:with-option name="attribute-name" select="'rel'"/>
-                <p:with-option name="attribute-value"
-                    select="substring-after(resolve-uri(.), concat($ditaPath,'/'))"/>
-            </p:add-attribute>
-
-            <p:identity name="resolve-relative-map-paths-done"/>
-        </p:for-each>
-        <p:wrap-sequence wrapper="c:result" name="relative-map-paths"/>
-
+            
+            <p:identity>
+                <p:input port="source">
+                    <p:pipe port="result" step="result-ditamap"/>
+                </p:input>
+            </p:identity>
+            <p:viewport name="resolve-relative-map-paths" match="/c:result/c:result">
+                <p:output port="result" primary="true" sequence="true">
+                    <p:pipe port="result" step="resolve-relative-map-paths-done"/>
+                </p:output>
+                
+                <p:add-attribute match="/*">
+                    <p:with-option name="attribute-name" select="'rel'"/>
+                    <p:with-option name="attribute-value"
+                        select="substring-after(p:resolve-uri(.), concat($ditaPath,'/'))"/>
+                </p:add-attribute>
+                
+                <p:identity name="resolve-relative-map-paths-done"/>
+            </p:viewport>
+            
+            <p:identity><p:input port="source"><p:pipe port="result" step="result-ditamap"/></p:input></p:identity>
+            <p:wrap wrapper="wrapper" match="/*"/>
+            <p:escape-markup/>
+            <cx:message><p:with-option name="message" select="'result-ditamap:'"></p:with-option></cx:message>
+            <cx:message><p:with-option name="message" select="."/></cx:message>
+            <p:sink/>
+        </p:group>
+        
         <p:group>
             <p:variable name="title" select="replace($srcPath,'^.*/','')"/>
 
@@ -187,10 +197,12 @@
                 </p:input>
             </p:xslt>
         </p:group>
-
+        
         <p:store name="store-sequence-map">
             <p:with-option name="href"
-                select="resolve-uri('sequence.ditamap',concat($ditaPath,'/'))"/>
+                select="p:resolve-uri('sequence.ditamap',concat($ditaPath,'/'))"/>
+            <!--p:with-option name="href"
+                select="concat($ditaPath,'/sequence.ditamap')"/-->
             <p:with-option name="indent" select="'true'"/>
         </p:store>
 

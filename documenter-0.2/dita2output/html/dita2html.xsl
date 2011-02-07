@@ -19,7 +19,7 @@
 
     <xsl:output encoding="UTF-8" method="html" omit-xml-declaration="yes" indent="yes"/>
 
-    <xsl:param name="title" required="yes"/>
+    <!--xsl:param name="title" required="yes"/-->
     <xsl:param name="pathToRoot" required="yes"/>
 
     <xd:doc target="following">
