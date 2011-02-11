@@ -1,0 +1,1161 @@
+<log4j:event logger="utfx.test_results" timestamp="1297429847429" level="INFO" thread="main">
+<log4j:message><![CDATA[logger created]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="&lt;init&gt;" file="ResultLogger.java" line="44"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847449" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:transform started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847548" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:transform FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1047
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847549" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:transform completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847549" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:copyright started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847608" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:copyright FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1248
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847609" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:copyright completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847609" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:strip-space started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847650" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:strip-space FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 156
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847651" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:strip-space completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847651" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:version started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847701" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:version FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1090
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847702" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:version completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847702" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:output started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847784" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:output FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1119
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847784" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:output completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847784" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:see started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847831" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:see FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1062
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847832" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:see completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847832" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:short started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847878" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:short FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1056
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847878" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:short completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847878" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:include started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847934" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:include FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 953
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847935" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:include completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429847935" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:character-map started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848041" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:character-map FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1054
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848041" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:character-map completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848042" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:template started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848097" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:template FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1045
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848097" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:template completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848098" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:param started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848113" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:param FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 578
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848113" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:param completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848113" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:key started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848134" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:key FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 141
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848135" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:key completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848135" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:detail started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848142" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:detail FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1059
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848142" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:detail completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848143" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:import started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848166" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:import FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 951
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848175" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:import completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848175" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:preserve-space started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848193" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:preserve-space FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 151
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848193" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:preserve-space completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848193" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:attribute-set started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848223" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:attribute-set FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1056
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848223" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:attribute-set completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848224" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:namespace-alias started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848244" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:namespace-alias FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 153
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848254" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:namespace-alias completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848255" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:function started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848308" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:function FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1049
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848308" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:function completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848309" level="INFO" thread="main">
+<log4j:message><![CDATA[complete started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848390" level="ERROR" thread="main">
+<log4j:message><![CDATA[complete FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 161
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848391" level="INFO" thread="main">
+<log4j:message><![CDATA[complete completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848391" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:author started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848402" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:author FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 180
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848402" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:author completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848403" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:decimal-format started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848417" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:decimal-format FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1057
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848418" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:decimal-format completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848418" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:param started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848428" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:param FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 588
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848428" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:param completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848428" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:variable started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848461" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:variable FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1051
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848462" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:variable completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848462" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:stylesheet started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848471" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:stylesheet FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1057
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848472" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:stylesheet completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848472" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:deprecated started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848490" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:deprecated FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1094
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848490" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:deprecated completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848490" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:import-schema started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848513" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:import-schema FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1093
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848525" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:import-schema completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848525" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:return started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848537" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:return FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1039
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848537" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:return completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848537" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:maintainer started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848547" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:maintainer FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 191
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848547" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:maintainer completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848547" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:contributor started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848567" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:contributor FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 194
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848567" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:contributor completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848567" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:since started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848572" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:since FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 1089
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1297429848573" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:since completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
