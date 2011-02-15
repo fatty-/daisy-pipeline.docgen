@@ -92,6 +92,19 @@
                             <p:document href="xsdoc.xsl"/>
                         </p:input>
                     </p:xslt>
+                    <p:viewport match="codeblock">
+                        <p:identity name="code"/>
+                        <p:escape-markup/>
+                        <p:identity name="code-escaped"/>
+                        <p:replace match="/">
+                            <p:input port="source">
+                                <p:pipe port="result" step="code"/>
+                            </p:input>
+                            <p:input port="replacement">
+                                <p:pipe port="result" step="code-escaped"/>
+                            </p:input>
+                        </p:replace>
+                    </p:viewport>
 
                     <p:choose>
                         <p:when test="count(/dita/reference) > 0">

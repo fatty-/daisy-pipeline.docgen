@@ -7,8 +7,7 @@
       <utfx:name>xsl:transform</utfx:name>
       <utfx:assert-equal>
          <utfx:source>
-            <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
                <xd:doc>
                   <xd:short>Short description.</xd:short>
                </xd:doc>
@@ -16,7 +15,7 @@
          </utfx:source>
          <utfx:expected>
             <dita>
-               <reference id="d91e2">
+               <reference id="d88e2">
                   <title>xsl:transform</title>
                   <abstract>
                      <shortdesc>Short description.</shortdesc>
@@ -54,11 +53,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;Short description.&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:transform&gt;</codeblock>
                   </section>
                </reference>
@@ -71,8 +65,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:copyright>
@@ -91,18 +84,18 @@
          </utfx:source>
          <utfx:expected>
             <dita>
-               <reference id="d116e2">
+               <reference id="d113e2">
                   <title>xsl:stylesheet</title>
                   <abstract>
                      <shortdesc/>
                   </abstract>
                   <prolog>
                      <copyright>
-                        <copyryear year="20112011"/>
+                        <copyryear year="2011"/>
                         <copyrholder>Copyright Holder</copyrholder>
                      </copyright>
                      <copyright>
-                        <copyryear year="20112011"/>
+                        <copyryear year="2011"/>
                         <copyrholder>Copyright Holder</copyrholder>
                      </copyright>
                      <metadata>
@@ -137,20 +130,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:copyright&gt;
-            &lt;xd:year&gt;2011&lt;/xd:year&gt;
-            &lt;xd:name&gt;Copyright Holder&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;copyright.holder@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;Copyright Holder Inc.&lt;/xd:organization&gt;
-        &lt;/xd:copyright&gt;
-        &lt;xd:copyright&gt;
-            &lt;xd:year&gt;2011&lt;/xd:year&gt;
-            &lt;xd:holder&gt;Copyright Holder&lt;/xd:holder&gt;
-        &lt;/xd:copyright&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -163,8 +142,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc>
                   <xd:short>xsl:strip-space</xd:short>
@@ -177,7 +155,7 @@
          </utfx:source>
          <utfx:expected>
             <dita>
-               <reference id="d179e2">
+               <reference id="d176e2">
                   <title>xsl:stylesheet</title>
                   <abstract>
                      <shortdesc>xsl:strip-space</shortdesc>xsl:strip-space should be documented
@@ -188,6 +166,7 @@
                         <othermeta name="programming-language" content="XSLT"/>
                         <othermeta name="xslt-version" content="1.0"/>
                         <othermeta name="xpath-version" content="1.0"/>
+                        <othermeta name="strip-spaces" content="country company price year"/>
                      </metadata>
                   </prolog>
                   <refbody>
@@ -215,14 +194,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xsl:strip-space&lt;/xd:short&gt;
-        &lt;xd:detail&gt;xsl:strip-space should be documented automatically.&lt;/xd:detail&gt;
-    &lt;/xd:doc&gt;
-    
-    &lt;xsl:strip-space elements="country company price year"/&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -235,8 +206,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:version>1.0</xd:version>
@@ -246,7 +216,7 @@
          </utfx:source>
          <utfx:expected>
             <dita>
-               <reference id="d215e2">
+               <reference id="d212e2">
                   <title>xsl:stylesheet</title>
                   <abstract>
                      <shortdesc/>
@@ -285,11 +255,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:version&gt;1.0&lt;/xd:version&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -302,26 +267,23 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc xd:target="parent">
                   <xd:short>xsl:output</xd:short>
+                  <xd:detail>Should be documented automatically.</xd:detail>
                </xd:doc>
 
-               <xsl:output method="xml" doctype-public="-//OASIS//DTD DITA Reference//EN"
-                  doctype-system="reference.dtd" encoding="UTF-8" indent="yes"
-                  media-type="application/xml" omit-xml-declaration="no" standalone="no"/>
+               <xsl:output method="xml" doctype-public="-//OASIS//DTD DITA Reference//EN" doctype-system="reference.dtd" encoding="UTF-8" indent="yes" media-type="application/xml" omit-xml-declaration="no" standalone="no"/>
 
             </xsl:stylesheet>
          </utfx:source>
          <utfx:expected>
             <dita>
-               <reference id="d243e2">
+               <reference id="d240e2">
                   <title>xsl:stylesheet</title>
                   <abstract>
-                     <shortdesc>xsl:output</shortdesc>
-                  </abstract>
+                     <shortdesc>xsl:output</shortdesc>Should be documented automatically. </abstract>
                   <prolog>
                      <metadata>
                         <audience type="programmer" job="programming" experiencelevel="expert"/>
@@ -355,13 +317,7 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc xd:target="parent"&gt;
-        &lt;xd:short&gt;xsl:output&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-
     &lt;xsl:output method="xml" doctype-public="-//OASIS//DTD DITA Reference//EN" doctype-system="reference.dtd" encoding="UTF-8" indent="yes" media-type="application/xml" omit-xml-declaration="no" standalone="no"/&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -374,8 +330,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:see>empty-in.xsl</xd:see>
@@ -386,7 +341,7 @@
          </utfx:source>
          <utfx:expected>
             <dita>
-               <reference id="d298e2">
+               <reference id="d300e2">
                   <title>xsl:stylesheet</title>
                   <abstract>
                      <shortdesc/>
@@ -425,9 +380,7 @@
                      <linklist>
                         <title>See also</title>
                         <link href="empty-in.xsl" format="ditamap"/>
-                        <link
-                           href="http://code.google.com/p/daisy-pipeline/wiki/HowTo_Documentation_Technical"
-                           format="ditamap"/>
+                        <link href="http://code.google.com/p/daisy-pipeline/wiki/HowTo_Documentation_Technical" format="ditamap"/>
                         <linkinfo>These are related readings suggested by the author of the XSLT
                            stylesheet.</linkinfo>
                      </linklist>
@@ -435,12 +388,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:see&gt;empty-in.xsl&lt;/xd:see&gt;
-        &lt;xd:see&gt;http://code.google.com/p/daisy-pipeline/wiki/HowTo_Documentation_Technical&lt;/xd:see&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -453,8 +400,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:short>Short description.</xd:short>
@@ -502,11 +448,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:short&gt;Short description.&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -519,8 +460,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xsl:include href="import-and-include-me.xsl"/>
 
@@ -579,14 +519,7 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
     &lt;xsl:include href="import-and-include-me.xsl"/&gt;
-
-    &lt;xd:doc xd:target="parent"&gt;
-        &lt;xd:short&gt;xsl:include&lt;/xd:short&gt;
-        &lt;xd:detail&gt;Includes are automatically documented.&lt;/xd:detail&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -599,8 +532,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc>
                   <xd:short>xd:character-map</xd:short>
@@ -657,20 +589,11 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xd:character-map&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-    
-    &lt;xd:doc xd:target="following"&gt;
-        &lt;xd:short&gt;Character map&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
     &lt;xsl:character-map name="jsp"&gt;
         &lt;xsl:output-character character="«" string="&amp;lt;%"/&gt;   
         &lt;xsl:output-character character="»" string="%&gt;"/&gt;
         &lt;xsl:output-character character="§" string="&amp;quot;"/&gt;
     &lt;/xsl:character-map&gt;
-    
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -708,8 +631,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
 
                <xd:doc>
                   <xd:short>xsl:template</xd:short>
@@ -768,27 +690,17 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-    
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xsl:template&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-    
-    &lt;xd:doc xd:target="following"&gt;
-        &lt;xd:short&gt;Identity template&lt;/xd:short&gt;
-        &lt;xd:param name="myParam"&gt;My parameter&lt;/xd:param&gt;
-    &lt;/xd:doc&gt;
     &lt;xsl:template match="@*|node()" mode="myMode" name="myName" priority="2"&gt;
         &lt;xsl:param name="myParam" required="yes" tunnel="yes"/&gt;
         &lt;xsl:copy&gt;
             &lt;xsl:apply-templates/&gt;
         &lt;/xsl:copy&gt;
     &lt;/xsl:template&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
                <reference id="d2e18">
-                  <title>xsl:template - myName</title>
+                  <title>xsl:template - myName - match="@*|node()"</title>
                   <abstract>
                      <shortdesc>Identity template</shortdesc>
                   </abstract>
@@ -800,7 +712,7 @@
                   </prolog>
                   <refbody>
                      <section>
-                        <apiname>xsl:template - myName</apiname>
+                        <apiname>xsl:template - myName - match="@*|node()"</apiname>
                      </section>
                      <section outputclass="parameters xslt-params">
                         <title outputclass="io-header">Parameters (xsl:param /
@@ -834,9 +746,7 @@
       <utfx:name>doc:param</utfx:name>
       <utfx:assert-equal>
          <utfx:source>
-
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:param name="myParam">This is a parameter.</xd:param>
@@ -899,13 +809,7 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-    
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:param name="myParam"&gt;This is a parameter.&lt;/xd:param&gt;
-    &lt;/xd:doc&gt;
-    
     &lt;xsl:param name="myParam"/&gt;
-    
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -917,9 +821,7 @@
       <utfx:name>xsl:key</utfx:name>
       <utfx:assert-equal>
          <utfx:source>
-
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc>
                   <xd:short>xsl:key</xd:short>
@@ -949,6 +851,24 @@
                      <section>
                         <apiname>xsl:stylesheet</apiname>
                      </section>
+                     <section outputclass="parameters xslt-keys">
+                        <title outputclass="io-header">Keys (xsl:key)</title>
+                        <parml outputclass="xslt-params">
+                           <plentry>
+                              <pt>preg</pt>
+                              <pt>person</pt>
+                              <pt>@id</pt>
+                              <pd/>
+                           </plentry>
+                           <plentry>
+                              <pt>myParam</pt>
+                              <pt>undefined</pt>
+                              <pt>false</pt>
+                              <pt>no</pt>
+                              <pd>This is a parameter.</pd>
+                           </plentry>
+                        </parml>
+                     </section>
                      <section outputclass="parameters xslt-outputs">
                         <title outputclass="io-header">Outputs (xsl:output)</title>
                         <parml outputclass="xslt-outputs">
@@ -970,14 +890,7 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xsl:key&lt;/xd:short&gt;
-        &lt;xd:detail&gt;xsl:keys should be documented automatically.&lt;/xd:detail&gt;
-    &lt;/xd:doc&gt;
-    
     &lt;xsl:key name="preg" match="person" use="@id"/&gt;
-    
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -990,8 +903,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:detail>Detailed description.</xd:detail>
@@ -1038,11 +950,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:detail&gt;Detailed description.&lt;/xd:detail&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -1055,8 +962,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xsl:import href="import-and-include-me.xsl"/>
 
@@ -1115,14 +1021,7 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
     &lt;xsl:import href="import-and-include-me.xsl"/&gt;
-
-    &lt;xd:doc xd:target="parent"&gt;
-        &lt;xd:short&gt;xsl:import&lt;/xd:short&gt;
-        &lt;xd:detail&gt;Imports are automatically documented.&lt;/xd:detail&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -1135,8 +1034,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc>
                   <xd:short>xsl:preserve-space</xd:short>
@@ -1160,6 +1058,7 @@
                         <othermeta name="programming-language" content="XSLT"/>
                         <othermeta name="xslt-version" content="1.0"/>
                         <othermeta name="xpath-version" content="1.0"/>
+                        <othermeta name="preserve-space" content="title artist"/>
                      </metadata>
                   </prolog>
                   <refbody>
@@ -1187,14 +1086,7 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xsl:preserve-space&lt;/xd:short&gt;
-        &lt;xd:detail&gt;xsl:preserve-space should be documented automatically.&lt;/xd:detail&gt;
-    &lt;/xd:doc&gt;
-    
     &lt;xsl:preserve-space elements="title artist"/&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -1206,13 +1098,13 @@
       <utfx:name>xsl:attribute-set</utfx:name>
       <utfx:assert-equal>
          <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
-
-               <xd:doc xd:target="following">
-                  <xd:short>Short description.</xd:short>
+               <xd:doc>
+                  <xd:short>xsl:attribute-set</xd:short>
+                  <xd:detail>xsl:attribute-set won't be documented.</xd:detail>
                </xd:doc>
+
                <xsl:attribute-set name="title-style">
                   <xsl:attribute name="font-size">12pt</xsl:attribute>
                   <xsl:attribute name="font-weight">bold</xsl:attribute>
@@ -1225,7 +1117,7 @@
                <reference id="d814e2">
                   <title>xsl:stylesheet</title>
                   <abstract>
-                     <shortdesc>Short description.</shortdesc>
+                     <shortdesc>xsl:attribute-set</shortdesc>
                   </abstract>
                   <prolog>
                      <metadata>
@@ -1260,15 +1152,10 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc xd:target="following"&gt;
-        &lt;xd:short&gt;Short description.&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
     &lt;xsl:attribute-set name="title-style"&gt;
         &lt;xsl:attribute name="font-size"&gt;12pt&lt;/xsl:attribute&gt;
         &lt;xsl:attribute name="font-weight"&gt;bold&lt;/xsl:attribute&gt;
     &lt;/xsl:attribute-set&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -1281,9 +1168,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:wxsl="http://www.w3schools.com/w3style.xsl"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wxsl="http://www.w3schools.com/w3style.xsl" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
 
                <xd:doc>
                   <xd:short>xsl:namespace-alias</xd:short>
@@ -1307,6 +1192,10 @@
                         <othermeta name="programming-language" content="XSLT"/>
                         <othermeta name="xslt-version" content="2.0"/>
                         <othermeta name="xpath-version" content="2.0"/>
+                        <data name="namespace-alias">
+                           <data name="from" value="wxsl"/>
+                           <data name="to" value="xsl"/>
+                        </data>
                      </metadata>
                   </prolog>
                   <refbody>
@@ -1334,14 +1223,7 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xsl:namespace-alias&lt;/xd:short&gt;
-        &lt;xd:detail&gt;xsl:namespace-alias should be automatically documented.&lt;/xd:detail&gt;
-    &lt;/xd:doc&gt;
-    
     &lt;xsl:namespace-alias stylesheet-prefix="wxsl" result-prefix="xsl"/&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -1354,9 +1236,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mynamespace="http://example.org"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mynamespace="http://example.org" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
 
                <xd:doc>
                   <xd:short>xd:function</xd:short>
@@ -1417,24 +1297,11 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xd:function&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-
-    &lt;xd:doc target="following"&gt;
-        &lt;xd:short&gt;Test function&lt;/xd:short&gt;
-        &lt;xd:detail&gt;Contains one undocumented and one documented parameter, as well as a documented
-            return value.&lt;/xd:detail&gt;
-        &lt;xd:param name="myParam"&gt;This is a parameter.&lt;/xd:param&gt;
-        &lt;xd:return&gt;This function returns something.&lt;/xd:return&gt;
-    &lt;/xd:doc&gt;
     &lt;xsl:function name="mynamespace:myFunction"&gt;
         &lt;xsl:param name="myParam" tunnel="no" as="xs:string"/&gt;
         &lt;xsl:param name="myOtherParam"/&gt;
         &lt;xsl:value-of select="'myValue'"/&gt;
     &lt;/xsl:function&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -1473,6 +1340,13 @@
                            </plentry>
                         </parml>
                      </section>
+                     <section outputclass="parameters xslt-outputs">
+                        <title outputclass="io-header">Returns</title>
+                        <parml outputclass="xslt-outputs">
+                           <pt/>
+                           <pd>This function returns something.</pd>
+                        </parml>
+                     </section>
                   </refbody>
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
@@ -1488,323 +1362,11 @@
       </utfx:assert-equal>
    </utfx:test>
    <utfx:test>
-      <utfx:name>complete</utfx:name>
-      <utfx:assert-equal>
-         <utfx:source>
-
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
-               xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mynamespace="http://example.org"
-               version="2.0">
-
-               <xd:doc target="parent">
-                  <xd:short>Complete test.</xd:short>
-                  <xd:detail>This example tests as much as possible at the same time.</xd:detail>
-                  <xd:author>
-                     <xd:name>First Author</xd:name>
-                     <xd:mailto>first.author@example.com</xd:mailto>
-                     <xd:organization>First Author Inc.</xd:organization>
-                  </xd:author>
-                  <xd:author>
-                     <xd:name>Second Author</xd:name>
-                     <xd:mailto>second.author@example.com</xd:mailto>
-                     <xd:organization>Second Author Inc.</xd:organization>
-                  </xd:author>
-                  <xd:contributor>
-                     <xd:name>First Contributor</xd:name>
-                     <xd:mailto>first.contributor@example.com</xd:mailto>
-                     <xd:organization>First Contributor Inc.</xd:organization>
-                  </xd:contributor>
-                  <xd:contributor>
-                     <xd:name>Second Contributor</xd:name>
-                     <xd:mailto>second.contributor@example.com</xd:mailto>
-                     <xd:organization>Second Contributor Inc.</xd:organization>
-                  </xd:contributor>
-                  <xd:maintainer>
-                     <xd:name>First Maintainer</xd:name>
-                     <xd:mailto>first.maintainer@example.com</xd:mailto>
-                     <xd:organization>First Maintainer Inc.</xd:organization>
-                  </xd:maintainer>
-                  <xd:maintainer>
-                     <xd:name>Second Maintainer</xd:name>
-                     <xd:mailto>second.maintainer@example.com</xd:mailto>
-                     <xd:organization>Second Maintainer Inc.</xd:organization>
-                  </xd:maintainer>
-                  <xd:copyright>
-                     <xd:year>2011</xd:year>
-                     <xd:name>Copyright Holder</xd:name>
-                     <xd:mailto>copyright.holder@example.com</xd:mailto>
-                     <xd:organization>Copyright Holder Inc.</xd:organization>
-                  </xd:copyright>
-                  <xd:copyright>
-                     <xd:year>2011</xd:year>
-                     <xd:holder>Copyright Holder</xd:holder>
-                  </xd:copyright>
-                  <xd:version>1.0</xd:version>
-                  <xd:since>0.5</xd:since>
-                  <xd:see>empty-in.xsl</xd:see>
-                  <xd:see>http://code.google.com/p/daisy-pipeline/wiki/HowTo_Documentation_Technical</xd:see>
-                  <xd:deprecated>0.9</xd:deprecated>
-               </xd:doc>
-
-               <xsl:template match="@*|node()">
-                  <xd:doc>
-                     <xd:short>Identity template</xd:short>
-                  </xd:doc>
-                  <xsl:copy>
-                     <xsl:apply-templates/>
-                  </xsl:copy>
-               </xsl:template>
-
-               <xd:doc target="following">
-                  <xd:short>Test function</xd:short>
-                  <xd:detail>Contains one undocumented and one documented parameter, as well as a
-                     documented return value.</xd:detail>
-                  <xd:param name="myParam">This is a parameter.</xd:param>
-                  <xd:return>This function returns something.</xd:return>
-               </xd:doc>
-               <xsl:function name="mynamespace:myFunction">
-                  <xsl:param name="myParam"/>
-                  <xsl:param name="myOtherParam"/>
-                  <xsl:value-of select="'myValue'"/>
-               </xsl:function>
-
-            </xsl:stylesheet>
-         </utfx:source>
-         <utfx:expected>
-            <dita>
-               <reference id="d1026e2">
-                  <title>xsl:stylesheet</title>
-                  <abstract>
-                     <shortdesc>Complete test.</shortdesc>This example tests as much as possible at
-                     the same time.</abstract>
-                  <prolog>
-                     <author type="creator">First Author, First Author Inc.,
-                        first.author@example.com</author>
-                     <author type="creator">Second Author, Second Author Inc.,
-                        second.author@example.com</author>
-                     <author type="contributor">First Contributor, First Contributor Inc.,
-                        first.contributor@example.com</author>
-                     <author type="contributor">Second Contributor, Second Contributor Inc.,
-                        second.contributor@example.com</author>
-                     <author type="maintainer">First Maintainer, First Maintainer Inc.,
-                        first.maintainer@example.com</author>
-                     <author type="maintainer">Second Maintainer, Second Maintainer Inc.,
-                        second.maintainer@example.com</author>
-                     <copyright>
-                        <copyryear year="20112011"/>
-                        <copyrholder>Copyright Holder</copyrholder>
-                     </copyright>
-                     <copyright>
-                        <copyryear year="20112011"/>
-                        <copyrholder>Copyright Holder</copyrholder>
-                     </copyright>
-                     <metadata>
-                        <audience type="programmer" job="programming" experiencelevel="expert"/>
-                        <othermeta name="programming-language" content="XSLT"/>
-                        <othermeta name="version" content="1.0"/>
-                        <othermeta name="since" content="0.5"/>
-                        <othermeta name="deprecated" content="0.9"/>
-                        <othermeta name="xslt-version" content="2.0"/>
-                        <othermeta name="xpath-version" content="2.0"/>
-                     </metadata>
-                  </prolog>
-                  <refbody>
-                     <section>
-                        <apiname>xsl:stylesheet</apiname>
-                     </section>
-                     <section outputclass="parameters xslt-outputs">
-                        <title outputclass="io-header">Outputs (xsl:output)</title>
-                        <parml outputclass="xslt-outputs">
-                           <pt/>
-                           <pt/>
-                           <pt/>
-                           <pt/>
-                           <pt/>
-                           <pt>yes</pt>
-                           <pt/>
-                           <pt/>
-                           <pt>no</pt>
-                           <pt>omit</pt>
-                           <pt/>
-                           <pd/>
-                        </parml>
-                     </section>
-                  </refbody>
-                  <related-links>
-                     <linklist>
-                        <title>See also</title>
-                        <link href="empty-in.xsl" format="ditamap"/>
-                        <link
-                           href="http://code.google.com/p/daisy-pipeline/wiki/HowTo_Documentation_Technical"
-                           format="ditamap"/>
-                        <linkinfo>These are related readings suggested by the author of the XSLT
-                           stylesheet.</linkinfo>
-                     </linklist>
-                  </related-links>
-                  <section outputclass="sourcecode">
-                     <title outputclass="sourcecode-header">Source Code</title>
-                     <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:short&gt;Complete test.&lt;/xd:short&gt;
-        &lt;xd:detail&gt;This example tests as much as possible at the same time.&lt;/xd:detail&gt;
-        &lt;xd:author&gt;
-            &lt;xd:name&gt;First Author&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;first.author@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;First Author Inc.&lt;/xd:organization&gt;
-        &lt;/xd:author&gt;
-        &lt;xd:author&gt;
-            &lt;xd:name&gt;Second Author&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;second.author@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;Second Author Inc.&lt;/xd:organization&gt;
-        &lt;/xd:author&gt;
-        &lt;xd:contributor&gt;
-            &lt;xd:name&gt;First Contributor&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;first.contributor@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;First Contributor Inc.&lt;/xd:organization&gt;
-        &lt;/xd:contributor&gt;
-        &lt;xd:contributor&gt;
-            &lt;xd:name&gt;Second Contributor&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;second.contributor@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;Second Contributor Inc.&lt;/xd:organization&gt;
-        &lt;/xd:contributor&gt;
-        &lt;xd:maintainer&gt;
-            &lt;xd:name&gt;First Maintainer&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;first.maintainer@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;First Maintainer Inc.&lt;/xd:organization&gt;
-        &lt;/xd:maintainer&gt;
-        &lt;xd:maintainer&gt;
-            &lt;xd:name&gt;Second Maintainer&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;second.maintainer@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;Second Maintainer Inc.&lt;/xd:organization&gt;
-        &lt;/xd:maintainer&gt;
-        &lt;xd:copyright&gt;
-            &lt;xd:year&gt;2011&lt;/xd:year&gt;
-            &lt;xd:name&gt;Copyright Holder&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;copyright.holder@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;Copyright Holder Inc.&lt;/xd:organization&gt;
-        &lt;/xd:copyright&gt;
-        &lt;xd:copyright&gt;
-            &lt;xd:year&gt;2011&lt;/xd:year&gt;
-            &lt;xd:holder&gt;Copyright Holder&lt;/xd:holder&gt;
-        &lt;/xd:copyright&gt;
-        &lt;xd:version&gt;1.0&lt;/xd:version&gt;
-        &lt;xd:since&gt;0.5&lt;/xd:since&gt;
-        &lt;xd:see&gt;empty-in.xsl&lt;/xd:see&gt;
-        &lt;xd:see&gt;http://code.google.com/p/daisy-pipeline/wiki/HowTo_Documentation_Technical&lt;/xd:see&gt;
-        &lt;xd:deprecated&gt;0.9&lt;/xd:deprecated&gt;
-    &lt;/xd:doc&gt;
-
-    &lt;xsl:template match="@*|node()"&gt;
-        &lt;xd:doc&gt;
-            &lt;xd:short&gt;Identity template&lt;/xd:short&gt;
-        &lt;/xd:doc&gt;
-        &lt;xsl:copy&gt;
-            &lt;xsl:apply-templates/&gt;
-        &lt;/xsl:copy&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xd:doc target="following"&gt;
-        &lt;xd:short&gt;Test function&lt;/xd:short&gt;
-        &lt;xd:detail&gt;Contains one undocumented and one documented parameter, as well as a documented
-            return value.&lt;/xd:detail&gt;
-        &lt;xd:param name="myParam"&gt;This is a parameter.&lt;/xd:param&gt;
-        &lt;xd:return&gt;This function returns something.&lt;/xd:return&gt;
-    &lt;/xd:doc&gt;
-    &lt;xsl:function name="mynamespace:myFunction"&gt;
-        &lt;xsl:param name="myParam"/&gt;
-        &lt;xsl:param name="myOtherParam"/&gt;
-        &lt;xsl:value-of select="'myValue'"/&gt;
-    &lt;/xsl:function&gt;
-
-&lt;/xsl:stylesheet&gt;</codeblock>
-                  </section>
-               </reference>
-               <reference id="d2e125">
-                  <title>xsl:template</title>
-                  <abstract>
-                     <shortdesc>Identity template</shortdesc>
-                  </abstract>
-                  <prolog>
-                     <metadata>
-                        <audience type="programmer" job="programming" experiencelevel="expert"/>
-                        <othermeta name="programming-language" content="XSLT"/>
-                     </metadata>
-                  </prolog>
-                  <refbody>
-                     <section>
-                        <apiname>xsl:template</apiname>
-                     </section>
-                  </refbody>
-                  <section outputclass="sourcecode">
-                     <title outputclass="sourcecode-header">Source Code</title>
-                     <codeblock>&lt;xsl:template match="@*|node()" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-        &lt;xd:doc&gt;
-            &lt;xd:short&gt;Identity template&lt;/xd:short&gt;
-        &lt;/xd:doc&gt;
-        &lt;xsl:copy&gt;
-            &lt;xsl:apply-templates/&gt;
-        &lt;/xsl:copy&gt;
-    &lt;/xsl:template&gt;</codeblock>
-                  </section>
-               </reference>
-               <reference id="d2e154">
-                  <title>xsl:function - mynamespace:myFunction</title>
-                  <abstract>
-                     <shortdesc>Test function</shortdesc>Contains one undocumented and one
-                     documented parameter, as well as a documented return value.</abstract>
-                  <prolog>
-                     <metadata>
-                        <audience type="programmer" job="programming" experiencelevel="expert"/>
-                        <othermeta name="programming-language" content="XSLT"/>
-                     </metadata>
-                  </prolog>
-                  <refbody>
-                     <section>
-                        <apiname>xsl:function - mynamespace:myFunction</apiname>
-                     </section>
-                     <section outputclass="parameters xslt-params">
-                        <title outputclass="io-header">Parameters (xsl:param /
-                           xsl:with-param)</title>
-                        <parml outputclass="xslt-params">
-                           <plentry>
-                              <pt>myParam</pt>
-                              <pt>undefined</pt>
-                              <pt>true</pt>
-                              <pt>no</pt>
-                              <pd>This is a parameter.</pd>
-                           </plentry>
-                           <plentry>
-                              <pt>myOtherParam</pt>
-                              <pt>undefined</pt>
-                              <pt>true</pt>
-                              <pt>no</pt>
-                              <pd/>
-                           </plentry>
-                        </parml>
-                     </section>
-                  </refbody>
-                  <section outputclass="sourcecode">
-                     <title outputclass="sourcecode-header">Source Code</title>
-                     <codeblock>&lt;xsl:function name="mynamespace:myFunction" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
-        &lt;xsl:param name="myParam"/&gt;
-        &lt;xsl:param name="myOtherParam"/&gt;
-        &lt;xsl:value-of select="'myValue'"/&gt;
-    &lt;/xsl:function&gt;</codeblock>
-                  </section>
-               </reference>
-            </dita>
-         </utfx:expected>
-      </utfx:assert-equal>
-   </utfx:test>
-   <utfx:test>
       <utfx:name>doc:author</utfx:name>
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:author>
@@ -1865,20 +1427,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:author&gt;
-            &lt;xd:name&gt;First Author&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;first.author@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;First Author Inc.&lt;/xd:organization&gt;
-        &lt;/xd:author&gt;
-        &lt;xd:author&gt;
-            &lt;xd:name&gt;Second Author&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;second.author@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;Second Author Inc.&lt;/xd:organization&gt;
-        &lt;/xd:author&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -1890,17 +1438,13 @@
       <utfx:name>xsl:decimal-format</utfx:name>
       <utfx:assert-equal>
          <utfx:source>
-
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
 
                <xd:doc>
                   <xd:short>xsl:decimal-format</xd:short>
+                  <xd:detail>xsl:decimal-format will not be documented.</xd:detail>
                </xd:doc>
 
-               <xd:doc xd:target="following">
-                  <xd:short>Decimal format for the "Euro"-currency (€).</xd:short>
-               </xd:doc>
                <xsl:decimal-format name="euro" decimal-separator="," grouping-separator="."/>
 
             </xsl:stylesheet>
@@ -1910,8 +1454,8 @@
                <reference id="d1449e2">
                   <title>xsl:stylesheet</title>
                   <abstract>
-                     <shortdesc>xsl:decimal-format</shortdesc>
-                  </abstract>
+                     <shortdesc>xsl:decimal-format</shortdesc>xsl:decimal-format will not be
+                     documented. </abstract>
                   <prolog>
                      <metadata>
                         <audience type="programmer" job="programming" experiencelevel="expert"/>
@@ -1945,38 +1489,8 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xsl:decimal-format&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-
-    &lt;xd:doc xd:target="following"&gt;
-        &lt;xd:short&gt;Decimal format for the "Euro"-currency (€).&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
     &lt;xsl:decimal-format name="euro" decimal-separator="," grouping-separator="."/&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
-                  </section>
-               </reference>
-               <reference id="d2e15">
-                  <title>xsl:decimal-format - euro</title>
-                  <abstract>
-                     <shortdesc>Decimal format for the "Euro"-currency (€).</shortdesc>
-                  </abstract>
-                  <prolog>
-                     <metadata>
-                        <audience type="programmer" job="programming" experiencelevel="expert"/>
-                        <othermeta name="programming-language" content="XSLT"/>
-                     </metadata>
-                  </prolog>
-                  <refbody>
-                     <section>
-                        <apiname>xsl:decimal-format - euro</apiname>
-                     </section>
-                  </refbody>
-                  <section outputclass="sourcecode">
-                     <title outputclass="sourcecode-header">Source Code</title>
-                     <codeblock>&lt;xsl:decimal-format name="euro" decimal-separator="," grouping-separator="." xmlns:xsl="http://www.w3.org/1999/XSL/Transform"/&gt;</codeblock>
                   </section>
                </reference>
             </dita>
@@ -1988,18 +1502,15 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
 
                <xd:doc>
                   <xd:short>xsl:param</xd:short>
                   <xd:param name="myDocumentedParam">A parameter with documentation.</xd:param>
                </xd:doc>
 
-               <xsl:param name="myDocumentedParam" select="'myDocumentedValue'" required="no"
-                  tunnel="no"/>
-               <xsl:param name="myUndocumentedParam" required="yes" tunnel="no"
-                  exclude-result-prefixes="#all"/>
+               <xsl:param name="myDocumentedParam" select="'myDocumentedValue'" required="no" tunnel="no"/>
+               <xsl:param name="myUndocumentedParam" required="yes" tunnel="no" exclude-result-prefixes="#all"/>
 
             </xsl:stylesheet>
          </utfx:source>
@@ -2063,15 +1574,8 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xsl:param&lt;/xd:short&gt;
-        &lt;xd:param name="myDocumentedParam"&gt;A parameter with documentation.&lt;/xd:param&gt;
-    &lt;/xd:doc&gt;
-    
     &lt;xsl:param name="myDocumentedParam" select="'myDocumentedValue'" required="no" tunnel="no"/&gt;
     &lt;xsl:param name="myUndocumentedParam" required="yes" tunnel="no" exclude-result-prefixes="#all"/&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -2084,17 +1588,20 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
 
                <xd:doc>
                   <xd:short>xsl:variable</xd:short>
                </xd:doc>
 
                <xd:doc xd:target="following">
-                  <xd:short>This is a variable.</xd:short>
+                  <xd:short>This is a documented variable.</xd:short>
+                  <xd:detail>Variables with attached documentation will be documented. Those without
+                     attached documentation will not.</xd:detail>
                </xd:doc>
-               <xsl:variable name="myVariable" select="'myValue'"/>
+               <xsl:variable name="documentedVariable" select="'myValue'"/>
+
+               <xsl:variable name="undocumentedVariable" select="'myOtherValue'"/>
 
             </xsl:stylesheet>
          </utfx:source>
@@ -2138,24 +1645,17 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;xsl:variable&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-    
-    &lt;xd:doc xd:target="following"&gt;
-        &lt;xd:short&gt;This is a variable.&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
     &lt;xsl:variable name="myVariable" select="'myValue'"/&gt;
-
+    &lt;xsl:variable name="undocumentedVariable" select="'myOtherValue'"/&gt;
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
                <reference id="d2e15">
-                  <title>xsl:variable - myVariable</title>
+                  <title>xsl:variable - documentedVariable</title>
                   <abstract>
-                     <shortdesc>This is a variable.</shortdesc>
-                  </abstract>
+                     <shortdesc>This is a documented variable.</shortdesc>Variables with attached
+                     documentation will be documented. Those without attached documentation will
+                     not.</abstract>
                   <prolog>
                      <metadata>
                         <audience type="programmer" job="programming" experiencelevel="expert"/>
@@ -2164,12 +1664,12 @@
                   </prolog>
                   <refbody>
                      <section>
-                        <apiname>xsl:variable - myVariable</apiname>
+                        <apiname>xsl:variable - documentedVariable</apiname>
                      </section>
                   </refbody>
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
-                     <codeblock>&lt;xsl:variable name="myVariable" select="'myValue'" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"/&gt;</codeblock>
+                     <codeblock>&lt;xsl:variable name="documentedVariable" select="'myValue'"/&gt;</codeblock>
                   </section>
                </reference>
             </dita>
@@ -2181,8 +1681,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc>
                   <xd:short>Short description.</xd:short>
@@ -2230,11 +1729,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc&gt;
-        &lt;xd:short&gt;Short description.&lt;/xd:short&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -2247,8 +1741,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:deprecated>0.9</xd:deprecated>
@@ -2297,11 +1790,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:deprecated&gt;0.9&lt;/xd:deprecated&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -2314,9 +1802,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xs="http://www.w3.org/2001/XMLSchema"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
 
                <xsl:import-schema>
                   <xs:schema targetNamespace="http://example.org">
@@ -2331,8 +1817,8 @@
 
                <xd:doc xd:target="parent">
                   <xd:short>xsl:import-schema</xd:short>
-                  <xd:detail>Imported Schemas should probably be automatically
-                     documented...?</xd:detail>
+                  <xd:detail>Imported Schemas are currently not being documented. Should they
+                     be?</xd:detail>
                </xd:doc>
 
             </xsl:stylesheet>
@@ -2342,8 +1828,8 @@
                <reference id="d1685e2">
                   <title>xsl:stylesheet</title>
                   <abstract>
-                     <shortdesc/>
-                  </abstract>
+                     <shortdesc>xsl:import-schema</shortdesc>Imported Schemas are currently not
+                     being documented. Should they be? </abstract>
                   <prolog>
                      <metadata>
                         <audience type="programmer" job="programming" experiencelevel="expert"/>
@@ -2377,7 +1863,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
     &lt;xsl:import-schema&gt;
         &lt;xs:schema targetNamespace="http://example.org"&gt;
             &lt;xs:simpleType name="yes-no"&gt;
@@ -2388,12 +1873,6 @@
             &lt;/xs:simpleType&gt;
         &lt;/xs:schema&gt;
     &lt;/xsl:import-schema&gt;
-
-    &lt;xd:doc xd:target="parent"&gt;
-        &lt;xd:short&gt;xsl:import-schema&lt;/xd:short&gt;
-        &lt;xd:detail&gt;Imported Schemas should probably be automatically documented...?&lt;/xd:detail&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -2406,10 +1885,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
-               xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mynamespace="http://example.org"
-               version="2.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mynamespace="http://example.org" version="2.0">
 
                <xd:doc target="following">
                   <xd:return>This function returns something.</xd:return>
@@ -2461,15 +1937,9 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="following"&gt;
-         &lt;xd:return&gt;This function returns something.&lt;/xd:return&gt;
-    &lt;/xd:doc&gt;
-    
     &lt;xsl:function name="mynamespace:myFunction"&gt;
         &lt;xsl:value-of select="'myValue'"/&gt;
     &lt;/xsl:function&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -2488,6 +1958,13 @@
                      <section>
                         <apiname>xsl:function - mynamespace:myFunction</apiname>
                      </section>
+                     <section outputclass="parameters xslt-outputs">
+                        <title outputclass="io-header">Returns</title>
+                        <parml outputclass="xslt-outputs">
+                           <pt/>
+                           <pd>This function returns something.</pd>
+                        </parml>
+                     </section>
                   </refbody>
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
@@ -2505,8 +1982,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:maintainer>
@@ -2567,20 +2043,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:maintainer&gt;
-            &lt;xd:name&gt;First Maintainer&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;first.maintainer@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;First Maintainer Inc.&lt;/xd:organization&gt;
-        &lt;/xd:maintainer&gt;
-        &lt;xd:maintainer&gt;
-            &lt;xd:name&gt;Second Maintainer&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;second.maintainer@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;Second Maintainer Inc.&lt;/xd:organization&gt;
-        &lt;/xd:maintainer&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -2593,8 +2055,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:contributor>
@@ -2655,20 +2116,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:contributor&gt;
-            &lt;xd:name&gt;First Contributor&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;first.contributor@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;First Contributor Inc.&lt;/xd:organization&gt;
-        &lt;/xd:contributor&gt;
-        &lt;xd:contributor&gt;
-            &lt;xd:name&gt;Second Contributor&lt;/xd:name&gt;
-            &lt;xd:mailto&gt;second.contributor@example.com&lt;/xd:mailto&gt;
-            &lt;xd:organization&gt;Second Contributor Inc.&lt;/xd:organization&gt;
-        &lt;/xd:contributor&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
@@ -2681,8 +2128,7 @@
       <utfx:assert-equal>
          <utfx:source>
 
-            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-               xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="1.0">
 
                <xd:doc target="parent">
                   <xd:since>0.5</xd:since>
@@ -2731,11 +2177,6 @@
                   <section outputclass="sourcecode">
                      <title outputclass="sourcecode-header">Source Code</title>
                      <codeblock>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
-
-    &lt;xd:doc target="parent"&gt;
-        &lt;xd:since&gt;0.5&lt;/xd:since&gt;
-    &lt;/xd:doc&gt;
-
 &lt;/xsl:stylesheet&gt;</codeblock>
                   </section>
                </reference>
