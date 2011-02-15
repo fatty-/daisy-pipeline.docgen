@@ -3,8 +3,6 @@
   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
   xmlns:xsltdoc="http://www.pnp-software.com/XSLTdoc" exclude-result-prefixes="#all" version="2.0">
 
-  <xsl:import href="xml-to-string.xsl"/>
-
   <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
   <xd:doc target="parent">
@@ -701,11 +699,12 @@
       <section outputclass="sourcecode">
         <title outputclass="sourcecode-header">Source Code</title>
         <codeblock>
-          <xsl:for-each select="$code">
+          <xsl:copy-of select="$code"/>
+          <!--xsl:for-each select="$code">
             <xsl:if test="not(self::xd:doc) and not(self::xsltdoc:doc)">
               <xsl:call-template name="xml-to-string"/>
             </xsl:if>
-          </xsl:for-each>
+          </xsl:for-each-->
         </codeblock>
       </section>
     </reference>
