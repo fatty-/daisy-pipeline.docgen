@@ -1,0 +1,43 @@
+<reference id="d13209e622">
+   <title>xsl:template - import</title>
+   <abstract>
+      <shortdesc>Normalizes xd:import elements.</shortdesc>Will create empty documentation for imports that are not documented, and removes documentation of imports that does not exist in the code.</abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template - import</apiname>
+      </section>
+      <section outputclass="parameters xslt-params">
+         <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+         <parml outputclass="xslt-params">
+            <plentry>
+               <pt>code</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>no</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" name="import"&gt;
+        &lt;xsl:param name="code" required="yes"/&gt;
+        &lt;xsl:variable name="doc" select="."/&gt;
+        &lt;xsl:for-each select="$code/xsl:import"&gt;
+            &lt;xsl:variable name="href" select="@href"/&gt;
+            &lt;xd:import href="{@href}"&gt;
+                &lt;xsl:if test="$doc/*[local-name()='import' and @href=$href]"&gt;
+                    &lt;xsl:value-of select="$doc/*[local-name()='import' and @href=$href]"/&gt;
+                &lt;/xsl:if&gt;
+            &lt;/xd:import&gt;
+        &lt;/xsl:for-each&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

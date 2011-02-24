@@ -1,0 +1,68 @@
+<reference id="d86e204">
+   <title>p:group - relative-map-paths</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                   xmlns:d="http://www.example.org/documenter"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Resolves relative map paths.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>relative-map-paths</apiname>
+      </section>
+      <section outputclass="parameters xproc-outputs">
+         <title outputclass="io-header">Outputs</title>
+         <parml outputclass="xproc-outputs">
+            <plentry>
+               <pt>result</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt>result@resolve-relative-map-paths</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:group name="relative-map-paths" xmlns:p="http://www.w3.org/ns/xproc" xmlns:cx="http://xmlcalabash.com/ns/extensions"&gt;
+            &lt;p:output port="result"&gt;
+                &lt;p:pipe port="result" step="resolve-relative-map-paths"/&gt;
+            &lt;/p:output&gt;
+            
+            &lt;p:identity&gt;
+                &lt;p:input port="source"&gt;
+                    &lt;p:pipe port="result" step="result-ditamap"/&gt;
+                &lt;/p:input&gt;
+            &lt;/p:identity&gt;
+            &lt;p:viewport name="resolve-relative-map-paths" match="/c:result/c:result"&gt;
+                &lt;p:output port="result" primary="true" sequence="true"&gt;
+                    &lt;p:pipe port="result" step="resolve-relative-map-paths-done"/&gt;
+                &lt;/p:output&gt;
+                
+                &lt;p:add-attribute match="/*"&gt;
+                    &lt;p:with-option name="attribute-name" select="'rel'"/&gt;
+                    &lt;p:with-option name="attribute-value" select="substring-after(p:resolve-uri(.), concat($ditaPath,'/'))"/&gt;
+                &lt;/p:add-attribute&gt;
+                
+                &lt;p:identity name="resolve-relative-map-paths-done"/&gt;
+            &lt;/p:viewport&gt;
+            
+            &lt;p:identity&gt;&lt;p:input port="source"&gt;&lt;p:pipe port="result" step="result-ditamap"/&gt;&lt;/p:input&gt;&lt;/p:identity&gt;
+            &lt;p:wrap wrapper="wrapper" match="/*"/&gt;
+            &lt;p:escape-markup/&gt;
+            &lt;cx:message&gt;&lt;p:with-option name="message" select="'result-ditamap:'"/&gt;&lt;/cx:message&gt;
+            &lt;cx:message&gt;&lt;p:with-option name="message" select="."/&gt;&lt;/cx:message&gt;
+            &lt;p:sink/&gt;
+        &lt;/p:group&gt;</codeblock>
+   </section>
+</reference>

@@ -1,0 +1,81 @@
+<reference id="d13209e70">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>Matches each xd:doc element.</shortdesc>
+        
+        Determines what code is being documented and calls appropriate templates for: <xd:ul xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
+             xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xd:li>short description (xd:short)</xd:li>
+                <xd:li>detailed description (xd:detail)</xd:li>
+                <xd:li>authors (xd:author)</xd:li>
+                <xd:li>contributors (xd:contributor)</xd:li>
+                <xd:li>maintainers (xd:maintainer)</xd:li>
+                <xd:li>copyright (xd:copyright)</xd:li>
+                <xd:li>version (xd:version)</xd:li>
+                <xd:li>code existed since version (xd:since)</xd:li>
+                <xd:li>see also (xd:see)</xd:li>
+                <xd:li>deprecated since version (xd:deprecated)</xd:li>
+                <xd:li>import statements (xd:import and xsl:import)</xd:li>
+                <xd:li>include statements (xd:include and xsl:include)</xd:li>
+                <xd:li>parameters (xd:param and xsl:param)</xd:li>
+                <xd:li>return values / output (xd:return)</xd:li>
+            </xd:ul>
+        
+        
+    </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" match="xd:doc"&gt;
+        &lt;xsl:copy&gt;
+            &lt;xsl:variable name="target"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="@target"&gt;
+                        &lt;xsl:value-of select="@target"/&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:when test="count(preceding-sibling::*)=0"&gt;
+                        &lt;xsl:value-of select="'parent'"/&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:value-of select="'following'"/&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:variable&gt;
+            &lt;xsl:variable name="code" select="if ($target='parent') then parent::* else following-sibling::*[1]"/&gt;
+
+            &lt;xsl:attribute name="target" select="$target"/&gt;
+
+            &lt;xsl:call-template name="short"/&gt;
+            &lt;xsl:call-template name="detail"/&gt;
+            &lt;xsl:call-template name="authors"/&gt;
+            &lt;xsl:call-template name="contributors"/&gt;
+            &lt;xsl:call-template name="maintainers"/&gt;
+            &lt;xsl:call-template name="copyright"/&gt;
+            &lt;xsl:call-template name="version"/&gt;
+            &lt;xsl:call-template name="since"/&gt;
+            &lt;xsl:call-template name="see"/&gt;
+            &lt;xsl:call-template name="deprecated"/&gt;
+            &lt;xsl:call-template name="import"&gt;
+                &lt;xsl:with-param name="code" select="$code"/&gt;
+            &lt;/xsl:call-template&gt;
+            &lt;xsl:call-template name="include"&gt;
+                &lt;xsl:with-param name="code" select="$code"/&gt;
+            &lt;/xsl:call-template&gt;
+            &lt;xsl:call-template name="param"&gt;
+                &lt;xsl:with-param name="code" select="$code"/&gt;
+            &lt;/xsl:call-template&gt;
+            &lt;xsl:call-template name="return"/&gt;
+        &lt;/xsl:copy&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

@@ -1,0 +1,120 @@
+<reference id="d13209e1061">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>Handles non-problematic lists.</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+      <section outputclass="parameters xslt-params">
+         <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+         <parml outputclass="xslt-params">
+            <plentry>
+               <pt>wrapin-p</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-ul</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-li</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-b</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-i</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-a</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-a-elem</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" mode="list" match="@*|node()"&gt;
+        &lt;xsl:param name="wrapin-p" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-ul" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-li" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-b" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-i" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-a" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-a-elem" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:variable name="is-empty" select="count(descendant-or-self::node()[self::text() and string-length(normalize-space())&amp;gt;0 or local-name()='pre'])=0"/&gt;
+        &lt;xsl:variable name="contains-block" select="count(descendant::*[local-name()='ul' or local-name()='li' or local-name()='pre' or local-name()='p'])&amp;gt;0"/&gt;
+        &lt;xsl:choose&gt;
+            &lt;xsl:when test="local-name()='li'"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="$is-empty"/&gt;
+                    &lt;xsl:when test="$contains-block"&gt;
+                        &lt;xsl:call-template name="unwrap-to-blocks"&gt;
+                            &lt;xsl:with-param name="wrapin-ul" select="true()" tunnel="yes"/&gt;
+                            &lt;xsl:with-param name="wrapin-li" select="true()" tunnel="yes"/&gt;
+                        &lt;/xsl:call-template&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:when test="$wrapin-ul"&gt;
+                        &lt;xd:ul&gt;
+                            &lt;xd:li&gt;
+                                &lt;xsl:apply-templates mode="phrase" select="@*|node()"/&gt;
+                            &lt;/xd:li&gt;
+                        &lt;/xd:ul&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xd:li&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="@*|node()"/&gt;
+                        &lt;/xd:li&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:otherwise&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="self::text()"&gt;
+                        &lt;xsl:copy/&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates mode="list" select="@*|node()"/&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:otherwise&gt;
+        &lt;/xsl:choose&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

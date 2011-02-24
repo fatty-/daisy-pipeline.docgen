@@ -1,0 +1,167 @@
+<reference id="d13209e1407">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>Phrases are matched with this template (mode="phrase") and handled appropriately.</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+      <section outputclass="parameters xslt-params">
+         <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+         <parml outputclass="xslt-params">
+            <plentry>
+               <pt>wrapin-b</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-i</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-a</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-a-elem</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" mode="phrase" match="@*|node()"&gt;
+        &lt;xsl:param name="wrapin-b" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-i" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-a" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-a-elem" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:choose&gt;
+            &lt;xsl:when test="local-name()='b'"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="not(ancestor::*[local-name()='b'])"&gt;
+                        &lt;xd:b&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="@*|node()"&gt;
+                                &lt;xsl:with-param name="wrapin-b" select="false()" tunnel="yes"/&gt;
+                            &lt;/xsl:apply-templates&gt;
+                        &lt;/xd:b&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates mode="phrase" select="@*|node()"&gt;
+                            &lt;xsl:with-param name="wrapin-b" select="false()" tunnel="yes"/&gt;
+                        &lt;/xsl:apply-templates&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="$wrapin-b"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="not(ancestor::*[local-name()='b'])"&gt;
+                        &lt;xd:b&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="."&gt;
+                                &lt;xsl:with-param name="wrapin-b" select="false()" tunnel="yes"/&gt;
+                            &lt;/xsl:apply-templates&gt;
+                        &lt;/xd:b&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates mode="phrase" select="."&gt;
+                            &lt;xsl:with-param name="wrapin-b" select="false()" tunnel="yes"/&gt;
+                        &lt;/xsl:apply-templates&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="local-name()='i'"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="not(ancestor::*[local-name()='i'])"&gt;
+                        &lt;xd:i&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="@*|node()"&gt;
+                                &lt;xsl:with-param name="wrapin-i" select="false()" tunnel="yes"/&gt;
+                            &lt;/xsl:apply-templates&gt;
+                        &lt;/xd:i&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates mode="phrase" select="@*|node()"&gt;
+                            &lt;xsl:with-param name="wrapin-i" select="false()" tunnel="yes"/&gt;
+                        &lt;/xsl:apply-templates&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="$wrapin-i"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="not(ancestor::*[local-name()='i'])"&gt;
+                        &lt;xd:i&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="."&gt;
+                                &lt;xsl:with-param name="wrapin-i" select="false()" tunnel="yes"/&gt;
+                            &lt;/xsl:apply-templates&gt;
+                        &lt;/xd:i&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates mode="phrase" select="."&gt;
+                            &lt;xsl:with-param name="wrapin-i" select="false()" tunnel="yes"/&gt;
+                        &lt;/xsl:apply-templates&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="local-name()='a'"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="not(ancestor::*[local-name()='a'])"&gt;
+                        &lt;xd:a&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="$wrapin-a-elem/@*"/&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="node()"&gt;
+                                &lt;xsl:with-param name="wrapin-a" select="false()" tunnel="yes"/&gt;
+                            &lt;/xsl:apply-templates&gt;
+                        &lt;/xd:a&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates mode="phrase" select="@*|node()"/&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="$wrapin-a"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="not(ancestor::*[local-name()='a'])"&gt;
+                        &lt;xd:a&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="$wrapin-a-elem/@*"/&gt;
+                            &lt;xsl:apply-templates mode="phrase" select="."&gt;
+                                &lt;xsl:with-param name="wrapin-a" select="false()" tunnel="yes"/&gt;
+                            &lt;/xsl:apply-templates&gt;
+                        &lt;/xd:a&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates mode="phrase" select="."&gt;
+                            &lt;xsl:with-param name="wrapin-a" select="false()" tunnel="yes"/&gt;
+                        &lt;/xsl:apply-templates&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:otherwise&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="self::text()"&gt;
+                        &lt;xsl:copy/&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates mode="phrase" select="@*|node()"/&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:otherwise&gt;
+        &lt;/xsl:choose&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

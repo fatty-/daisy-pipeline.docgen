@@ -18,8 +18,8 @@ usageExit ()
 	echo "    -v      : verbose"
 	echo ""
 	echo "Example:"
-	echo "    `basename "$0"` documenter-0.2"
-	echo "    `basename "$0"` -o documentation documenter-0.2"
+	echo "    `basename "$0"` documenter-0.3"
+	echo "    `basename "$0"` -o documentation documenter-0.3"
 	exit ${1:-1}
 }
 
@@ -61,4 +61,4 @@ then
 	OUT_DIR="output"
 fi
 
-calabash ${MODULE_DIR// /%20}/documenter-0.2/document.xpl src=${SRC_DIR// /%20} doc=${OUT_DIR// /%20}
+calabash ${MODULE_DIR// /%20}/documenter-0.3/document.xpl src=${SRC_DIR// /%20} doc=${OUT_DIR// /%20}

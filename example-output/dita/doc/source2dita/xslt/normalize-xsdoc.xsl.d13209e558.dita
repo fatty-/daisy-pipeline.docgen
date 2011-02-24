@@ -1,0 +1,27 @@
+<reference id="d13209e558">
+   <title>xsl:template - version</title>
+   <abstract>
+      <shortdesc>Normalizes xd:version elements.</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template - version</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" name="version"&gt;
+        &lt;xsl:if test="child::*[local-name()='version' and string-length(normalize-space(./text()))&amp;gt;0]"&gt;
+            &lt;xd:version&gt;
+                &lt;xsl:value-of select="child::*[local-name()='version' and string-length(normalize-space(./text()))&amp;gt;0]"/&gt;
+            &lt;/xd:version&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

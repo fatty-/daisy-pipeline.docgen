@@ -1,0 +1,69 @@
+<reference id="d5657e424">
+   <title>p:xslt</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                   xmlns:d="http://www.example.org/documenter"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Strip 'file:' from beginning of URLs (useful when interacting with the
+                    command line).</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:xslt</apiname>
+      </section>
+      <section outputclass="parameters xproc-inputs">
+         <title outputclass="io-header">Inputs</title>
+         <parml outputclass="xproc-inputs">
+            <plentry>
+               <pt>parameters</pt>
+               <pt>false</pt>
+               <pt/>
+               <pt>empty</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>stylesheet</pt>
+               <pt>false</pt>
+               <pt/>
+               <pt>inline</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:xslt xmlns:p="http://www.w3.org/ns/xproc"&gt;
+                &lt;p:input port="parameters"&gt;
+                    &lt;p:empty/&gt;
+                &lt;/p:input&gt;
+                &lt;p:input port="stylesheet"&gt;
+                    &lt;p:inline&gt;
+                        &lt;xsl:stylesheet version="2.0" exclude-result-prefixes="cx fn d xd" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+                            &lt;xsl:template match="@*|node()"&gt;
+                                &lt;xsl:copy&gt;
+                                    &lt;xsl:for-each select="@*|node()"&gt;
+                                        &lt;xsl:choose&gt;
+                                            &lt;xsl:when test="self::text()"&gt;&lt;xsl:value-of select="replace(.,'^file:','')"/&gt;&lt;/xsl:when&gt;
+                                            &lt;xsl:otherwise&gt;
+                                                &lt;xsl:apply-templates select="@*|node()"/&gt;
+                                            &lt;/xsl:otherwise&gt;
+                                        &lt;/xsl:choose&gt;
+                                    &lt;/xsl:for-each&gt;
+                                &lt;/xsl:copy&gt;
+                            &lt;/xsl:template&gt;
+                        &lt;/xsl:stylesheet&gt;
+                    &lt;/p:inline&gt;
+                &lt;/p:input&gt;
+            &lt;/p:xslt&gt;</codeblock>
+   </section>
+</reference>

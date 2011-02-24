@@ -1,5 +1,0 @@
-Each folder tests an XSLT stylesheet. Each folder contains
-the source file(s) and the expected output file(s). A script
-is also included in each folder that applies the stylesheet
-to the source file(s) and generates result file(s) which
-can be compared to the expected output file(s) for correctness.

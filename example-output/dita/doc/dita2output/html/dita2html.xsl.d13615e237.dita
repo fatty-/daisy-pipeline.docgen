@@ -1,0 +1,28 @@
+<reference id="d13615e237">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>&lt;copyright&gt;&lt;copyryear
+            year="..."/&gt;&lt;copyrholder&gt;...&lt;/copyrholder&gt;&lt;/copyright&gt; becomes
+            &lt;p class="copyright"&gt;© [holder], [year]&lt;/p&gt;</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" match="copyright"&gt;
+        &lt;p class="copyright {@outputclass}"&gt; © &lt;xsl:apply-templates select="copyrholder"/&gt;
+            &lt;xsl:if test="count(./copyrholder)&amp;gt;0 and count(./copyryear)&amp;gt;0"&gt;, &lt;/xsl:if&gt;
+            &lt;xsl:apply-templates select="copyryear"/&gt;
+        &lt;/p&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

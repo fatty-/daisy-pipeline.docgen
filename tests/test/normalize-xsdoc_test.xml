@@ -1,0 +1,3247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE utfx:tests PUBLIC "-//UTF-X//DTD utfx-tests 1.0//EN" "utfx_tests.dtd">
+<utfx:tests xmlns:utfx="http://utfx.org/test-definition"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <utfx:stylesheet src="../documenter-0.3/source2dita/xslt/normalize-xsdoc.xsl"/>
+   <utfx:test>
+      <utfx:name>xd:doc</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:doc - target="parent" #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:doc - target="parent" #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xd:doc/>
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xd:doc target="parent"/>
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:doc - target="following"</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+               <xd:doc/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>two xd:doc elements - target="parent" and target="following"</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc>
+                  <xd:short>doc #1</xd:short>
+               </xd:doc>
+               <xd:doc>
+                  <xd:short>doc #2</xd:short>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent">
+                  <xd:short>doc #1</xd:short>
+               </xd:doc>
+               <xd:doc target="following">
+                  <xd:short>doc #2</xd:short>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:short and xd:detail #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  This is the first sentence. This is the second sentence. This is the third sentence.
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:short>This is the first sentence.</xd:short>
+                  <xd:detail>This is the second sentence. This is the third sentence.</xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:short and xd:detail #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:short>This is the short description.</xd:short>
+                  This is the first sentence. This is the second sentence. This is the third sentence.
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:short>This is the short description.</xd:short>
+                  <xd:detail>This is the first sentence. This is the second sentence. This is the third sentence.</xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:short and xd:detail #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  This is the first sentence. This is the second sentence. This is the third sentence.
+                  <xd:detail>This is the detailed description.</xd:detail>
+                  This is the fourth sentence. This is the fifth sentence.
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:short>This is the first sentence.</xd:short>
+                  <xd:detail>
+                     <xd:section>This is the second sentence. This is the third sentence.</xd:section>
+                     <xd:section>This is the detailed description.</xd:section>
+                     <xd:section>This is the fourth sentence. This is the fifth sentence.</xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:short and xd:detail #4</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>This is the detailed description. There's no short description here.</xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>This is the detailed description. There's no short description here.</xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:short and xd:detail #5</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:short>This is the short description. There's no detailed description here.</xd:short>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:short>This is the short description. There's no detailed description here.</xd:short>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>Paragraph</xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>Paragraph</xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:p #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:p>Nested paragraph</xd:p>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>Nested paragraph</xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:p #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:p>Nested paragraph #1</xd:p>
+                        <xd:p>Nested paragraph #2</xd:p>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                        <xd:p>Nested paragraph #1</xd:p>
+                        <xd:p>Nested paragraph #2</xd:p>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:p in xd:p #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:p>
+                           <xd:p>Nested paragraph</xd:p>
+                        </xd:p>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>Nested paragraph</xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:p in xd:p #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:p>
+                           <xd:p>Nested paragraph #1</xd:p>
+                           <xd:p>Nested paragraph #2</xd:p>
+                        </xd:p>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                        <xd:p>Nested paragraph #1</xd:p>
+                        <xd:p>Nested paragraph #2</xd:p>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:i</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:i>Italic</xd:i>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:i>Italic</xd:i>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:b</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:b>Bold</xd:b>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:b>Bold</xd:b>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:b #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:b>
+                        <xd:p>Paragraph in bold.</xd:p>
+                     </xd:b>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:b>Paragraph in bold.</xd:b>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:b #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:b>
+                        <xd:p>Paragraph #1</xd:p>
+                        <xd:p>Paragraph #2</xd:p>
+                     </xd:b>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:b>Paragraph #1</xd:b>
+                     </xd:p>
+                     <xd:p>
+                        <xd:b>Paragraph #2</xd:b>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:i #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:i>
+                        <xd:p>Paragraph in italic.</xd:p>
+                     </xd:i>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:i>Paragraph in italic.</xd:i>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:i #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:i>
+                        <xd:p>Paragraph #1</xd:p>
+                        <xd:p>Paragraph #2</xd:p>
+                     </xd:i>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:i>Paragraph #1</xd:i>
+                     </xd:p>
+                     <xd:p>
+                        <xd:i>Paragraph #2</xd:i>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:p in xd:i</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:i>
+                        <xd:p>
+                           <xd:p>Paragraph in italic.</xd:p>
+                        </xd:p>
+                     </xd:i>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:i>Paragraph in italic.</xd:i>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:i in xd:p</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:i>
+                           <xd:p>Paragraph in italic.</xd:p>
+                        </xd:i>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:i>Paragraph in italic.</xd:i>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:i in xd:p in xd:p</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:p>
+                           <xd:i>Paragraph in italic.</xd:i>
+                        </xd:p>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:i>Paragraph in italic.</xd:i>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>other:p</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <other:p xmlns:other="http://example.org">Paragraph.</other:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>Paragraph.</xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>other:p in xd:p</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <other:p xmlns:other="http://example.org">Paragraph.</other:p>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>Paragraph.</xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in other:p</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <other:p xmlns:other="http://example.org">
+                        <xd:p>Paragraph.</xd:p>
+                     </other:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>Paragraph.</xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>other:b</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <other:b xmlns:other="http://example.org">Bold.</other:b>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:b>Bold.</xd:b>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>other:i</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <other:i xmlns:other="http://example.org">Italic.</other:i>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:i>Italic.</xd:i>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>unknown element #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <other:foo xmlns:other="http://example.org">Text.</other:foo>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>Text.</xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>unknown element #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                        <other:foo xmlns:other="http://example.org">Text.</other:foo>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>Text.</xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>unknown element #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <other:foo xmlns:other="http://example.org">Text.</other:foo>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>Text.</xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>unknown element #4</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <other:foo xmlns:other="http://example.org">
+                           <xd:i>Text</xd:i>
+                        </other:foo>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <xd:i>Text</xd:i>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>unknown element #5</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                        <other:foo xmlns:other="http://example.org">Text #1</other:foo>
+                        <other:foo xmlns:other="http://example.org">Text #2</other:foo>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                        <xd:section>Text #1</xd:section>
+                        <xd:section>Text #2</xd:section>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>unknown element #6</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        <other:foo xmlns:other="http://example.org">Text #1</other:foo>
+                        <other:foo xmlns:other="http://example.org">Text #2</other:foo>
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        Text #1
+                        Text #2
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>unknown element #7</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        Text #1
+                        <other:foo xmlns:other="http://example.org">Text #2</other:foo>
+                        Text #3
+                        <other:foo xmlns:other="http://example.org">Text #4</other:foo>
+                        Text #5
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        Text #1
+                        Text #2
+                        Text #3
+                        Text #4
+                        Text #5
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:pre #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:pre><preformatted>Preformatted</preformatted></xd:pre>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:pre><preformatted>Preformatted</preformatted></xd:pre>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:pre #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <other:pre xmlns:other="http://example.org"><preformatted>Preformatted</preformatted></other:pre>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:pre><preformatted>Preformatted</preformatted></xd:pre>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:pre #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:pre>
+                        <xd:author/>
+                        <xd:doc/>
+                        <xd:since/>
+                        <xd:pre>
+                           <xd:pre/>
+                        </xd:pre>
+                     </xd:pre>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:pre>
+                        <xd:author/>
+                        <xd:doc/>
+                        <xd:since/>
+                        <xd:pre>
+                           <xd:pre/>
+                        </xd:pre>
+                     </xd:pre>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:ul and xd:li #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li>List item 1</xd:li>
+                        <xd:li>List item 2</xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li>List item 1</xd:li>
+                        <xd:li>List item 2</xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:ul and xd:li #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <other:li xmlns:other="http://example.org">List item 1</other:li>
+                        <xd:li>List item 2</xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li>List item 1</xd:li>
+                        <xd:li>List item 2</xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:ul and xd:li #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <other:ul xmlns:other="http://example.org">
+                        <xd:li>List item 1</xd:li>
+                        <xd:li>List item 2</xd:li>
+                     </other:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li>List item 1</xd:li>
+                        <xd:li>List item 2</xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:ul and xd:li #4</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul/>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:ul and xd:li #5</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li/>
+                     </xd:ul>
+                     <xd:ul>
+                        <xd:li/>
+                        <xd:li>List item</xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li>List item</xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:li #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:li>List item</xd:li>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li>List item</xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:li #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:li/>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:ul in xd:p</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:p>
+                        Text #1
+                        <xd:ul>
+                           <xd:li>List item</xd:li>
+                        </xd:ul>
+                        Text #2
+                     </xd:p>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                       <xd:p>Text #1</xd:p>
+                       <xd:ul>
+                          <xd:li>List item</xd:li>
+                       </xd:ul>
+                       <xd:p>Text #2</xd:p>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:ul</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:p>Paragraph #1</xd:p>
+                        <xd:li>List item 1</xd:li>
+                        <xd:p>Paragraph #2</xd:p>
+                        <xd:li>List item 2</xd:li>
+                        <xd:p>Paragraph #3</xd:p>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                       <xd:p>Paragraph #1</xd:p>
+                       <xd:ul>
+                          <xd:li>List item 1</xd:li>
+                       </xd:ul>
+                       <xd:p>Paragraph #2</xd:p>
+                       <xd:ul>
+                          <xd:li>List item 2</xd:li>
+                       </xd:ul>
+                       <xd:p>Paragraph #3</xd:p>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:li #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li><xd:p>Paragraph #1</xd:p></xd:li>
+                        <xd:li>List item 1</xd:li>
+                        <xd:li><xd:p>Paragraph #2</xd:p></xd:li>
+                        <xd:li>List item 2</xd:li>
+                        <xd:li><xd:p>Paragraph #3</xd:p></xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                       <xd:p>Paragraph #1</xd:p>
+                       <xd:ul>
+                          <xd:li>List item 1</xd:li>
+                       </xd:ul>
+                       <xd:p>Paragraph #2</xd:p>
+                       <xd:ul>
+                          <xd:li>List item 2</xd:li>
+                       </xd:ul>
+                       <xd:p>Paragraph #3</xd:p>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:p in xd:li #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:ul>
+                        <xd:li><xd:p>Paragraph #1</xd:p></xd:li>
+                        <xd:li>List item 1</xd:li>
+                        <xd:li><xd:p>Paragraph #2</xd:p></xd:li>
+                        <xd:li>List item 2</xd:li>
+                        <xd:li><xd:p>Paragraph #3</xd:p></xd:li>
+                     </xd:ul>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:section>
+                       <xd:p>Paragraph #1</xd:p>
+                       <xd:ul>
+                          <xd:li>List item 1</xd:li>
+                       </xd:ul>
+                       <xd:p>Paragraph #2</xd:p>
+                       <xd:ul>
+                          <xd:li>List item 2</xd:li>
+                       </xd:ul>
+                       <xd:p>Paragraph #3</xd:p>
+                     </xd:section>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:a #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:a href="#identity">A link.</xd:a>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:a href="#identity">A link.</xd:a>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:a #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <other:a xmlns:other="http://example.org" href="#identity">A link.</other:a>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:detail>
+                     <xd:a href="#identity">A link.</xd:a>
+                  </xd:detail>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:param #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:param name="paramName">Parameter description</xd:param>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:param name="paramName">Parameter description</xd:param>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:param #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:param xmlns:other="http://example.org" name="paramName">Parameter description</other:param>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:param name="paramName">Parameter description</xd:param>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:param #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:param name="paramName" select="'paramValue'"/>
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:param name="paramName"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:param name="paramName" select="'paramValue'"/>
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:return #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:return>Return description</xd:return>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:return>Return description</xd:return>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:return #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:return xmlns:other="http://example.org" name="paramName">Return description</other:return>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:return>Return description</xd:return>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:author #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:author> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:author>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:author> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:author>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:author #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:author>Name</xd:author>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:author> 
+                     <xd:name>Name</xd:name> 
+                  </xd:author>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:author #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:author/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:author #4</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:author xmlns:other="http://example.org"> 
+                     <other:name>Name</other:name> 
+                     <other:mailto>mailto@example.org</other:mailto> 
+                     <other:organization>Organization</other:organization> 
+                  </other:author>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:author> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:author>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:contributor #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:contributor> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:contributor>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:contributor> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:contributor>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:contributor #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:contributor>Name</xd:contributor>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:contributor> 
+                     <xd:name>Name</xd:name> 
+                  </xd:contributor>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:contributor #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:contributor/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:contributor #4</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:contributor xmlns:other="http://example.org"> 
+                     <other:name>Name</other:name> 
+                     <other:mailto>mailto@example.org</other:mailto> 
+                     <other:organization>Organization</other:organization> 
+                  </other:contributor>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:contributor> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:contributor>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:maintainer #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:maintainer> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:maintainer>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:maintainer> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:maintainer>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:maintainer #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:maintainer>Name</xd:maintainer>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:maintainer> 
+                     <xd:name>Name</xd:name> 
+                  </xd:maintainer>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:maintainer #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:maintainer/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:maintainer #4</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:maintainer xmlns:other="http://example.org"> 
+                     <other:name>Name</other:name> 
+                     <other:mailto>mailto@example.org</other:mailto> 
+                     <other:organization>Organization</other:organization> 
+                  </other:maintainer>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:maintainer> 
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:maintainer>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:copyright #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:copyright>
+                     <xd:year>2011</xd:year>
+                     <xd:name>Name</xd:name>
+                     <xd:mailto>mailto@example.org</xd:mailto>
+                     <xd:organization>Organization</xd:organization>
+                  </xd:copyright>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:copyright>
+                     <xd:year>2011</xd:year>
+                     <xd:name>Name</xd:name> 
+                     <xd:mailto>mailto@example.org</xd:mailto> 
+                     <xd:organization>Organization</xd:organization> 
+                  </xd:copyright>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:copyright #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:copyright>Name</xd:copyright>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:copyright> 
+                     <xd:name>Name</xd:name> 
+                  </xd:copyright>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:copyright #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:copyright/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:copyright #4</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:copyright xmlns:other="http://example.org">
+                     <year>2011</year>
+                     <other:name>Name</other:name>
+                     <other:mailto>mailto@example.org</other:mailto>
+                     <other:organization>Organization</other:organization>
+                  </other:copyright>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:copyright>
+                     <xd:year>2011</xd:year>
+                     <xd:name>Name</xd:name>
+                     <xd:mailto>mailto@example.org</xd:mailto>
+                     <xd:organization>Organization</xd:organization>
+                  </xd:copyright>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:version #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:version>1.0</xd:version>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:version>1.0</xd:version>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:version #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:version xmlns:other="http://example.org">1.0</other:version>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:version>1.0</xd:version>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:version #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:version/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:since #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:since>1.0</xd:since>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:since>1.0</xd:since>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:since #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:since xmlns:other="http://example.org">1.0</other:since>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:since>1.0</xd:since>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:since #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:since/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:see #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:see>http://code.google.com/p/daisy-pipeline</xd:see>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:see>http://code.google.com/p/daisy-pipeline</xd:see>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:see #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:see xmlns:other="http://example.org">http://code.google.com/p/daisy-pipeline</other:see>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:see>http://code.google.com/p/daisy-pipeline</xd:see>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:see #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:see/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:deprecated #1</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:deprecated>1.0</xd:deprecated>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:deprecated>1.0</xd:deprecated>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:deprecated #2</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <other:deprecated xmlns:other="http://example.org">1.0</other:deprecated>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:deprecated>1.0</xd:deprecated>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:deprecated #3</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following">
+                  <xd:deprecated/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:import #1 - href and description</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:import href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:import href="http://example.org/stylesheet.xsl">Description of import.</xd:import>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:import href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:import href="http://example.org/stylesheet.xsl">Description of import.</xd:import>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:import #2 - other namespace</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:import href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <other:import xmlns:other="http://example.org" href="http://example.org/stylesheet.xsl">Description of import.</other:import>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:import href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:import href="http://example.org/stylesheet.xsl">Description of import.</xd:import>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:import #3 - empty</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent">
+                  <xd:import/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:import #4 - only href</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:import href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:import href="http://example.org/stylesheet.xsl"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:import href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:import href="http://example.org/stylesheet.xsl"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:import #5 - not documented</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:import href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:import href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:import href="http://example.org/stylesheet.xsl"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:import #6 - documented but non-existant</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent">
+                  <xd:import href="http://example.org/stylesheet.xsl"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:include #1 - href and description</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:include href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:include href="http://example.org/stylesheet.xsl">Description of import.</xd:include>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:include href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:include href="http://example.org/stylesheet.xsl">Description of import.</xd:include>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:include #2 - other namespace</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:include href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <other:include xmlns:other="http://example.org" href="http://example.org/stylesheet.xsl">Description of import.</other:include>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:include href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:include href="http://example.org/stylesheet.xsl">Description of import.</xd:include>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:include #3 - empty</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent">
+                  <xd:include/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:include #4 - only href</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:include href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:include href="http://example.org/stylesheet.xsl"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:include href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:include href="http://example.org/stylesheet.xsl"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:include #5 - not documented</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:include href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent"/>
+                  <xsl:template match="@*|node()" xml:id="identity">
+                     <xsl:copy>
+                        <xsl:apply-templates select="@*|node()"/>
+                     </xsl:copy>
+                  </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xsl:include href="http://example.org/stylesheet.xsl"/>
+               <xd:doc target="parent">
+                  <xd:include href="http://example.org/stylesheet.xsl"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+   <utfx:test>
+      <utfx:name>xd:include #6 - documented but non-existant</utfx:name>
+      <utfx:assert-equal normalise-internal-whitespace="yes">
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent">
+                  <xd:include href="http://example.org/stylesheet.xsl"/>
+               </xd:doc>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="parent"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates select="@*|node()"/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+</utfx:tests>

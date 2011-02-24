@@ -1,0 +1,95 @@
+<reference id="d13209e203">
+   <title>xsl:template - detail</title>
+   <abstract>
+      <shortdesc>Determines the detailed description.</shortdesc>
+        
+        The detailed description will be put together based on any number of
+            &lt;xd:detail/&gt;-elements, as well as any number of text nodes that are direct
+            children of the &lt;xd:doc/&gt;-element. If the xd:short was extracted from the first
+            text node, then the first sentence from that text node will be ignored. If there are
+            multiple &lt;xd:detail/&gt; and text nodes, then each of them will be wrapped in
+            &lt;xd:section/&gt;s.
+    </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template - detail</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" name="detail"&gt;
+        &lt;xsl:variable name="shortInFirstText" select="count(./*[local-name()='short'])=0"/&gt;
+        &lt;xsl:variable name="detailCount" select="(if (matches(normalize-space(./text()[1]),'\.[^\.].')) then 1 else 0) + count(*[local-name()='detail' and (descendant-or-self::node()[self::text() and string-length(normalize-space())&amp;gt;0 or local-name()='pre' and not(ancestor::*[local-name()='pre'])])]) + count(./text()[not(position()=1) and string-length(normalize-space())&amp;gt;0])"/&gt;
+        &lt;xsl:if test="$detailCount&amp;gt;0"&gt;
+            &lt;xd:detail&gt;
+                &lt;xsl:for-each select="*|text()"&gt;
+                    &lt;xsl:choose&gt;
+                        &lt;xsl:when test="self::text() and count(preceding-sibling::text()[string-length(normalize-space())&amp;gt;0])=0"&gt;
+                            &lt;!-- first text --&gt;
+                            &lt;xsl:choose&gt;
+                                &lt;xsl:when test="$shortInFirstText"&gt;
+                                    &lt;xsl:variable name="detail" select="replace(normalize-space(),'^[^\.]+.?\s?(.*)$','$1')"/&gt;
+                                    &lt;xsl:choose&gt;
+                                        &lt;xsl:when test="$detailCount&amp;gt;1"&gt;
+                                            &lt;xd:section&gt;
+                                                &lt;xsl:value-of select="$detail"/&gt;
+                                            &lt;/xd:section&gt;
+                                        &lt;/xsl:when&gt;
+                                        &lt;xsl:otherwise&gt;
+                                            &lt;xsl:value-of select="$detail"/&gt;
+                                        &lt;/xsl:otherwise&gt;
+                                    &lt;/xsl:choose&gt;
+                                &lt;/xsl:when&gt;
+                                &lt;xsl:otherwise&gt;
+                                    &lt;xsl:choose&gt;
+                                        &lt;xsl:when test="$detailCount&amp;gt;1"&gt;
+                                            &lt;xd:section&gt;
+                                                &lt;xsl:value-of select="."/&gt;
+                                            &lt;/xd:section&gt;
+                                        &lt;/xsl:when&gt;
+                                        &lt;xsl:otherwise&gt;
+                                            &lt;xsl:value-of select="."/&gt;
+                                        &lt;/xsl:otherwise&gt;
+                                    &lt;/xsl:choose&gt;
+                                &lt;/xsl:otherwise&gt;
+                            &lt;/xsl:choose&gt;
+                        &lt;/xsl:when&gt;
+                        &lt;xsl:when test="self::text()"&gt;
+                            &lt;!-- non-first text --&gt;
+                            &lt;xsl:choose&gt;
+                                &lt;xsl:when test="$detailCount&amp;gt;1"&gt;
+                                    &lt;xd:section&gt;
+                                        &lt;xsl:value-of select="."/&gt;
+                                    &lt;/xd:section&gt;
+                                &lt;/xsl:when&gt;
+                                &lt;xsl:otherwise&gt;
+                                    &lt;xsl:value-of select="."/&gt;
+                                &lt;/xsl:otherwise&gt;
+                            &lt;/xsl:choose&gt;
+                        &lt;/xsl:when&gt;
+                        &lt;xsl:when test="local-name()='detail'"&gt;
+                            &lt;!-- detail element --&gt;
+                            &lt;xsl:choose&gt;
+                                &lt;xsl:when test="$detailCount&amp;gt;1"&gt;
+                                    &lt;xd:section&gt;
+                                        &lt;xsl:apply-templates select="child::node()" mode="section"/&gt;
+                                    &lt;/xd:section&gt;
+                                &lt;/xsl:when&gt;
+                                &lt;xsl:otherwise&gt;
+                                    &lt;xsl:apply-templates select="child::node()" mode="section"/&gt;
+                                &lt;/xsl:otherwise&gt;
+                            &lt;/xsl:choose&gt;
+                        &lt;/xsl:when&gt;
+                    &lt;/xsl:choose&gt;
+                &lt;/xsl:for-each&gt;
+            &lt;/xd:detail&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

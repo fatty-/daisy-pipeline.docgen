@@ -1,0 +1,83 @@
+<reference id="d13615e299">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>&lt;othermeta name="..." value="..."/&gt; becomes &lt;tr
+            class="othermeta"&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" match="othermeta"&gt;
+        &lt;tr class="othermeta {@outputclass}"&gt;
+            &lt;xsl:choose&gt;
+                &lt;xsl:when test="@name='programming-language'"&gt;
+                    &lt;td&gt;Programming language&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:when test="@name='version'"&gt;
+                    &lt;td&gt;Version&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:when test="@name='since'"&gt;
+                    &lt;td&gt;Since&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:when test="@name='see'"&gt;
+                    &lt;td&gt;See&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:when test="@name='deprecated'"&gt;
+                    &lt;td&gt;Deprecated&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:when test="@name='xslt-version'"&gt;
+                    &lt;td&gt;XSLT version&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:when test="@name='xproc-version'"&gt;
+                    &lt;td&gt;XProc version&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:when test="@name='xpath-version'"&gt;
+                    &lt;td&gt;XPath version&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:otherwise&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@name"/&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;xsl:value-of select="@content"/&gt;
+                    &lt;/td&gt;
+                &lt;/xsl:otherwise&gt;
+            &lt;/xsl:choose&gt;
+        &lt;/tr&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

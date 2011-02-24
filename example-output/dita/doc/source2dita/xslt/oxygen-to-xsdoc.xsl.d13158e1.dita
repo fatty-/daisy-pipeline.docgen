@@ -1,0 +1,219 @@
+<reference id="d13158e1">
+   <title>xsl:stylesheet</title>
+   <abstract>
+      <shortdesc/>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+         <othermeta name="xslt-version" content="2.0"/>
+         <othermeta name="xpath-version" content="2.0"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:stylesheet</apiname>
+      </section>
+      <section outputclass="parameters xslt-outputs">
+         <title outputclass="io-header">Outputs (xsl:output)</title>
+         <parml outputclass="xslt-outputs">
+            <pt/>
+            <pt/>
+            <pt/>
+            <pt/>
+            <pt/>
+            <pt>yes</pt>
+            <pt/>
+            <pt/>
+            <pt>no</pt>
+            <pt>omit</pt>
+            <pt/>
+            <pd/>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:doc="http://www.oxygenxml.com/ns/doc/xsl" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0"&gt;
+
+    &lt;xsl:template match="@*|node()" xml:id="identity"&gt;
+        &lt;xsl:choose&gt;
+            &lt;xsl:when test="ancestor::doc:doc and not(ancestor::*[local-name()='pre']) and self::*"&gt;
+                &lt;!-- Remove unknown elements from documentation --&gt;
+                &lt;xsl:apply-templates select="@*|node()"/&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:otherwise&gt;
+                &lt;xsl:copy&gt;
+                    &lt;xsl:apply-templates select="@*|node()"/&gt;
+                &lt;/xsl:copy&gt;
+            &lt;/xsl:otherwise&gt;
+        &lt;/xsl:choose&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="doc:doc"&gt;
+        &lt;xsl:element name="xd:doc"&gt;
+            &lt;xsl:choose&gt;
+                &lt;xsl:when test="@scope='stylesheet'"&gt;
+                    &lt;xsl:attribute name="target" select="'parent'"/&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:otherwise&gt;
+                    &lt;xsl:attribute name="target" select="'following'"/&gt;
+                &lt;/xsl:otherwise&gt;
+            &lt;/xsl:choose&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="*[local-name()='desc' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:detail"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="*[local-name()='p' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:p"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="*[local-name()='pre' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:pre"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="*[local-name()='ul' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:ul"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="*[local-name()='li' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:li"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="*[local-name()='ref' and ancestor::doc:doc]"&gt;
+        &lt;xsl:variable name="name" select="@name"/&gt;
+        &lt;!-- required --&gt;
+        &lt;xsl:choose&gt;
+            &lt;xsl:when test="@type='variable'"&gt;
+                &lt;xsl:attribute name="href" select="'TODO'"/&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="@type='parameter'"&gt;
+                &lt;xsl:attribute name="href" select="'TODO'"/&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="@type='template'"&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="//xsl:template[@match=$name]"&gt;
+                        &lt;xsl:element name="xd:a"&gt;
+                            &lt;xsl:choose&gt;
+                                &lt;xsl:when test="//xsl:template[@match=$name][1]/@xml:id"&gt;
+                                    &lt;xsl:attribute name="href" select="concat('#',//xsl:template[@match=$name][1]/@xml:id)"/&gt;
+                                &lt;/xsl:when&gt;
+                                &lt;xsl:when test="//xsl:template[@match=$name]/@id"&gt;
+                                    &lt;xsl:attribute name="href" select="concat('#',//xsl:template[@match=$name][1]/@id)"/&gt;
+                                &lt;/xsl:when&gt;
+                                &lt;xsl:otherwise&gt;
+                                    &lt;xsl:attribute name="href" select="concat('#',generate-id(//xsl:template[@match=$name][1]))"/&gt;
+                                &lt;/xsl:otherwise&gt;
+                            &lt;/xsl:choose&gt;
+                            &lt;xsl:apply-templates/&gt;
+                        &lt;/xsl:element&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:apply-templates/&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="@type='function'"&gt;
+                &lt;xsl:attribute name="href" select="'TODO'"/&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="@type='output'"&gt;
+                &lt;xsl:attribute name="href" select="'TODO'"/&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="@type='decimal-format'"&gt;
+                &lt;xsl:attribute name="href" select="'TODO'"/&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="@type='character-map'"&gt;
+                &lt;xsl:attribute name="href" select="'TODO'"/&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="@type='attributes-set'"&gt;
+                &lt;xsl:attribute name="href" select="'TODO'"/&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:otherwise&gt;
+                &lt;xsl:attribute name="href" select="'TODO'"/&gt;
+            &lt;/xsl:otherwise&gt;
+        &lt;/xsl:choose&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="*[local-name()='a' and ancestor::doc:doc]"&gt;
+        &lt;xsl:choose&gt;
+            &lt;xsl:when test="@docid"&gt;
+                &lt;xsl:variable name="docid" select="@docid"/&gt;
+                &lt;xsl:choose&gt;
+                    &lt;xsl:when test="not(@href)"&gt;
+                        &lt;xsl:choose&gt;
+                            &lt;xsl:when test="//*[@xml:id=$docid or @id=$docid]"&gt;
+                                &lt;xsl:element name="xd:a"&gt;
+                                    &lt;xsl:attribute name="href" select="concat('#',$docid)"/&gt;
+                                    &lt;xsl:apply-templates/&gt;
+                                &lt;/xsl:element&gt;
+                            &lt;/xsl:when&gt;
+                            &lt;xsl:otherwise&gt;
+                                &lt;xsl:apply-templates/&gt;
+                            &lt;/xsl:otherwise&gt;
+                        &lt;/xsl:choose&gt;
+                    &lt;/xsl:when&gt;
+                    &lt;xsl:otherwise&gt;
+                        &lt;xsl:element name="xd:a"&gt;
+                            &lt;xsl:attribute name="href" select="concat(@href,'#',$docid)"/&gt;
+                            &lt;xsl:apply-templates/&gt;
+                        &lt;/xsl:element&gt;
+                    &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:otherwise&gt;
+                &lt;xsl:element name="xd:a"&gt;
+                    &lt;xsl:attribute name="href" select="@href"/&gt;
+                    &lt;xsl:apply-templates/&gt;
+                &lt;/xsl:element&gt;
+            &lt;/xsl:otherwise&gt;
+        &lt;/xsl:choose&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match="*[local-name()='inline' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:section"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+    
+    &lt;xsl:template match="*[local-name()='b' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:b"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+    
+    &lt;xsl:template match="*[local-name()='i' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:i"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+    
+    &lt;xsl:template match="*[local-name()='param' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:param"&gt;
+            &lt;xsl:apply-templates select="@name"/&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+    
+    &lt;xsl:template match="*[local-name()='return' and ancestor::doc:doc]"&gt;
+        &lt;xsl:element name="xd:return"&gt;
+            &lt;xsl:apply-templates/&gt;
+        &lt;/xsl:element&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</codeblock>
+   </section>
+</reference>

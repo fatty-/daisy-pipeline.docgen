@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE utfx:tests PUBLIC "-//UTF-X//DTD utfx-tests 1.0//EN" "utfx_tests.dtd">
+<utfx:tests xmlns:utfx="http://utfx.org/test-definition"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <utfx:stylesheet src="../documenter-0.3/source2dita/xslt/xsltdoc-to-xsdoc.xsl"/>
+   <utfx:test>
+      <utfx:name>XSLTdoc - main wrapper test #1: doc:doc</utfx:name>
+      <utfx:assert-equal>
+         <utfx:source>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:doc="http://www.pnp-software.com/XSLTdoc" version="2.0">
+               <doc:doc/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:source>
+         <utfx:expected>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" version="2.0">
+               <xd:doc target="following"/>
+               <xsl:template match="@*|node()" xml:id="identity">
+                  <xsl:copy>
+                     <xsl:apply-templates/>
+                  </xsl:copy>
+               </xsl:template>
+            </xsl:stylesheet>
+         </utfx:expected>
+      </utfx:assert-equal>
+   </utfx:test>
+</utfx:tests>

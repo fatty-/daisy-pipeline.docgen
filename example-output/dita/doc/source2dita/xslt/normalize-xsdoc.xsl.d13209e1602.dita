@@ -1,0 +1,150 @@
+<reference id="d13209e1602">
+   <title>xsl:template - unwrap-to-sections</title>
+   <abstract>
+      <shortdesc>This template unwraps problematic elements into sections.</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template - unwrap-to-sections</apiname>
+      </section>
+      <section outputclass="parameters xslt-params">
+         <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+         <parml outputclass="xslt-params">
+            <plentry>
+               <pt>wasWrapped</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>no</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-p</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-ul</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-li</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-b</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-i</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-a</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+            <plentry>
+               <pt>wrapin-a-elem</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" name="unwrap-to-sections"&gt;
+        &lt;xsl:param name="wasWrapped" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-p" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-ul" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-li" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-b" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-i" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-a" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:param name="wrapin-a-elem" tunnel="yes" select="false()"/&gt;
+        &lt;xsl:variable name="element" select="."/&gt;
+        &lt;xsl:choose&gt;
+            &lt;xsl:when test="not($wasWrapped) and count(child::node()[self::* or self::text() and string-length(normalize-space())&amp;gt;0])&amp;gt;1"&gt;
+                &lt;xd:section&gt;
+                    &lt;xsl:call-template name="unwrap-to-sections"&gt;
+                        &lt;xsl:with-param name="wasWrapped" select="true()"/&gt;
+                    &lt;/xsl:call-template&gt;
+                &lt;/xd:section&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:otherwise&gt;
+                &lt;xsl:for-each-group select="child::node()[self::* or self::text() and string-length(normalize-space())&amp;gt;0]" group-adjacent="self::* and not(ancestor::*[local-name()='pre']) and (local-name()='section' or local-name()='ul' or local-name()='li' or local-name()='pre' or local-name()='p')"&gt;
+                    &lt;xsl:choose&gt;
+                        &lt;xsl:when test="current-grouping-key()"&gt;
+                            &lt;xsl:choose&gt;
+                                &lt;xsl:when test="count(current-group())&amp;gt;1 and last()&amp;gt;1"&gt;
+                                    &lt;xd:section&gt;
+                                        &lt;xsl:apply-templates mode="section" select="current-group()"&gt;
+                                            &lt;xsl:with-param name="wrapin-p" tunnel="yes" select="if ($wrapin-p or local-name($element)='p') then true() else false()"/&gt;
+                                            &lt;xsl:with-param name="wrapin-ul" tunnel="yes" select="if ($wrapin-ul or local-name($element)='ul') then true() else false()"/&gt;
+                                            &lt;xsl:with-param name="wrapin-li" tunnel="yes" select="if ($wrapin-li or local-name($element)='li') then true() else false()"/&gt;
+                                            &lt;xsl:with-param name="wrapin-b" tunnel="yes" select="if ($wrapin-b or local-name($element)='b') then true() else false()"/&gt;
+                                            &lt;xsl:with-param name="wrapin-i" tunnel="yes" select="if ($wrapin-i or local-name($element)='i') then true() else false()"/&gt;
+                                            &lt;xsl:with-param name="wrapin-a" tunnel="yes" select="if ($wrapin-a or local-name($element)='a') then true() else false()"/&gt;
+                                            &lt;xsl:with-param name="wrapin-a-elem" tunnel="yes" select="if (not($wrapin-a) and local-name($element)='a') then $element else false()"/&gt;
+                                        &lt;/xsl:apply-templates&gt;
+                                    &lt;/xd:section&gt;
+                                &lt;/xsl:when&gt;
+                                &lt;xsl:otherwise&gt;
+                                    &lt;xsl:apply-templates mode="section" select="current-group()"&gt;
+                                        &lt;xsl:with-param name="wrapin-p" tunnel="yes" select="if ($wrapin-p or local-name($element)='p') then true() else false()"/&gt;
+                                        &lt;xsl:with-param name="wrapin-ul" tunnel="yes" select="if ($wrapin-ul or local-name($element)='ul') then true() else false()"/&gt;
+                                        &lt;xsl:with-param name="wrapin-li" tunnel="yes" select="if ($wrapin-li or local-name($element)='li') then true() else false()"/&gt;
+                                        &lt;xsl:with-param name="wrapin-b" tunnel="yes" select="if ($wrapin-b or local-name($element)='b') then true() else false()"/&gt;
+                                        &lt;xsl:with-param name="wrapin-i" tunnel="yes" select="if ($wrapin-i or local-name($element)='i') then true() else false()"/&gt;
+                                        &lt;xsl:with-param name="wrapin-a" tunnel="yes" select="if ($wrapin-a or local-name($element)='a') then true() else false()"/&gt;
+                                        &lt;xsl:with-param name="wrapin-a-elem" tunnel="yes" select="if (not($wrapin-a) and local-name($element)='a') then $element else false()"/&gt;
+                                    &lt;/xsl:apply-templates&gt;
+                                &lt;/xsl:otherwise&gt;
+                            &lt;/xsl:choose&gt;
+                        &lt;/xsl:when&gt;
+                        &lt;xsl:otherwise&gt;
+                            &lt;xsl:element name="xd:{local-name($element)}"&gt;
+                                &lt;xsl:for-each select="$element/@*"&gt;
+                                    &lt;xsl:attribute name="xd:{local-name()}" select="."/&gt;
+                                &lt;/xsl:for-each&gt;
+                                &lt;xsl:apply-templates mode="phrase" select="current-group()"&gt;
+                                    &lt;xsl:with-param name="wrapin-p" tunnel="yes" select="if ($wrapin-p or local-name($element)='p') then false() else $wrapin-p"/&gt;
+                                    &lt;xsl:with-param name="wrapin-ul" tunnel="yes" select="if ($wrapin-ul or local-name($element)='ul') then false() else $wrapin-ul"/&gt;
+                                    &lt;xsl:with-param name="wrapin-li" tunnel="yes" select="if ($wrapin-li or local-name($element)='li') then false() else $wrapin-li"/&gt;
+                                    &lt;xsl:with-param name="wrapin-b" tunnel="yes" select="if ($wrapin-b or local-name($element)='b') then false() else $wrapin-b"/&gt;
+                                    &lt;xsl:with-param name="wrapin-i" tunnel="yes" select="if ($wrapin-i or local-name($element)='i') then false() else $wrapin-i"/&gt;
+                                    &lt;xsl:with-param name="wrapin-a" tunnel="yes" select="if ($wrapin-a or local-name($element)='a') then false() else $wrapin-a"/&gt;
+                                &lt;/xsl:apply-templates&gt;
+                            &lt;/xsl:element&gt;
+                        &lt;/xsl:otherwise&gt;
+                    &lt;/xsl:choose&gt;
+                &lt;/xsl:for-each-group&gt;
+            &lt;/xsl:otherwise&gt;
+        &lt;/xsl:choose&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>
