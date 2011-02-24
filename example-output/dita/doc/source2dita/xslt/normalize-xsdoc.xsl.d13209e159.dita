@@ -1,0 +1,57 @@
+<reference id="d13209e159">
+   <title>xsl:template - short</title>
+   <abstract>
+      <shortdesc>Determines the short description.</shortdesc>
+        
+        
+            <xd:ul xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
+             xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                <xd:li>If there is no &lt;xd:short/&gt;-element present, but plain text is present as a
+                    child of the &lt;xd:doc/&gt;element, then the first sentence from that text (up
+                    until the first period (".") will be used as a short description.</xd:li>
+                <xd:li>Else; if there are multiple &lt;xd:short/&gt;-elements, each one of their
+                    contents will be wrapped in separate &lt;section/&gt;s.</xd:li>
+                <xd:li>Else; use the one &lt;xd:short/&gt;-element that is present for the short
+                    description.</xd:li>
+            </xd:ul>
+        
+    </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template - short</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" name="short"&gt;
+        &lt;xsl:choose&gt;
+            &lt;xsl:when test="count(child::*[local-name()='short'])&amp;gt;1"&gt;
+                &lt;xd:short&gt;
+                    &lt;xsl:for-each select="child::*[local-name()='short']"&gt;
+                        &lt;xd:section&gt;
+                            &lt;xsl:apply-templates mode="section"/&gt;
+                        &lt;/xd:section&gt;
+                    &lt;/xsl:for-each&gt;
+                &lt;/xd:short&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="count(child::*[local-name()='short'])=1"&gt;
+                &lt;xd:short&gt;
+                    &lt;xsl:apply-templates select="child::*[local-name()='short']/node()" mode="section"/&gt;
+                &lt;/xd:short&gt;
+            &lt;/xsl:when&gt;
+            &lt;xsl:when test="child::text()[string-length(normalize-space())&amp;gt;0]"&gt;
+                &lt;xsl:variable name="short" select="replace(normalize-space(child::text()[1]),'^([^\.]+\.?)\s?.*$','$1')"/&gt;
+                &lt;xd:short&gt;
+                    &lt;xsl:value-of select="$short"/&gt;
+                &lt;/xd:short&gt;
+            &lt;/xsl:when&gt;
+        &lt;/xsl:choose&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

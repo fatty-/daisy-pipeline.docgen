@@ -1,0 +1,27 @@
+<reference id="d13209e573">
+   <title>xsl:template - since</title>
+   <abstract>
+      <shortdesc>Normalizes xd:since elements.</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template - since</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" name="since"&gt;
+        &lt;xsl:if test="child::*[local-name()='since' and string-length(normalize-space(./text()))&amp;gt;0]"&gt;
+            &lt;xd:since&gt;
+                &lt;xsl:value-of select="child::*[local-name()='since' and string-length(normalize-space(./text()))&amp;gt;0]"/&gt;
+            &lt;/xd:since&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

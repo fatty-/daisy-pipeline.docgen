@@ -1,10 +1,10 @@
 <map title="source2dita/xproc/xpdoc.xsl">
-   <topicref format="dita" href="xpdoc.xsl.d12511e1.dita">
-      <topicref href="xpdoc.xsl.d12511e46.dita" format="dita"/>
-      <topicref href="xpdoc.xsl.d12511e58.dita" format="dita"/>
-      <topicref href="xpdoc.xsl.d12511e75.dita" format="dita"/>
-      <topicref href="xpdoc.xsl.d12511e162.dita" format="dita"/>
-      <topicref href="xpdoc.xsl.d12511e274.dita" format="dita"/>
-      <topicref href="xpdoc.xsl.d12511e924.dita" format="dita"/>
+   <topicref format="dita" href="xpdoc.xsl.d13511e1.dita">
+      <topicref href="xpdoc.xsl.d13511e28.dita" format="dita"/>
+      <topicref href="xpdoc.xsl.d13511e38.dita" format="dita"/>
+      <topicref href="xpdoc.xsl.d13511e52.dita" format="dita"/>
+      <topicref href="xpdoc.xsl.d13511e134.dita" format="dita"/>
+      <topicref href="xpdoc.xsl.d13511e241.dita" format="dita"/>
+      <topicref href="xpdoc.xsl.d13511e889.dita" format="dita"/>
    </topicref>
 </map>

@@ -1,0 +1,93 @@
+<reference id="d86e89">
+   <title>p:group - result-ditamap</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                   xmlns:d="http://www.example.org/documenter"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc">Iterates and compiles a list of all supported and parsed source files.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>result-ditamap</apiname>
+      </section>
+      <section outputclass="parameters xproc-outputs">
+         <title outputclass="io-header">Outputs</title>
+         <parml outputclass="xproc-outputs">
+            <plentry>
+               <pt>result</pt>
+               <pt>true</pt>
+               <pt/>
+               <pt>result@result-map-done</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:group name="result-ditamap" xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:d="http://www.example.org/documenter" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+        &lt;p:output port="result" primary="true"&gt;
+            &lt;p:pipe port="result" step="result-map-done"/&gt;
+        &lt;/p:output&gt;
+
+        &lt;p:documentation xd:target="following"&gt;
+            &lt;xd:short&gt;Documents all XProc scripts.&lt;/xd:short&gt;
+            &lt;xd:output&gt;&lt;xd:code&gt;&amp;lt;c:result&gt;&amp;lt;c:file .../&gt;&amp;lt;c:file .../&gt;...&amp;lt;/c:result&gt;&lt;/xd:code&gt;&lt;/xd:output&gt;
+        &lt;/p:documentation&gt;
+        &lt;d:document-xproc-ditamap name="xproc-ditamap"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="file-list"/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="srcPath" select="$srcPath"/&gt;
+            &lt;p:with-option name="tempPath" select="$tempPath"/&gt;
+            &lt;p:with-option name="ditaPath" select="$ditaPath"/&gt;
+            &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
+        &lt;/d:document-xproc-ditamap&gt;
+
+        &lt;p:documentation xd:target="following"&gt;
+            &lt;xd:short&gt;Documents all XSLT stylesheets.&lt;/xd:short&gt;
+            &lt;xd:output&gt;&lt;xd:code&gt;&amp;lt;c:result&gt;&amp;lt;c:file .../&gt;&amp;lt;c:file .../&gt;...&amp;lt;/c:result&gt;&lt;/xd:code&gt;&lt;/xd:output&gt;
+        &lt;/p:documentation&gt;
+        &lt;d:document-xslt-ditamap name="xslt-ditamap"&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:pipe port="result" step="file-list"/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="srcPath" select="$srcPath"/&gt;
+            &lt;p:with-option name="tempPath" select="$tempPath"/&gt;
+            &lt;p:with-option name="ditaPath" select="$ditaPath"/&gt;
+            &lt;p:with-option name="selfPath" select="$selfPath"/&gt;
+        &lt;/d:document-xslt-ditamap&gt;
+
+        &lt;p:identity&gt;
+            &lt;p:input port="source"&gt;
+                &lt;p:inline&gt;
+                    &lt;c:result/&gt;
+                &lt;/p:inline&gt;
+            &lt;/p:input&gt;
+        &lt;/p:identity&gt;
+        &lt;p:insert&gt;
+            &lt;p:input port="insertion" select="/c:result/c:result"&gt;
+                &lt;p:pipe port="result" step="xproc-ditamap"/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="position" select="'last-child'"/&gt;
+        &lt;/p:insert&gt;
+        &lt;p:insert&gt;
+            &lt;p:input port="insertion" select="/c:result/c:result"&gt;
+                &lt;p:pipe port="result" step="xslt-ditamap"/&gt;
+            &lt;/p:input&gt;
+            &lt;p:with-option name="position" select="'last-child'"/&gt;
+        &lt;/p:insert&gt;
+        
+        &lt;p:identity name="result-map-done"/&gt;
+    &lt;/p:group&gt;</codeblock>
+   </section>
+</reference>

@@ -1,0 +1,47 @@
+<reference id="d13209e677">
+   <title>xsl:template - param</title>
+   <abstract>
+      <shortdesc>Normalizes xd:import elements.</shortdesc>Will create empty documentation for imports that are not documented, and removes documentation of imports that does not exist in the code.</abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template - param</apiname>
+      </section>
+      <section outputclass="parameters xslt-params">
+         <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+         <parml outputclass="xslt-params">
+            <plentry>
+               <pt>code</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>no</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" name="param"&gt;
+        &lt;xsl:param name="code" required="yes"/&gt;
+        &lt;xsl:variable name="doc" select="."/&gt;
+        &lt;xsl:for-each select="*[local-name()='param']"&gt;
+            &lt;xd:param&gt;
+                &lt;xsl:apply-templates select="@*"/&gt;
+                &lt;xsl:apply-templates mode="section" select="node()"/&gt;
+            &lt;/xd:param&gt;
+        &lt;/xsl:for-each&gt;
+        &lt;xsl:for-each select="$code/xsl:param"&gt;
+            &lt;xsl:variable name="name" select="@name"/&gt;
+            &lt;xsl:if test="not($doc/*[local-name()='param' and @name=$name])"&gt;
+                &lt;xd:param name="{@name}"/&gt;
+            &lt;/xsl:if&gt;
+        &lt;/xsl:for-each&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

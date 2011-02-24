@@ -1,12 +1,12 @@
 <map title="source2dita/makedita.xpl">
-   <topicref format="dita" href="makedita.xpl.d5576e1.dita">
-      <topicref href="makedita.xpl.d5576e76.dita" format="dita"/>
-      <topicref href="makedita.xpl.d5576e89.dita" format="dita"/>
-      <topicref href="makedita.xpl.d5576e106.dita" format="dita"/>
-      <topicref href="makedita.xpl.d5576e132.dita" format="dita"/>
-      <topicref href="makedita.xpl.d5576e190.dita" format="dita"/>
-      <topicref href="makedita.xpl.d5576e212.dita" format="dita"/>
-      <topicref href="makedita.xpl.d5576e321.dita" format="dita"/>
-      <topicref href="makedita.xpl.d5576e342.dita" format="dita"/>
+   <topicref format="dita" href="makedita.xpl.d86e1.dita">
+      <topicref href="makedita.xpl.d86e76.dita" format="dita"/>
+      <topicref href="makedita.xpl.d86e89.dita" format="dita"/>
+      <topicref href="makedita.xpl.d86e106.dita" format="dita"/>
+      <topicref href="makedita.xpl.d86e132.dita" format="dita"/>
+      <topicref href="makedita.xpl.d86e190.dita" format="dita"/>
+      <topicref href="makedita.xpl.d86e204.dita" format="dita"/>
+      <topicref href="makedita.xpl.d86e344.dita" format="dita"/>
+      <topicref href="makedita.xpl.d86e365.dita" format="dita"/>
    </topicref>
 </map>

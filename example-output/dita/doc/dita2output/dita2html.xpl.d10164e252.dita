@@ -1,0 +1,42 @@
+<reference id="d10164e252">
+   <title>p:store</title>
+   <abstract>
+      <shortdesc>
+         <xd:short xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+                   xmlns:cx="http://xmlcalabash.com/ns/extensions"
+                   xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
+                   xmlns:d="http://www.example.org/documenter">Stores the index.html in the output directory.</xd:short>
+      </shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XProc"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>p:store</apiname>
+      </section>
+      <section outputclass="parameters xproc-options">
+         <title outputclass="io-header">Options</title>
+         <parml outputclass="xproc-options xproc-with-options">
+            <plentry>
+               <pt>href</pt>
+               <pt/>
+               <pt/>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;p:store xmlns:p="http://www.w3.org/ns/xproc" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"&gt;
+        &lt;p:documentation xd:target="parent"&gt;
+            &lt;xd:short&gt;Stores the index.html in the output directory.&lt;/xd:short&gt;
+        &lt;/p:documentation&gt;
+        &lt;p:with-option name="href" select="concat($htmlPath,'/index.html')"/&gt;
+    &lt;/p:store&gt;</codeblock>
+   </section>
+</reference>

@@ -1,0 +1,35 @@
+<reference id="d13615e112">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>Matches top element of a reference document.</shortdesc>
+        
+        Wraps the reference in a &lt;section&gt;, creates a headline, a short
+            description, and apply-templates to the rest of the document.
+    </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" match="/reference"&gt;
+        &lt;section&gt;
+            &lt;xsl:attribute name="class"&gt;
+                &lt;xsl:value-of select="concat('reference ',//*[@name='programming-language'][1]/@content,' ',@outputclass)"/&gt;
+            &lt;/xsl:attribute&gt;
+            &lt;xsl:apply-templates select="./title"/&gt;
+            &lt;p class="shortdesc {@outputclass}"&gt;
+                &lt;xsl:value-of select="./abstract[1]/shortdesc[1]"/&gt;
+            &lt;/p&gt;
+            &lt;xsl:apply-templates select="./*[not(local-name(.)='title')]"/&gt;
+        &lt;/section&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

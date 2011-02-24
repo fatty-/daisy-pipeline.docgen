@@ -37,8 +37,8 @@ ECHO     -h      : print this help
 ECHO     -v      : verbose
 ECHO.
 ECHO Example:
-ECHO     %CMD% documenter-0.2
-ECHO     %CMD% -o documentation documenter-0.2
+ECHO     %CMD% documenter-0.3
+ECHO     %CMD% -o documentation documenter-0.3
 GOTO:EOF
 
 :Continue
@@ -81,4 +81,4 @@ IF "%OUT_DIR%"=="" (
 set CP=
 for %%f IN ("%LIB_DIR%\*.jar") do set CP=!CP!;"%%f"
 
-%JAVA% -classpath %CP%  -Dcom.xmlcalabash.phonehome=false com.xmlcalabash.drivers.Main -c %CONF_CALABASH% "%MODULE_DIR%\documenter-0.2\document.xpl" src="%SRC_DIR%" doc="%OUT_DIR%"
+%JAVA% -classpath %CP%  -Dcom.xmlcalabash.phonehome=false com.xmlcalabash.drivers.Main -c %CONF_CALABASH% "%MODULE_DIR%\documenter-0.3\document.xpl" src="%SRC_DIR%" doc="%OUT_DIR%"

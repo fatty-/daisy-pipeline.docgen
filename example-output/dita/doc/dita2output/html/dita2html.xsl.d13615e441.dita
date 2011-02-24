@@ -1,0 +1,40 @@
+<reference id="d13615e441">
+   <title>xsl:template</title>
+   <abstract>
+      <shortdesc>&lt;section/&gt; becomes &lt;section class="section"/&gt;</shortdesc>
+   </abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template</apiname>
+      </section>
+      <section outputclass="parameters xslt-params">
+         <title outputclass="io-header">Parameters (xsl:param / xsl:with-param)</title>
+         <parml outputclass="xslt-params">
+            <plentry>
+               <pt>isTopDocument</pt>
+               <pt>undefined</pt>
+               <pt>false</pt>
+               <pt>yes</pt>
+               <pd/>
+            </plentry>
+         </parml>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" match="section"&gt;
+        &lt;xsl:param name="isTopDocument" select="false()" tunnel="yes"/&gt;
+        &lt;xsl:if test="not($isTopDocument and contains(@outputclass,'sourcecode'))"&gt;
+            &lt;section class="section {@outputclass}"&gt;
+                &lt;xsl:apply-templates/&gt;
+            &lt;/section&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

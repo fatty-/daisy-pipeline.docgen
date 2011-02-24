@@ -1,94 +1,112 @@
 <html><head><style type="text/css">
                     body {
-                        font-family: futura, helvetica, arial, sans-serif;
+                        font-family : futura, helvetica, arial, sans-serif;
                     }
-                    section, article, header, footer, nav, aside, hgroup {
-                        display: block;
+                    section,
+                    article,
+                    header,
+                    footer,
+                    nav,
+                    aside,
+                    hgroup {
+                        display : block;
                     }
                     section.reference {
-                        border-style: solid;
-                        border-width: 1px;
-                        border-radius:10px;
-                        -moz-border-radius:10px;
-                        margin: 5px;
-                        padding: 20px;
-                        border-color: #CCC;
-                        background-color: #F9F9F9;
+                        border-style : solid;
+                        border-width : 1px;
+                        border-radius : 10px;
+                        -moz-border-radius : 10px;
+                        margin : 5px;
+                        padding : 20px;
+                        border-color : #CCC;
+                        background-color : #F9F9F9;
                     }
                     .child-topics section.reference {
-                        border-style: solid;
-                        border-width: 2px;
-                        border-radius:10px;
-                        -moz-border-radius:10px;
-                        margin: 20px;
-                        padding: 20px;
-                        border-color: #CCC;
-                        background-color: #EEF;
+                        border-style : solid;
+                        border-width : 2px;
+                        border-radius : 10px;
+                        -moz-border-radius : 10px;
+                        margin : 20px;
+                        padding : 20px;
+                        border-color : #CCC;
+                        background-color : #EEF;
                     }
                     section.child-topics {
-                        margin-left: 25px;
+                        margin-left : 25px;
                     }
                     .main-header h1 {
-                        width: 100%;
-                        border-style: solid;
-                        border-width: 0px 0px 1px 0px;
-                        font-size: 26px;
+                        width : 100%;
+                        border-style : solid;
+                        border-width : 0px 0px 1px 0px;
+                        font-size : 26px;
                     }
                     table {
-                        margin: 10px;
+                        margin : 10px;
                     }
                     table.parml {
-                        border-style: solid;
-                        border-width: 1px;
-                        border-color: white;
-                        background-color: #EEF;
+                        border-style : solid;
+                        border-width : 1px;
+                        border-color : white;
+                        background-color : #EEF;
                     }
                     tr.plentry {
-                        border-style: dotted;
-                        border-width: 1px;
+                        border-style : dotted;
+                        border-width : 1px;
                     }
                     td.pt td.pd {
-                        padding: 5px;
-                        border-style: solid;
-                        border-width: 1px;
-                        border-radius:4px;
+                        padding : 5px;
+                        border-style : solid;
+                        border-width : 1px;
+                        border-radius : 4px;
                     }
                     .reference h1 {
-                        font-size: 22px;
-                        color: #006;
+                        font-size : 22px;
+                        color : #006;
                     }
-                    section.abstract, section.prolog, section.parameters, section.linklist, section.sourcecode {
-                        border-style: dotted;
-                        border-width: 1px;
-                        border-radius: 0px;
-                        margin: 10px;
-                        padding: 10px 10px 50px 10px;
-                        background-color: #F5F5FF;
+                    section.abstract,
+                    section.prolog,
+                    section.parameters,
+                    section.linklist,
+                    section.sourcecode {
+                        border-style : dotted;
+                        border-width : 1px;
+                        border-radius : 0px;
+                        margin : 10px;
+                        padding : 10px 10px 50px 10px;
+                        background-color : #F5F5FF;
                     }
                     section.sourcecode {
-                        display: none;
+                        /*display: none;*/
                     }
-                    header.abstract-header, header.prolog-header, header.io-header,.linklist header, header.sourcecode-header {
-                        position: relative;
-                        top: -30px;
-                        float: left;
+                    header.abstract-header,
+                    header.prolog-header,
+                    header.io-header,
+                    .linklist header,
+                    header.sourcecode-header {
+                        position : relative;
+                        top : -30px;
+                        float : left;
                     }
-                    .abstract-header h1,.prolog-header h1,.io-header h1,.linklist h1,.sourcecode-header h1 {
-                        position: absolute;
-                        color: #006;
-                        background-color: #EEF;
-                        font-size: 18px;
-                        white-space: nowrap;
+                    .abstract-header h1,
+                    .prolog-header h1,
+                    .io-header h1,
+                    .linklist h1,
+                    .sourcecode-header h1 {
+                        position : absolute;
+                        color : #006;
+                        background-color : #EEF;
+                        font-size : 18px;
+                        white-space : nowrap;
                     }
                     header.subheader {
-                        position: static;
-                        top: 0px;
-                        float: none;
+                        position : static;
+                        top : 0px;
+                        float : none;
                     }
                     .subheader h1 {
-                        color: #006;
-                        background-color: transparent;
-                        font-size: 16px;
+                        color : #006;
+                        background-color : transparent;
+                        font-size : 16px;
                     }</style></head><header class="main-header"><h1>lib/xml-to-string.xsl</h1></header>
    <section class="reference XSLT "><header class="title "><h1>xsl:stylesheet</h1></header><p class="shortdesc "/>
       <section class="section ">
@@ -242,302 +260,5 @@
             <td class="pd "/>
          </table>
       </section>
-   <section class="section sourcecode">
-      <header class="title sourcecode-header"><h1>Source Code</h1></header>
-      <pre class="codeblock"><code class="">&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
-
-    &lt;xsl:output omit-xml-declaration="yes"/&gt;
-
-    &lt;xsl:param name="use-empty-syntax" select="true()"/&gt;
-    &lt;xsl:param name="exclude-unused-prefixes" select="true()"/&gt;
-
-    &lt;xsl:param name="force-exclude-all-namespaces" select="false()"/&gt;
-
-    &lt;!-- a node-set; each node's string-value
-       will be interpreted as a namespace URI to be
-       excluded from the serialization. --&gt;
-    &lt;xsl:param name="namespaces-to-exclude" select="/.."/&gt;
-    &lt;!-- initialized to empty node-set --&gt;
-
-    &lt;xsl:param name="start-tag-start" select="'&amp;lt;'"/&gt;
-    &lt;xsl:param name="start-tag-end" select="'&gt;'"/&gt;
-    &lt;xsl:param name="empty-tag-end" select="'/&gt;'"/&gt;
-    &lt;xsl:param name="end-tag-start" select="'&amp;lt;/'"/&gt;
-    &lt;xsl:param name="end-tag-end" select="'&gt;'"/&gt;
-    &lt;xsl:param name="space" select="' '"/&gt;
-    &lt;xsl:param name="ns-decl" select="'xmlns'"/&gt;
-    &lt;xsl:param name="colon" select="':'"/&gt;
-    &lt;xsl:param name="equals" select="'='"/&gt;
-    &lt;xsl:param name="attribute-delimiter" select="'&amp;quot;'"/&gt;
-    &lt;xsl:param name="comment-start" select="'&amp;lt;!--'"/&gt;
-    &lt;xsl:param name="comment-end" select="'--&gt;'"/&gt;
-    &lt;xsl:param name="pi-start" select="'&amp;lt;?'"/&gt;
-    &lt;xsl:param name="pi-end" select="'?&gt;'"/&gt;
-
-    &lt;xsl:template name="xml-to-string"&gt;
-        &lt;xsl:param name="node-set" select="."/&gt;
-        &lt;xsl:apply-templates select="$node-set" mode="xml-to-string"&gt;
-            &lt;xsl:with-param name="depth" select="1"/&gt;
-        &lt;/xsl:apply-templates&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template match="/" name="xml-to-string-root-rule"&gt;
-        &lt;xsl:call-template name="xml-to-string"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template match="/" mode="xml-to-string"&gt;
-        &lt;xsl:param name="depth"/&gt;
-        &lt;xsl:apply-templates mode="xml-to-string"&gt;
-            &lt;xsl:with-param name="depth" select="$depth"/&gt;
-        &lt;/xsl:apply-templates&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template match="*" mode="xml-to-string"&gt;
-        &lt;xsl:param name="depth"/&gt;
-        &lt;xsl:variable name="element" select="."/&gt;
-        &lt;xsl:value-of select="$start-tag-start"/&gt;
-        &lt;xsl:call-template name="element-name"&gt;
-            &lt;xsl:with-param name="text" select="name()"/&gt;
-        &lt;/xsl:call-template&gt;
-        &lt;xsl:apply-templates select="@*" mode="xml-to-string"/&gt;
-        &lt;xsl:if test="not($force-exclude-all-namespaces)"&gt;
-            &lt;xsl:for-each select="namespace::*"&gt;
-                &lt;xsl:call-template name="process-namespace-node"&gt;
-                    &lt;xsl:with-param name="element" select="$element"/&gt;
-                    &lt;xsl:with-param name="depth" select="$depth"/&gt;
-                &lt;/xsl:call-template&gt;
-            &lt;/xsl:for-each&gt;
-        &lt;/xsl:if&gt;
-        &lt;xsl:choose&gt;
-            &lt;xsl:when test="node() or not($use-empty-syntax)"&gt;
-                &lt;xsl:value-of select="$start-tag-end"/&gt;
-                &lt;xsl:apply-templates mode="xml-to-string"&gt;
-                    &lt;xsl:with-param name="depth" select="$depth + 1"/&gt;
-                &lt;/xsl:apply-templates&gt;
-                &lt;xsl:value-of select="$end-tag-start"/&gt;
-                &lt;xsl:call-template name="element-name"&gt;
-                    &lt;xsl:with-param name="text" select="name()"/&gt;
-                &lt;/xsl:call-template&gt;
-                &lt;xsl:value-of select="$end-tag-end"/&gt;
-            &lt;/xsl:when&gt;
-            &lt;xsl:otherwise&gt;
-                &lt;xsl:value-of select="$empty-tag-end"/&gt;
-            &lt;/xsl:otherwise&gt;
-        &lt;/xsl:choose&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="process-namespace-node"&gt;
-        &lt;xsl:param name="element"/&gt;
-        &lt;xsl:param name="depth"/&gt;
-        &lt;xsl:variable name="declaredAbove"&gt;
-            &lt;xsl:call-template name="isDeclaredAbove"&gt;
-                &lt;xsl:with-param name="depth" select="$depth - 1"/&gt;
-                &lt;xsl:with-param name="element" select="$element/.."/&gt;
-            &lt;/xsl:call-template&gt;
-        &lt;/xsl:variable&gt;
-
-        &lt;xsl:variable name="is-used-on-this-element" select="($element    | $element/@*) [namespace-uri() = current()]"/&gt;
-        &lt;xsl:variable name="is-used-on-a-descendant" select="($element//* | $element//@*)[namespace-uri() = current()]"/&gt;
-        &lt;xsl:variable name="is-unused" select="not($is-used-on-this-element) and                                            not($is-used-on-a-descendant)"/&gt;
-        &lt;xsl:variable name="exclude-ns" select="($is-unused and $exclude-unused-prefixes) or                                             (. = $namespaces-to-exclude)"/&gt;
-
-        &lt;xsl:variable name="force-include" select="$is-used-on-this-element and (. = $namespaces-to-exclude)"/&gt;
-
-        &lt;xsl:if test="(name() != 'xml') and ($force-include or (not($exclude-ns) and not(string($declaredAbove))))"&gt;
-            &lt;xsl:value-of select="$space"/&gt;
-            &lt;xsl:value-of select="$ns-decl"/&gt;
-            &lt;xsl:if test="name()"&gt;
-                &lt;xsl:value-of select="$colon"/&gt;
-                &lt;xsl:call-template name="ns-prefix"&gt;
-                    &lt;xsl:with-param name="text" select="name()"/&gt;
-                &lt;/xsl:call-template&gt;
-            &lt;/xsl:if&gt;
-            &lt;xsl:value-of select="$equals"/&gt;
-            &lt;xsl:value-of select="$attribute-delimiter"/&gt;
-            &lt;xsl:call-template name="ns-uri"&gt;
-                &lt;xsl:with-param name="text" select="string(.)"/&gt;
-            &lt;/xsl:call-template&gt;
-            &lt;xsl:value-of select="$attribute-delimiter"/&gt;
-        &lt;/xsl:if&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="isDeclaredAbove"&gt;
-        &lt;xsl:param name="element"/&gt;
-        &lt;xsl:param name="depth"/&gt;
-        &lt;xsl:if test="$depth &gt; 0"&gt;
-            &lt;xsl:choose&gt;
-                &lt;xsl:when test="$element/namespace::*[name(.)=name(current()) and .=current()]"&gt;1&lt;/xsl:when&gt;
-                &lt;xsl:when test="$element/namespace::*[name(.)=name(current())]"/&gt;
-                &lt;xsl:otherwise&gt;
-                    &lt;xsl:call-template name="isDeclaredAbove"&gt;
-                        &lt;xsl:with-param name="depth" select="$depth - 1"/&gt;
-                        &lt;xsl:with-param name="element" select="$element/.."/&gt;
-                    &lt;/xsl:call-template&gt;
-                &lt;/xsl:otherwise&gt;
-            &lt;/xsl:choose&gt;
-        &lt;/xsl:if&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template match="@*" mode="xml-to-string" name="serialize-attribute"&gt;
-        &lt;xsl:param name="att-value" select="string(.)"/&gt;
-        &lt;xsl:value-of select="$space"/&gt;
-        &lt;xsl:call-template name="attribute-name"&gt;
-            &lt;xsl:with-param name="text" select="name()"/&gt;
-        &lt;/xsl:call-template&gt;
-        &lt;xsl:value-of select="$equals"/&gt;
-        &lt;xsl:value-of select="$attribute-delimiter"/&gt;
-        &lt;xsl:call-template name="attribute-value"&gt;
-            &lt;xsl:with-param name="text" select="$att-value"/&gt;
-        &lt;/xsl:call-template&gt;
-        &lt;xsl:value-of select="$attribute-delimiter"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template match="comment()" mode="xml-to-string"&gt;
-        &lt;xsl:value-of select="$comment-start"/&gt;
-        &lt;xsl:call-template name="comment-text"&gt;
-            &lt;xsl:with-param name="text" select="string(.)"/&gt;
-        &lt;/xsl:call-template&gt;
-        &lt;xsl:value-of select="$comment-end"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template match="processing-instruction()" mode="xml-to-string"&gt;
-        &lt;xsl:value-of select="$pi-start"/&gt;
-        &lt;xsl:call-template name="pi-target"&gt;
-            &lt;xsl:with-param name="text" select="name()"/&gt;
-        &lt;/xsl:call-template&gt;
-        &lt;xsl:value-of select="$space"/&gt;
-        &lt;xsl:call-template name="pi-text"&gt;
-            &lt;xsl:with-param name="text" select="string(.)"/&gt;
-        &lt;/xsl:call-template&gt;
-        &lt;xsl:value-of select="$pi-end"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template match="text()" mode="xml-to-string"&gt;
-        &lt;xsl:call-template name="text-content"&gt;
-            &lt;xsl:with-param name="text" select="string(.)"/&gt;
-        &lt;/xsl:call-template&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="element-name"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:value-of select="$text"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="attribute-name"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:value-of select="$text"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="attribute-value"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:variable name="escaped-markup"&gt;
-            &lt;xsl:call-template name="escape-markup-characters"&gt;
-                &lt;xsl:with-param name="text" select="$text"/&gt;
-            &lt;/xsl:call-template&gt;
-        &lt;/xsl:variable&gt;
-        &lt;xsl:choose&gt;
-            &lt;xsl:when test="$attribute-delimiter = &amp;quot;'&amp;quot;"&gt;
-                &lt;xsl:call-template name="replace-string"&gt;
-                    &lt;xsl:with-param name="text" select="$escaped-markup"/&gt;
-                    &lt;xsl:with-param name="replace" select="&amp;quot;'&amp;quot;"/&gt;
-                    &lt;xsl:with-param name="with" select="'&amp;amp;apos;'"/&gt;
-                &lt;/xsl:call-template&gt;
-            &lt;/xsl:when&gt;
-            &lt;xsl:when test="$attribute-delimiter = '&amp;quot;'"&gt;
-                &lt;xsl:call-template name="replace-string"&gt;
-                    &lt;xsl:with-param name="text" select="$escaped-markup"/&gt;
-                    &lt;xsl:with-param name="replace" select="'&amp;quot;'"/&gt;
-                    &lt;xsl:with-param name="with" select="'&amp;amp;quot;'"/&gt;
-                &lt;/xsl:call-template&gt;
-            &lt;/xsl:when&gt;
-            &lt;xsl:otherwise&gt;
-                &lt;xsl:call-template name="replace-string"&gt;
-                    &lt;xsl:with-param name="text" select="$escaped-markup"/&gt;
-                    &lt;xsl:with-param name="replace" select="$attribute-delimiter"/&gt;
-                    &lt;xsl:with-param name="with" select="''"/&gt;
-                &lt;/xsl:call-template&gt;
-            &lt;/xsl:otherwise&gt;
-        &lt;/xsl:choose&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="ns-prefix"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:value-of select="$text"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="ns-uri"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:call-template name="attribute-value"&gt;
-            &lt;xsl:with-param name="text" select="$text"/&gt;
-        &lt;/xsl:call-template&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="text-content"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:call-template name="escape-markup-characters"&gt;
-            &lt;xsl:with-param name="text" select="$text"/&gt;
-        &lt;/xsl:call-template&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="pi-target"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:value-of select="$text"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="pi-text"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:value-of select="$text"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="comment-text"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:value-of select="$text"/&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="escape-markup-characters"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:variable name="ampEscaped"&gt;
-            &lt;xsl:call-template name="replace-string"&gt;
-                &lt;xsl:with-param name="text" select="$text"/&gt;
-                &lt;xsl:with-param name="replace" select="'&amp;amp;'"/&gt;
-                &lt;xsl:with-param name="with" select="'&amp;amp;amp;'"/&gt;
-            &lt;/xsl:call-template&gt;
-        &lt;/xsl:variable&gt;
-        &lt;xsl:variable name="ltEscaped"&gt;
-            &lt;xsl:call-template name="replace-string"&gt;
-                &lt;xsl:with-param name="text" select="$ampEscaped"/&gt;
-                &lt;xsl:with-param name="replace" select="'&amp;lt;'"/&gt;
-                &lt;xsl:with-param name="with" select="'&amp;amp;lt;'"/&gt;
-            &lt;/xsl:call-template&gt;
-        &lt;/xsl:variable&gt;
-        &lt;xsl:call-template name="replace-string"&gt;
-            &lt;xsl:with-param name="text" select="$ltEscaped"/&gt;
-            &lt;xsl:with-param name="replace" select="']]&amp;gt;'"/&gt;
-            &lt;xsl:with-param name="with" select="']]&amp;amp;gt;'"/&gt;
-        &lt;/xsl:call-template&gt;
-    &lt;/xsl:template&gt;
-
-    &lt;xsl:template name="replace-string"&gt;
-        &lt;xsl:param name="text"/&gt;
-        &lt;xsl:param name="replace"/&gt;
-        &lt;xsl:param name="with"/&gt;
-        &lt;xsl:variable name="stringText" select="string($text)"/&gt;
-        &lt;xsl:choose&gt;
-            &lt;xsl:when test="contains($stringText,$replace)"&gt;
-                &lt;xsl:value-of select="substring-before($stringText,$replace)"/&gt;
-                &lt;xsl:value-of select="$with"/&gt;
-                &lt;xsl:call-template name="replace-string"&gt;
-                    &lt;xsl:with-param name="text" select="substring-after($stringText,$replace)"/&gt;
-                    &lt;xsl:with-param name="replace" select="$replace"/&gt;
-                    &lt;xsl:with-param name="with" select="$with"/&gt;
-                &lt;/xsl:call-template&gt;
-            &lt;/xsl:when&gt;
-            &lt;xsl:otherwise&gt;
-                &lt;xsl:value-of select="$stringText"/&gt;
-            &lt;/xsl:otherwise&gt;
-        &lt;/xsl:choose&gt;
-    &lt;/xsl:template&gt;
-
-&lt;/xsl:stylesheet&gt;</code></pre>
-   </section></section>
+   </section>
 </html>

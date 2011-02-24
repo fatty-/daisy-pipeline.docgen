@@ -1,0 +1,2386 @@
+<log4j:event logger="utfx.test_results" timestamp="1298562785222" level="INFO" thread="main">
+<log4j:message><![CDATA[logger created]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="&lt;init&gt;" file="ResultLogger.java" line="44"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785229" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - main wrapper test #1: doc:doc started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785254" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - main wrapper test #1: doc:doc completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785254" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - main wrapper test #2: doc:doc/@scope='component' started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785257" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - main wrapper test #2: doc:doc/@scope='component' completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785258" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - main wrapper test #3: doc:doc/@scope='stylesheet' started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785260" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - main wrapper test #3: doc:doc/@scope='stylesheet' completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785260" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - description: desc started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785264" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - description: desc completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785264" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - paragraph: doc:p started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785274" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - paragraph: doc:p completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785275" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - preformatted text: doc:pre started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785278" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - preformatted text: doc:pre completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785278" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - lists: doc:ul + doc:li started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785283" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - lists: doc:ul + doc:li completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785283" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - link test #1: doc:ref/@type="template" started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785289" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - link test #1: doc:ref/@type="template" completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785290" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - link test #2: doc:a/@docid started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785303" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - link test #2: doc:a/@docid completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785304" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - link test #3: doc:a/@href started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785307" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - link test #3: doc:a/@href completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785307" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - inline text: doc:inline started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785321" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - inline text: doc:inline completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785321" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - bold font face: doc:b started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785336" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - bold font face: doc:b completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785336" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - italic font face: doc:i started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785339" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - italic font face: doc:i completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785340" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - parameter: doc:param started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785342" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - parameter: doc:param completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785342" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - return value / output: doc:return started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785345" level="INFO" thread="main">
+<log4j:message><![CDATA[oXygen - return value / output: doc:return completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785345" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:transform started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785356" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:transform FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785356" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:transform completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785357" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:copyright started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785371" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:copyright FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785371" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:copyright completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785371" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:strip-space started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785384" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:strip-space FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785395" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:strip-space completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785395" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:version started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785401" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:version FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785401" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:version completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785401" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:output started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785411" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:output FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785412" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:output completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785412" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:see started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785417" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:see FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785417" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:see completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785418" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:short started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785426" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:short FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785427" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:short completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785427" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:include started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785433" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:include FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785433" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:include completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785434" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:character-map started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785446" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:character-map FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785446" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:character-map completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785446" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:template started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785457" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:template FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785458" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:template completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785458" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:param started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785463" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:param FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785463" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:param completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785464" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:key started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785487" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:key FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785487" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:key completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785487" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:detail started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785492" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:detail FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785492" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:detail completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785494" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:import started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785521" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:import FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785521" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:import completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785521" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:preserve-space started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785526" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:preserve-space FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785527" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:preserve-space completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785527" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:attribute-set started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785542" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:attribute-set FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785542" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:attribute-set completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785543" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:namespace-alias started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785547" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:namespace-alias FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785547" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:namespace-alias completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785547" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:function started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785566" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:function FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785567" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:function completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785567" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:author started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785578" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:author FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 36
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785578" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:author completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785579" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:decimal-format started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785590" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:decimal-format FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785591" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:decimal-format completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785591" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:param started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785596" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:param FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785596" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:param completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785596" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:variable started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785602" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:variable FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785602" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:variable completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785603" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:stylesheet started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785606" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:stylesheet FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785606" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:stylesheet completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785606" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:deprecated started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785614" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:deprecated FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785615" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:deprecated completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785615" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:import-schema started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785625" level="ERROR" thread="main">
+<log4j:message><![CDATA[xsl:import-schema FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785625" level="INFO" thread="main">
+<log4j:message><![CDATA[xsl:import-schema completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785625" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:return started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785634" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:return FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785635" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:return completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785635" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:maintainer started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785707" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:maintainer FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785708" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:maintainer completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785708" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:contributor started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785715" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:contributor FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785715" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:contributor completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785716" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:since started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785719" level="ERROR" thread="main">
+<log4j:message><![CDATA[doc:since FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 37
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785719" level="INFO" thread="main">
+<log4j:message><![CDATA[doc:since completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785719" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:doc started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785738" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:doc completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785738" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:doc - target="parent" #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785740" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:doc - target="parent" #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785740" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:doc - target="parent" #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785742" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:doc - target="parent" #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785742" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:doc - target="following" started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785748" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:doc - target="following" completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785748" level="INFO" thread="main">
+<log4j:message><![CDATA[two xd:doc elements - target="parent" and target="following" started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785750" level="INFO" thread="main">
+<log4j:message><![CDATA[two xd:doc elements - target="parent" and target="following" completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785750" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785758" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785758" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785760" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785761" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785763" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785764" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #4 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785766" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #4 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785766" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #5 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785768" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:short and xd:detail #5 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785768" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785771" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785771" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785776" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785776" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785779" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785779" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p in xd:p #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785792" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p in xd:p #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785792" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p in xd:p #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785796" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p in xd:p #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785796" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:i started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785808" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:i completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785808" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:b started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785811" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:b completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785811" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:b #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785814" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:b #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785814" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:b #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785827" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:b #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785827" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:i #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785829" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:i #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785830" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:i #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785832" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:i #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785832" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p in xd:i started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785835" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:p in xd:i completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785835" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:i in xd:p started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785844" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:i in xd:p completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785845" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:i in xd:p in xd:p started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785848" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:i in xd:p in xd:p completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785848" level="INFO" thread="main">
+<log4j:message><![CDATA[other:p started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785859" level="INFO" thread="main">
+<log4j:message><![CDATA[other:p completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785859" level="INFO" thread="main">
+<log4j:message><![CDATA[other:p in xd:p started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785861" level="INFO" thread="main">
+<log4j:message><![CDATA[other:p in xd:p completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785862" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in other:p started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785870" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in other:p completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785871" level="INFO" thread="main">
+<log4j:message><![CDATA[other:b started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785873" level="INFO" thread="main">
+<log4j:message><![CDATA[other:b completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785873" level="INFO" thread="main">
+<log4j:message><![CDATA[other:i started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785875" level="INFO" thread="main">
+<log4j:message><![CDATA[other:i completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785876" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785878" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785878" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785886" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785887" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785899" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785900" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #4 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785902" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #4 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785903" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #5 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785905" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #5 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785905" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #6 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785908" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #6 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785908" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #7 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785913" level="INFO" thread="main">
+<log4j:message><![CDATA[unknown element #7 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785913" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:pre #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785920" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:pre #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785920" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:pre #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785922" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:pre #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785923" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:pre #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785925" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:pre #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785925" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785927" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785928" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785930" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785930" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785933" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785933" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #4 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785934" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #4 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785935" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #5 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785937" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul and xd:li #5 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785937" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:li #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785939" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:li #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785939" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:li #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785941" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:li #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785941" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul in xd:p started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785944" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:ul in xd:p completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785944" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:ul started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785946" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:ul completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785947" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:li #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785950" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:li #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785950" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:li #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785953" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:p in xd:li #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785953" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:a #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785956" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:a #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785956" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:a #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785958" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:a #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785958" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:param #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785960" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:param #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785960" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:param #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785961" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:param #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785962" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:param #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785963" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:param #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785963" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:return #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785965" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:return #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785965" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:return #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785967" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:return #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785967" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:author #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785969" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:author #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785969" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:author #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785971" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:author #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785971" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:author #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785972" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:author #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785973" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:author #4 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785974" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:author #4 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785975" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:contributor #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785977" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:contributor #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785977" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:contributor #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785979" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:contributor #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785979" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:contributor #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785980" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:contributor #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785980" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:contributor #4 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785982" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:contributor #4 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785982" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:maintainer #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785984" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:maintainer #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785984" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:maintainer #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785986" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:maintainer #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785986" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:maintainer #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785988" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:maintainer #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785988" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:maintainer #4 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785990" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:maintainer #4 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785990" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:copyright #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785992" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:copyright #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562785992" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:copyright #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786003" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:copyright #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786003" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:copyright #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786005" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:copyright #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786005" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:copyright #4 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786007" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:copyright #4 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786007" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:version #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786009" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:version #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786009" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:version #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786010" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:version #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786010" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:version #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786016" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:version #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786017" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:since #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786019" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:since #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786019" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:since #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786021" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:since #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786021" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:since #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786023" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:since #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786023" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:see #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786025" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:see #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786025" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:see #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786027" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:see #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786027" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:see #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786029" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:see #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786029" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:deprecated #1 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786031" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:deprecated #1 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786031" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:deprecated #2 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786033" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:deprecated #2 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786033" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:deprecated #3 started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786035" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:deprecated #3 completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786035" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #1 - href and description started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786037" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #1 - href and description completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786037" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #2 - other namespace started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786039" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #2 - other namespace completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786039" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #3 - empty started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786068" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #3 - empty completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786068" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #4 - only href started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786070" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #4 - only href completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786070" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #5 - not documented started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786072" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #5 - not documented completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786072" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #6 - documented but non-existant started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786074" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:import #6 - documented but non-existant completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786074" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #1 - href and description started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786076" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #1 - href and description completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786076" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #2 - other namespace started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786078" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #2 - other namespace completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786078" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #3 - empty started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786080" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #3 - empty completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786080" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #4 - only href started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786091" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #4 - only href completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786091" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #5 - not documented started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786093" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #5 - not documented completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786093" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #6 - documented but non-existant started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786095" level="INFO" thread="main">
+<log4j:message><![CDATA[xd:include #6 - documented but non-existant completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786095" level="INFO" thread="main">
+<log4j:message><![CDATA[XSLTdoc - main wrapper test #1: doc:doc started]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="startTest" file="ResultLogger.java" line="84"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786097" level="ERROR" thread="main">
+<log4j:message><![CDATA[XSLTdoc - main wrapper test #1: doc:doc FAILED]]></log4j:message>
+<log4j:throwable><![CDATA[utfx.framework.StringComparisonFailure: UTF-X test failed: byte arrays differ at offset 45
+	at utfx.framework.UTFXTestCase.assertEquals(UTFXTestCase.java:108)
+	at utfx.framework.UTFXTestCase.assertEquivXML(UTFXTestCase.java:241)
+	at utfx.framework.XSLTTransformTestCase.testTransform(XSLTTransformTestCase.java:608)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at utfx.runner.TestRunner.runTestCase(TestRunner.java:236)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:246)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.runSuite(TestRunner.java:261)
+	at utfx.runner.TestRunner.runTest(TestRunner.java:244)
+	at utfx.runner.TestRunner.doRun(TestRunner.java:154)
+	at utfx.runner.TestRunner.start(TestRunner.java:308)
+	at utfx.runner.TestRunner.main(TestRunner.java:328)
+]]></log4j:throwable>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="addFailure" file="ResultLogger.java" line="64"/>
+</log4j:event>
+
+<log4j:event logger="utfx.test_results" timestamp="1298562786097" level="INFO" thread="main">
+<log4j:message><![CDATA[XSLTdoc - main wrapper test #1: doc:doc completed]]></log4j:message>
+<log4j:locationInfo class="utfx.printers.ResultLogger" method="endTest" file="ResultLogger.java" line="74"/>
+</log4j:event>
+

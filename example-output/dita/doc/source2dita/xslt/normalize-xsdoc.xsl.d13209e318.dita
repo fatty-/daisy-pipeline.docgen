@@ -1,0 +1,52 @@
+<reference id="d13209e318">
+   <title>xsl:template - authors</title>
+   <abstract>
+      <shortdesc>Normalizes the xd:author-elements.</shortdesc>&gt;xd:author/&lt;s with no text are removed. &lt;xd:author/&gt;s with no child elements will have their text content wrapped in a &lt;xd:name/&gt; element. Children other than xd:name, xd:mailto and xd:organization are ignored.</abstract>
+   <prolog>
+      <metadata>
+         <audience type="programmer" job="programming" experiencelevel="expert"/>
+         <othermeta name="programming-language" content="XSLT"/>
+      </metadata>
+   </prolog>
+   <refbody>
+      <section>
+         <apiname>xsl:template - authors</apiname>
+      </section>
+   </refbody>
+   <section outputclass="sourcecode">
+      <title outputclass="sourcecode-header">Source Code</title>
+      <codeblock>&lt;xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" name="authors" xml:id="authors"&gt;
+        &lt;xsl:for-each select="*[local-name()='author']"&gt;
+            &lt;xsl:variable name="is-empty" select="count(descendant-or-self::text()[string-length(normalize-space())&amp;gt;0])=0"/&gt;
+            &lt;xsl:if test="not($is-empty)"&gt;
+                &lt;xd:author&gt;
+                    &lt;xsl:choose&gt;
+                        &lt;xsl:when test="count(child::*)=0"&gt;
+                            &lt;xd:name&gt;
+                                &lt;xsl:value-of select="."/&gt;
+                            &lt;/xd:name&gt;
+                        &lt;/xsl:when&gt;
+                        &lt;xsl:otherwise&gt;
+                            &lt;xsl:if test="child::*[local-name()='name']"&gt;
+                                &lt;xd:name&gt;
+                                    &lt;xsl:value-of select="child::*[local-name()='name']"/&gt;
+                                &lt;/xd:name&gt;
+                            &lt;/xsl:if&gt;
+                            &lt;xsl:if test="child::*[local-name()='mailto']"&gt;
+                                &lt;xd:mailto&gt;
+                                    &lt;xsl:value-of select="child::*[local-name()='mailto']"/&gt;
+                                &lt;/xd:mailto&gt;
+                            &lt;/xsl:if&gt;
+                            &lt;xsl:if test="child::*[local-name()='organization']"&gt;
+                                &lt;xd:organization&gt;
+                                    &lt;xsl:value-of select="child::*[local-name()='organization']"/&gt;
+                                &lt;/xd:organization&gt;
+                            &lt;/xsl:if&gt;
+                        &lt;/xsl:otherwise&gt;
+                    &lt;/xsl:choose&gt;
+                &lt;/xd:author&gt;
+            &lt;/xsl:if&gt;
+        &lt;/xsl:for-each&gt;
+    &lt;/xsl:template&gt;</codeblock>
+   </section>
+</reference>

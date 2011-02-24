@@ -1,15 +1,20 @@
-<map title="">
-   <topicref href="doc/source2dita/xproc/xproc.xpl.ditamap" format="ditamap"/>
-   <topicref href="doc/source2dita/fix-cross-references.xpl.ditamap" format="ditamap"/>
-   <topicref href="doc/source2dita/xslt/xslt.xpl.ditamap" format="ditamap"/>
+
+                    <map title="">
    <topicref href="doc/source2dita/makedita.xpl.ditamap" format="ditamap"/>
-   <topicref href="doc/dita2output/dita2html.xpl.ditamap" format="ditamap"/>
-   <topicref href="doc/lib/filelist.xpl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/xslt/xslt.xpl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/fix-cross-references.xpl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/xproc/xproc.xpl.ditamap" format="ditamap"/>
    <topicref href="doc/lib/recursive-directory-list.xpl.ditamap" format="ditamap"/>
+   <topicref href="doc/lib/filelist.xpl.ditamap" format="ditamap"/>
    <topicref href="doc/document.xpl.ditamap" format="ditamap"/>
+   <topicref href="doc/dita2output/dita2html.xpl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/xslt/oxygen-to-xsdoc.xsl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/xslt/xsltdoc-to-xsdoc.xsl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/xslt/normalize-xsdoc.xsl.ditamap" format="ditamap"/>
+   <topicref href="doc/source2dita/xslt/xsdoc-to-dita.xsl.ditamap" format="ditamap"/>
    <topicref href="doc/source2dita/xproc/xpdoc.xsl.ditamap" format="ditamap"/>
-   <topicref href="doc/source2dita/xslt/xsdoc.xsl.ditamap" format="ditamap"/>
+   <topicref href="doc/lib/xml-to-string.xsl.ditamap" format="ditamap"/>
    <topicref href="doc/dita2output/html/dita2html.xsl.ditamap" format="ditamap"/>
    <topicref href="doc/dita2output/html/dita2htmltoc.xsl.ditamap" format="ditamap"/>
-   <topicref href="doc/lib/xml-to-string.xsl.ditamap" format="ditamap"/>
 </map>
+                

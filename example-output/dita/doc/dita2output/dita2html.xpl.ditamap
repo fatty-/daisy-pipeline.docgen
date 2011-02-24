@@ -1,13 +1,13 @@
 <map title="dita2output/dita2html.xpl">
-   <topicref format="dita" href="dita2html.xpl.d7785e1.dita">
-      <topicref href="dita2html.xpl.d7785e99.dita" format="dita"/>
-      <topicref href="dita2html.xpl.d7785e116.dita" format="dita"/>
-      <topicref href="dita2html.xpl.d7785e154.dita" format="dita"/>
-      <topicref href="dita2html.xpl.d7785e212.dita" format="dita"/>
-      <topicref href="dita2html.xpl.d7785e232.dita" format="dita"/>
-      <topicref href="dita2html.xpl.d7785e252.dita" format="dita"/>
-      <topicref href="dita2html.xpl.d7785e272.dita" format="dita"/>
-      <topicref href="dita2html.xpl.d7785e304.dita" format="dita"/>
-      <topicref href="dita2html.xpl.d7785e321.dita" format="dita"/>
+   <topicref format="dita" href="dita2html.xpl.d10164e1.dita">
+      <topicref href="dita2html.xpl.d10164e99.dita" format="dita"/>
+      <topicref href="dita2html.xpl.d10164e116.dita" format="dita"/>
+      <topicref href="dita2html.xpl.d10164e154.dita" format="dita"/>
+      <topicref href="dita2html.xpl.d10164e212.dita" format="dita"/>
+      <topicref href="dita2html.xpl.d10164e232.dita" format="dita"/>
+      <topicref href="dita2html.xpl.d10164e252.dita" format="dita"/>
+      <topicref href="dita2html.xpl.d10164e272.dita" format="dita"/>
+      <topicref href="dita2html.xpl.d10164e304.dita" format="dita"/>
+      <topicref href="dita2html.xpl.d10164e321.dita" format="dita"/>
    </topicref>
 </map>

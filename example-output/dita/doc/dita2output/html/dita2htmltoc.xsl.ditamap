@@ -1,7 +1,7 @@
 <map title="dita2output/html/dita2htmltoc.xsl">
-   <topicref format="dita" href="dita2htmltoc.xsl.d25099e1.dita">
-      <topicref href="dita2htmltoc.xsl.d25099e46.dita" format="dita"/>
-      <topicref href="dita2htmltoc.xsl.d25099e61.dita" format="dita"/>
-      <topicref href="dita2htmltoc.xsl.d25099e145.dita" format="dita"/>
+   <topicref format="dita" href="dita2htmltoc.xsl.d13873e1.dita">
+      <topicref href="dita2htmltoc.xsl.d13873e30.dita" format="dita"/>
+      <topicref href="dita2htmltoc.xsl.d13873e43.dita" format="dita"/>
+      <topicref href="dita2htmltoc.xsl.d13873e127.dita" format="dita"/>
    </topicref>
 </map>
