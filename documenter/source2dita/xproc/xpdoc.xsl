@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:p="http://www.w3.org/ns/xproc" xmlns:xd="http://pipeline.daisy.org/ns/sample/doc"
-  exclude-result-prefixes="#all" version="2.0">
-  
+  xmlns:p="http://www.w3.org/ns/xproc" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xd="http://pipeline.daisy.org/ns/sample/doc" exclude-result-prefixes="#all" version="2.0">
+
   <xsl:import href="../../lib/xml-to-string.xsl"/>
-  
+
   <xd:doc target="parent">
     <xd:short>Transforms the input XProc document to a DITA Reference Topic.</xd:short>
     <xd:author>
@@ -27,14 +27,23 @@
   <xsl:template match="/">
     <xsl:apply-templates/>
   </xsl:template>
-  
+
   <xd:doc target="following">
     <xd:short>Identity template.</xd:short>
   </xd:doc>
   <xsl:template match="@*|node()">
-    <xsl:copy>
-      <xsl:apply-templates select="@*|node()"/>
-    </xsl:copy>
+    <!--xsl:choose>
+      <xsl:when test="self::*">
+        <xsl:element name="{local-name()}">
+          <xsl:apply-templates select="@*|node()"/>
+        </xsl:element>
+      </xsl:when>
+      <xsl:otherwise-->
+        <xsl:copy>
+          <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+      <!--/xsl:otherwise>
+    </xsl:choose-->
   </xsl:template>
 
   <xd:doc target="following">
@@ -110,7 +119,7 @@
 
           <!-- When the current element contains a p:documentation child targeting it, use it -->
           <xsl:when
-            test="./p:documentation[@xd:target='parent'][1] and not(generate-id(./p:documentation[@xd:target='parent'][1]) = generate-id($parentdoc))">
+            test="./p:documentation[@xd:target='parent'][1] and not($parentdoc and generate-id(./p:documentation[@xd:target='parent'][1]) = generate-id($parentdoc))">
             <xsl:variable name="doc" select="./p:documentation[@xd:target='parent'][1]"/>
             <xsl:call-template name="pipedoc">
               <xsl:with-param name="doc" select="$doc"/>
@@ -124,7 +133,7 @@
 
           <!-- When the first child of the current element is a p:documentation and is not targeting another element, use it -->
           <xsl:when
-            test="name(./*[1]) = 'p:documentation' and not(./*[1]/@xd:target = 'following') and not(generate-id(./*[1]) = generate-id($parentdoc))">
+            test="name(./*[1]) = 'p:documentation' and not(./*[1]/@xd:target = 'following') and not(not($parentdoc instance of xs:string) and generate-id(./*[1]) = generate-id($parentdoc))">
             <xsl:variable name="doc" select="./*[1]"/>
             <xsl:call-template name="pipedoc">
               <xsl:with-param name="doc" select="$doc"/>
@@ -138,7 +147,7 @@
 
           <!-- When the first preceding sibling is a p:documentation and is not targeting another element, use it -->
           <xsl:when
-            test="name(preceding-sibling::*[1]) = 'p:documentation' and not(preceding-sibling::*[1]/@xd:target = 'parent') and not(generate-id(preceding-sibling::*[1]) = generate-id($parentdoc))">
+            test="name(preceding-sibling::*[1]) = 'p:documentation' and not(preceding-sibling::*[1]/@xd:target = 'parent') and not(not($parentdoc instance of xs:string) and generate-id(preceding-sibling::*[1]) = generate-id($parentdoc))">
             <xsl:variable name="doc" select="preceding-sibling::*[1]"/>
             <xsl:call-template name="pipedoc">
               <xsl:with-param name="doc" select="$doc"/>
@@ -575,7 +584,7 @@
           </xsl:if>
         </related-links>
       </xsl:if>
-      
+
       <section outputclass="sourcecode">
         <title outputclass="sourcecode-header">Source Code</title>
         <codeblock>

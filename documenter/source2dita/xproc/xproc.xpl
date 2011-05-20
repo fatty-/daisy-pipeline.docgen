@@ -79,6 +79,14 @@
                             <p:empty/>
                         </p:input>
                         <p:input port="stylesheet">
+                            <p:document href="normalize-xpdoc.xsl"/>
+                        </p:input>
+                    </p:xslt>
+                    <p:xslt>
+                        <p:input port="parameters">
+                            <p:empty/>
+                        </p:input>
+                        <p:input port="stylesheet">
                             <p:document href="xpdoc.xsl"/>
                         </p:input>
                     </p:xslt>
