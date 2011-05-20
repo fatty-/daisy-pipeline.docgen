@@ -106,7 +106,7 @@
             </xsl:when>
             <xsl:when test="child::text()[string-length(normalize-space())>0]">
                 <xsl:variable name="short"
-                    select="replace(normalize-space(child::text()[1]),'^([^\.]+\.?)\s?.*$','$1')"/>
+                    select="replace(normalize-space(child::text()[1]),'^(.+?\.)\s.*$','$1')"/>
                 <xd:short>
                     <xsl:value-of select="$short"/>
                 </xd:short>
@@ -126,7 +126,7 @@
     <xsl:template name="detail">
         <xsl:variable name="shortInFirstText" select="count(./*[local-name()='short'])=0"/>
         <xsl:variable name="detailCount"
-            select="(if (matches(normalize-space(./text()[1]),'\.[^\.].')) then 1 else 0) + count(*[local-name()='detail' and (descendant-or-self::node()[self::text() and string-length(normalize-space())>0 or local-name()='pre' and not(ancestor::*[local-name()='pre'])])]) + count(./text()[not(position()=1) and string-length(normalize-space())>0])"/>
+            select="(if (matches(normalize-space(./text()[1]),'\.\s[^\s]')) then 1 else 0) + count(*[local-name()='detail' and (descendant-or-self::node()[self::text() and string-length(normalize-space())>0 or local-name()='pre' and not(ancestor::*[local-name()='pre'])])]) + count(./text()[not(position()=1) and string-length(normalize-space())>0])"/>
         <xsl:if test="$detailCount>0">
             <xd:detail>
                 <xsl:for-each select="*|text()">
@@ -137,7 +137,7 @@
                             <xsl:choose>
                                 <xsl:when test="$shortInFirstText">
                                     <xsl:variable name="detail"
-                                        select="replace(normalize-space(),'^[^\.]+.?\s?(.*)$','$1')"/>
+                                        select="replace(normalize-space(),'^.+?\.\s(.+)$','$1')"/>
                                     <xsl:choose>
                                         <xsl:when test="$detailCount>1">
                                             <xd:section>
